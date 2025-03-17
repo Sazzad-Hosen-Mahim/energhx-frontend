@@ -10,6 +10,10 @@ import Login from "@/pages/Login";
 import Signup from "@/pages/Signup";
 import RootConsumer from "@/pages/consumer/RootConsumer";
 import Dashboard from "@/pages/consumer/Dashboard";
+import BuildingInfo from "@/components/consumer/standard/BuildingInfo";
+import CertifiedAssociates from "@/components/consumer/standard/CertifiedAssociates";
+import History from "@/components/consumer/standard/History";
+import Settings from "@/components/consumer/standard/Settings";
 
 const routes = createBrowserRouter([
   {
@@ -31,9 +35,7 @@ const routes = createBrowserRouter([
       {
         path: "/admin",
         element: <AdminRoute />,
-        children: [
-          { path: "", element: <AdminDashboard /> },
-        ],
+        children: [{ path: "", element: <AdminDashboard /> }],
       },
     ],
   },
@@ -41,7 +43,15 @@ const routes = createBrowserRouter([
     path: "consumer",
     element: <RootConsumer />,
     children: [
+
+      { path: "", element: <Dashboard /> },
       { path: "dashboard", element: <Dashboard /> },
+      { path: "buildingInformation", element: <BuildingInfo /> },
+      {path: "certifiedAssociates", element: <CertifiedAssociates/>},
+      {path: "history", element: <History/>},
+      {path: "settings", element: <Settings/>}
+
+
     ],
   },
   {
