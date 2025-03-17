@@ -1,4 +1,8 @@
 import { useState } from "react";
+import Step1Form from "@/components/consumer/standard/step-form/Step1Form";
+import Step2Form from "@/components/consumer/standard/step-form/Step2Form";
+import Modal from "@/components/consumer/standard/step-form/Modal";
+import WallModal from "@/components/consumer/standard/step-form/WallModal"; // New WallModal component
 
 const BuildingInfo = () => {
   const [step, setStep] = useState(1);
@@ -14,12 +18,17 @@ const BuildingInfo = () => {
     units: "",
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showWallModal, setShowWallModal] = useState(false);
+  const [selectedDirection, setSelectedDirection] = useState(""); // Store selected wall direction
+  const [walls, setWalls] = useState<{ direction: string, length: string, width: string, type: string }[]>([]);
+
+  // Handle input change for form fields
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Handle checkbox change
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = e.target;
     setFormData((prevState) => ({
@@ -30,6 +39,7 @@ const BuildingInfo = () => {
     }));
   };
 
+  // Validation for Step 1
   const isStepOneValid = () => {
     return (
       formData.building &&
@@ -40,201 +50,105 @@ const BuildingInfo = () => {
     );
   };
 
+  // Validation for Step 2
   const isStepTwoValid = () => {
     return formData.phoneNumber && formData.accountNumber && formData.units;
+  };
+
+  // Open the modal
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  // Close the modal
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  // Handle form submission (move to Step 3 instead of alert)
+  const handleSubmit = () => {
+    setStep(3);
+    closeModal();
+  };
+
+  // Add a new wall to the selected direction
+  const handleAddWall = (length: string, width: string, type: string) => {
+    setWalls([...walls, { direction: selectedDirection, length, width, type }]);
+    setShowWallModal(false);
   };
 
   return (
     <div className="p-5">
       <h2 className="text-xl font-semibold mb-5">Building Information</h2>
 
+      {/* Step 1: Basic Information */}
       {step === 1 && (
-        <div className="space-y-4">
-          {/* First Row */}
-          <div className="grid grid-cols-3 gap-4">
-            <div>
-              <label className="block">Building</label>
-              <select
-                name="building"
-                className="w-full p-2 border rounded"
-                onChange={handleChange}
-              >
-                <option value="">Select Building</option>
-                <option value="Building A">Building A</option>
-                <option value="Building B">Building B</option>
-              </select>
-            </div>
-            <div>
-              <label className="block">Sub Building</label>
-              <select
-                name="subBuilding"
-                className="w-full p-2 border rounded"
-                onChange={handleChange}
-              >
-                <option value="">Select Sub Building</option>
-                <option value="Sub A">Sub A</option>
-                <option value="Sub B">Sub B</option>
-              </select>
-            </div>
-            <div>
-              <label className="block">Country</label>
-              <select
-                name="country"
-                className="w-full p-2 border rounded"
-                onChange={handleChange}
-              >
-                <option value="">Select Country</option>
-                <option value="USA">USA</option>
-                <option value="Canada">Canada</option>
-              </select>
-            </div>
-          </div>
+        <Step1Form
+          formData={formData}
+          handleChange={handleChange}
+          handleCheckboxChange={handleCheckboxChange}
+          isStepOneValid={isStepOneValid}
+          setStep={setStep}
+        />
+      )}
 
-          {/* Second Row */}
-          <div className="grid grid-cols-3 gap-4">
-            <div>
-              <label className="block">Street</label>
-              <select
-                name="street"
-                className="w-full p-2 border rounded"
-                onChange={handleChange}
-              >
-                <option value="">Select Street</option>
-                <option value="Street 1">Street 1</option>
-                <option value="Street 2">Street 2</option>
-              </select>
-            </div>
-            <div>
-              <label className="block">City</label>
-              <select
-                name="city"
-                className="w-full p-2 border rounded"
-                onChange={handleChange}
-              >
-                <option value="">Select City</option>
-                <option value="City 1">City 1</option>
-                <option value="City 2">City 2</option>
-              </select>
-            </div>
-            <div>
-              <label className="block">Postal Code</label>
-              <input
-                type="text"
-                name="zipCode"
-                className="w-full p-2 border rounded"
-                onChange={handleChange}
-              />
-            </div>
-          </div>
+      {/* Step 2: Contact and Account Information */}
+      {step === 2 && (
+        <Step2Form
+          formData={formData}
+          handleChange={handleChange}
+          isStepTwoValid={isStepTwoValid}
+          setStep={setStep}
+          openModal={openModal}
+        />
+      )}
 
-          {/* Third Row */}
-          <div className="grid grid-cols-3 gap-4">
-            <div>
-              <label className="block">Number of Occupation</label>
-              <input
-                type="text"
-                name="occupation"
-                className="w-full p-2 border rounded"
-                onChange={handleChange}
-                placeholder="Type Occupation"
-              />
-            </div>
-          
-          </div>
-          <div>
-              <label className="block">Commodity</label>
-              <div className="flex space-x-4">
-                <label>
-                  <input
-                    type="checkbox"
-                    value="Electricity"
-                    onChange={handleCheckboxChange}
-                  />{" "}
-                  Electricity
-                </label>
-                <label>
-                  <input
-                    type="checkbox"
-                    value="Natural Gas"
-                    onChange={handleCheckboxChange}
-                  />{" "}
-                  Natural Gas
-                </label>
-              </div>
-            </div>
+      {/* Step 3: Wall Information */}
+      {step === 3 && (
+        <div className="mt-4">
+          <h3 className="text-lg font-semibold mb-3">Wall Information</h3>
 
-          {/* Buttons */}
-          <div className="flex justify-between mt-4">
-            <button
-              className="bg-gray-500 text-white px-4 py-2 rounded"
-              disabled
-            >
-              Previous
-            </button>
-            <button
-              className="bg-green-600 text-white px-4 py-2 rounded"
-              disabled={!isStepOneValid()}
-              onClick={() => setStep(2)}
-            >
-              Continue
-            </button>
-          </div>
+          {/* Display walls for all four directions */}
+          {["North", "South", "East", "West"].map((direction) => (
+            <div key={direction} className="mb-4">
+              <h4 className="text-md font-semibold">{direction}</h4>
+              {walls.filter(wall => wall.direction === direction).length > 0 ? (
+                <div className="space-y-2">
+                  {walls
+                    .filter(wall => wall.direction === direction)
+                    .map((wall, index) => (
+                      <div key={index} className="flex items-center space-x-4 p-2 border rounded-md">
+                        <span>{`Wall ${index + 1}: ${wall.length} x ${wall.width} (${wall.type})`}</span>
+                      </div>
+                    ))}
+                </div>
+              ) : (
+                <button
+                  className="bg-blue-500 text-white px-4 py-2 rounded mt-2"
+                  onClick={() => {
+                    setSelectedDirection(direction);
+                    setShowWallModal(true);
+                  }}
+                >
+                  Add {direction} Wall
+                </button>
+              )}
+            </div>
+          ))}
         </div>
       )}
 
-      {step === 2 && (
-        <div className="space-y-4">
-          <div>
-            <label className="block">Phone Number</label>
-            <input
-              type="text"
-              name="phoneNumber"
-              className="w-full p-2 border rounded"
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <label className="block">Alternate Phone Number</label>
-            <input
-              type="text"
-              name="alternatePhoneNumber"
-              className="w-full p-2 border rounded"
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <label className="block">Account Number</label>
-            <input
-              type="text"
-              name="accountNumber"
-              className="w-full p-2 border rounded"
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <label className="block">Units</label>
-            <input
-              type="text"
-              name="units"
-              className="w-full p-2 border rounded"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="flex justify-between">
-            <button
-              className="bg-gray-500 text-white px-4 py-2 rounded"
-              onClick={() => setStep(1)}
-            >
-              Previous
-            </button>
-            <button
-              className="bg-green-600 text-white px-4 py-2 rounded"
-              disabled={!isStepTwoValid()}
-            >
-              Continue
-            </button>
-          </div>
-        </div>
+      {/* Terms & Conditions Modal */}
+      {isModalOpen && (
+        <Modal closeModal={closeModal} onSubmit={handleSubmit} />
+      )}
+
+      {/* Wall Modal for Adding Walls */}
+      {showWallModal && (
+        <WallModal
+          closeWallModal={() => setShowWallModal(false)}
+          onAddWall={handleAddWall}
+        />
       )}
     </div>
   );
