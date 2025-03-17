@@ -43,12 +43,14 @@ const routes = createBrowserRouter([
     path: "consumer",
     element: <RootConsumer />,
     children: [
+
       { path: "", element: <Dashboard /> },
       { path: "dashboard", element: <Dashboard /> },
       { path: "buildingInformation", element: <BuildingInfo /> },
       {path: "certifiedAssociates", element: <CertifiedAssociates/>},
       {path: "history", element: <History/>},
       {path: "settings", element: <Settings/>}
+
 
     ],
   },
