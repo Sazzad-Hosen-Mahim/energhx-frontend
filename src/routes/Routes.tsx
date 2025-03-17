@@ -41,7 +41,7 @@ const routes = createBrowserRouter([
     path: "consumer",
     element: <RootConsumer />,
     children: [
-      { path: "dashboard", element: <Dashboard /> }, // ✅ Corrected path
+      { path: "dashboard", element: <Dashboard /> },
     ],
   },
   {
