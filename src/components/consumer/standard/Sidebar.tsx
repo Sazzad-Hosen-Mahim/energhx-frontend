@@ -6,14 +6,15 @@ import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <div className="w-64 h-screen bg-green-700 text-white p-5">
+    <div className="w-64 h-screen bg-white text-[#758179] p-5 border-r border-gray-300 z-30">
+      {/* Sidebar content */}
       <h2 className="text-xl font-semibold mb-5">Dashboard</h2>
       <ul className="space-y-4">
         <NavLink
           to="/consumer/dashboard"
           className={({ isActive }) =>
             `flex items-center space-x-2 cursor-pointer p-2 rounded ${
-              isActive ? "bg-green-500" : "hover:bg-green-600"
+              isActive ? "bg-[#2DAD00] text-white" : "hover:bg-[#EAF7E6]" 
             }`
           }
         >
@@ -24,7 +25,7 @@ const Sidebar = () => {
           to="/consumer/buildingInformation"
           className={({ isActive }) =>
             `flex items-center space-x-2 cursor-pointer p-2 rounded ${
-              isActive ? "bg-green-500" : "hover:bg-green-600"
+              isActive ? "bg-[#2DAD00] text-white" : "hover:bg-[#EAF7E6]"
             }`
           }
         >
@@ -35,7 +36,7 @@ const Sidebar = () => {
           to="/consumer/certifiedAssociates"
           className={({ isActive }) =>
             `flex items-center space-x-2 cursor-pointer p-2 rounded ${
-              isActive ? "bg-green-500" : "hover:bg-green-600"
+              isActive ? "bg-[#2DAD00] text-white" : "hover:bg-[#EAF7E6]"
             }`
           }
         >
@@ -46,7 +47,7 @@ const Sidebar = () => {
           to="/consumer/history"
           className={({ isActive }) =>
             `flex items-center space-x-2 cursor-pointer p-2 rounded ${
-              isActive ? "bg-green-500" : "hover:bg-green-600"
+              isActive ? "bg-[#2DAD00] text-white" : "hover:bg-[#EAF7E6]"
             }`
           }
         >
@@ -57,7 +58,7 @@ const Sidebar = () => {
           to="/consumer/settings"
           className={({ isActive }) =>
             `flex items-center space-x-2 cursor-pointer p-2 rounded ${
-              isActive ? "bg-green-500" : "hover:bg-green-600"
+              isActive ? "bg-[#2DAD00] text-white" : "hover:bg-[#EAF7E6]"
             }`
           }
         >
@@ -66,7 +67,7 @@ const Sidebar = () => {
 
         <NavLink
           to="/logout"
-          className="flex items-center space-x-2 cursor-pointer hover:bg-green-600 p-2 rounded"
+          className="flex items-center space-x-2 cursor-pointer hover:bg-[#EAF7E6] p-2 rounded"
         >
           <MdLogout /> <span>Logout</span>
         </NavLink>

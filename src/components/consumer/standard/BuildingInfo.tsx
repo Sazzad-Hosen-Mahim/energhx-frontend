@@ -6,6 +6,7 @@ import WallModal from "@/components/consumer/standard/step-form/WallModals";
 import ElectricMobility from "@/components/consumer/standard/step-form/ElectricMobility";
 import RoomModal from "@/components/consumer/standard/step-form/RoomModals";
 import WindowModal from "@/components/consumer/standard/step-form/WindowModal";
+import { IoMdAdd } from "react-icons/io";
 
 
 const BuildingInfo = () => {
@@ -149,12 +150,13 @@ const BuildingInfo = () => {
   
       {/* Step 3: Wall & Roof Information */}
       {step === 3 && (
-        <div className="mt-4">
-          <h3 className="text-lg font-semibold mb-3">Wall Information</h3>
+        <div className="mt-4 ">
+          <h3 className="text-lg  mb-5">Wall Information</h3>
   
           {/* Display walls for all four directions */}
           {["North", "South", "East", "West"].map((direction) => (
             <div key={direction} className="mb-4">
+              <div className="flex items-center gap-6">
               <h4 className="text-md font-semibold">{direction}</h4>
               {walls.filter((wall) => wall.direction === direction).length >
               0 ? (
@@ -164,7 +166,7 @@ const BuildingInfo = () => {
                     .map((wall, index) => (
                       <div
                         key={index}
-                        className="flex items-center space-x-4 p-2 border rounded-md"
+                        className="flex items-center space-x-4 p-2 border rounded-md "
                       >
                         <span>{`Wall ${index + 1}: ${wall.length} x ${
                           wall.width
@@ -174,16 +176,19 @@ const BuildingInfo = () => {
                 </div>
               ) : (
                 <button
-                  className="bg-blue-500 text-white px-4 py-2 rounded mt-2"
+                  className="bg-[#2DAD00] text-white px-4 py-2 rounded mt-2"
                   onClick={() => {
                     setSelectedDirection(direction);
                     setShowWallModal(true);
                   }}
                 >
-                  Add {direction} Wall
+                <div className="flex items-center gap-1">Add <span><IoMdAdd /></span></div>  
                 </button>
               )}
             </div>
+
+              </div>
+          
           ))}
   
           {/* Roof Information */}
