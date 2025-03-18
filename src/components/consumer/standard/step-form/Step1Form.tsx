@@ -1,5 +1,7 @@
 // Step1Form.tsx
 import React from "react";
+import { GrPrevious } from "react-icons/gr";
+import { GrNext } from "react-icons/gr";
 
 interface Step1FormProps {
   formData: any;
@@ -17,14 +19,14 @@ const Step1Form: React.FC<Step1FormProps> = ({
   setStep,
 }) => {
   return (
-    <div className="space-y-4">
+    <div className="space-y-6 pt-4 w-[80%]">
       {/* Building, Sub Building, Country */}
       <div className="grid grid-cols-3 gap-4">
         <div>
-          <label className="block">Building</label>
+          <label className="block text-[#758179]">Building*</label>
           <select
             name="building"
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded text-[#758179] "
             onChange={handleChange}
           >
             <option value="">Select Building</option>
@@ -33,10 +35,10 @@ const Step1Form: React.FC<Step1FormProps> = ({
           </select>
         </div>
         <div>
-          <label className="block">Sub Building</label>
+          <label className="block text-[#758179]">Sub Building*</label>
           <select
             name="subBuilding"
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded text-[#758179]"
             onChange={handleChange}
           >
             <option value="">Select Sub Building</option>
@@ -45,10 +47,10 @@ const Step1Form: React.FC<Step1FormProps> = ({
           </select>
         </div>
         <div>
-          <label className="block">Country</label>
+          <label className="block text-[#758179]">Country*</label>
           <select
             name="country"
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded text-[#758179]"
             onChange={handleChange}
           >
             <option value="">Select Country</option>
@@ -61,10 +63,10 @@ const Step1Form: React.FC<Step1FormProps> = ({
       {/* Street, City, Postal Code */}
       <div className="grid grid-cols-3 gap-4">
         <div>
-          <label className="block">Street</label>
+          <label className="block text-[#758179]">Street*</label>
           <select
             name="street"
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded text-[#758179]"
             onChange={handleChange}
           >
             <option value="">Select Street</option>
@@ -73,10 +75,10 @@ const Step1Form: React.FC<Step1FormProps> = ({
           </select>
         </div>
         <div>
-          <label className="block">City</label>
+          <label className="block text-[#758179]">City*</label>
           <select
             name="city"
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded text-[#758179]"
             onChange={handleChange}
           >
             <option value="">Select City</option>
@@ -85,21 +87,32 @@ const Step1Form: React.FC<Step1FormProps> = ({
           </select>
         </div>
         <div>
-          <label className="block">Postal Code</label>
+          <label className="block text-[#758179]">Postal Code*</label>
           <input
             type="text"
             name="zipCode"
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded text-[#758179]"
             onChange={handleChange}
+            placeholder="123"
           />
         </div>
       </div>
+      <div>
+          <label className="block text-[#758179]">Number of Occupant*</label>
+          <input
+            type="text"
+            name="occupant"
+            className=" p-2 border rounded text-[#758179]"
+            onChange={handleChange}
+            placeholder="Type Occupant"
+          />
+        </div>
 
       {/* Commodity Checkboxes */}
       <div>
-        <label className="block">Commodity</label>
-        <div className="flex space-x-4">
-          <label>
+        <label className="block text-[#758179]">Commodity*</label>
+        <div className="flex space-x-6">
+          <label className="text-[#758179]">
             <input
               type="checkbox"
               value="Electricity"
@@ -107,7 +120,7 @@ const Step1Form: React.FC<Step1FormProps> = ({
             />{" "}
             Electricity
           </label>
-          <label>
+          <label className="text-[#758179]">
             <input
               type="checkbox"
               value="Natural Gas"
@@ -119,19 +132,19 @@ const Step1Form: React.FC<Step1FormProps> = ({
       </div>
 
       {/* Buttons */}
-      <div className="flex justify-between mt-4">
+      <div className="flex gap-4 mt-4">
         <button
-          className="bg-gray-500 text-white px-4 py-2 rounded"
+          className="bg-[#EAF7E6] text-[#2DAD00] px-4 py-2 rounded"
           disabled
         >
-          Previous
+        <div className="flex items-center gap-1"> <span className=""><GrPrevious /></span>Previous</div>
         </button>
         <button
-          className="bg-green-600 text-white px-4 py-2 rounded"
+          className="bg-[#2DAD00] text-white px-4 py-2 rounded"
           disabled={!isStepOneValid()}
           onClick={() => setStep(2)}
         >
-          Continue
+        <div className="flex items-center gap-1"> continue <span className=""><GrNext /></span><span className="ml-[-14px]"><GrNext /></span></div>
         </button>
       </div>
     </div>
