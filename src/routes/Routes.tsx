@@ -14,6 +14,10 @@ import BuildingInfo from "@/components/consumer/standard/BuildingInfo";
 import CertifiedAssociates from "@/components/consumer/standard/CertifiedAssociates";
 import History from "@/components/consumer/standard/History";
 import Settings from "@/components/consumer/standard/Settings";
+import RootServer from "@/pages/Server/RootServer";
+import ServerInternDashboard from "@/pages/Server/ServerInternDashboard";
+import Setting from "@/components/Server/Basic/Setting";
+import ServerForm from "@/pages/Server/ServerForm";
 
 const routes = createBrowserRouter([
   {
@@ -43,15 +47,30 @@ const routes = createBrowserRouter([
     path: "consumer",
     element: <RootConsumer />,
     children: [
-
       { path: "", element: <Dashboard /> },
       { path: "dashboard", element: <Dashboard /> },
       { path: "buildingInformation", element: <BuildingInfo /> },
-      {path: "certifiedAssociates", element: <CertifiedAssociates/>},
-      {path: "history", element: <History/>},
-      {path: "settings", element: <Settings/>}
-
-
+      { path: "certifiedAssociates", element: <CertifiedAssociates /> },
+      { path: "history", element: <History /> },
+      { path: "settings", element: <Settings /> },
+    ],
+  },
+  {
+    path: "server",
+    element: <RootServer />,
+    children: [
+      {
+        path: "",
+        element: <ServerInternDashboard />,
+      },
+      {
+        path: "setting",
+        element: <Setting />,
+      },
+      {
+        path: "form",
+        element: <ServerForm />,
+      },
     ],
   },
   {
