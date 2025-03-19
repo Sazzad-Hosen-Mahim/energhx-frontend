@@ -16,7 +16,7 @@ const consumerMenu = [
 
 const RootConsumer = () => {
   return (
-    <div className="flex px-20">
+    <div className="flex px-24">
       <Sidebar menuItems={consumerMenu} />
       <div className="flex-1 p-4">
         <Outlet />

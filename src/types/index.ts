@@ -1,3 +1,5 @@
+import { IconType } from "react-icons";
+
 // Define a type for your user (example)
 export interface User {
     id: string;
@@ -14,3 +16,15 @@ export interface User {
     component: React.ComponentType;
     exact?: boolean;
   };
+
+  // Define type for a single menu item
+export interface MenuItem {
+  path: string;
+  label: string;
+  icon: IconType;
+}
+
+// Define props type for Sidebar
+export interface SidebarProps {
+  menuItems: MenuItem[];
+}
