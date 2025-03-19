@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { GrNext } from "react-icons/gr";
 
 interface ElectricMobilityProps {
   closeElectricMobilityModal: () => void;
@@ -34,7 +35,7 @@ const ElectricMobility: React.FC<ElectricMobilityProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-opacity-50fixed bg-gray-50/0 bg-opacity-50 z-20 backdrop-blur-sm">
       <div className="bg-white p-6 rounded shadow-lg w-96">
         <h3 className="text-lg font-semibold mb-4">Add Electric Mobility</h3>
 
@@ -90,7 +91,7 @@ const ElectricMobility: React.FC<ElectricMobilityProps> = ({
             className="bg-green-600 text-white px-4 py-2 rounded"
             onClick={handleSubmit}
           >
-            Submit
+            <div className="flex items-center gap-1"> continue <span className=""><GrNext /></span><span className="ml-[-14px]"><GrNext /></span></div>
           </button>
         </div>
       </div>

@@ -2,10 +2,11 @@ import React from "react";
 import { GrPrevious } from "react-icons/gr";
 import { GrNext } from "react-icons/gr";
 
-
 interface Step2FormProps {
   formData: any;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void; // Updated to include select
+  handleChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => void; // Updated to include select
   isStepTwoValid: () => boolean;
   setStep: React.Dispatch<React.SetStateAction<number>>;
   openModal: () => void;
@@ -24,8 +25,8 @@ const Step2Form: React.FC<Step2FormProps> = ({
 
       {/* Grid layout for input fields */}
       <div className="grid grid-cols-3 gap-4">
-           {/* Dropdown for Utility */}
-           <div>
+        {/* Dropdown for Utility */}
+        <div>
           <label className="block text-[#758179]">Utility*</label>
           <select
             name="utility"
@@ -51,7 +52,9 @@ const Step2Form: React.FC<Step2FormProps> = ({
         </div>
 
         <div>
-          <label className="block text-[#758179]">Alternate Phone Number*</label>
+          <label className="block text-[#758179]">
+            Alternate Phone Number*
+          </label>
           <input
             type="text"
             name="alternatePhoneNumber"
@@ -72,20 +75,16 @@ const Step2Form: React.FC<Step2FormProps> = ({
           />
         </div>
         <div>
-        <label className="block text-[#758179]">Units*</label>
-        <input
-          type="text"
-          name="units"
-          value={formData.units}
-          className="w-full p-2 border rounded"
-          onChange={handleChange}
-        />
+          <label className="block text-[#758179]">Units*</label>
+          <input
+            type="text"
+            name="units"
+            value={formData.units}
+            className="w-full p-2 border rounded"
+            onChange={handleChange}
+          />
+        </div>
       </div>
-     
-      </div>
-
-      
-      
 
       {/* Buttons */}
       <div className="flex gap-4 mt-4">
@@ -93,14 +92,29 @@ const Step2Form: React.FC<Step2FormProps> = ({
           className="bg-[#EAF7E6] text-[#2DAD00] px-4 py-2 rounded"
           onClick={() => setStep(1)}
         >
-          <div className="flex items-center gap-1"> <span className=""><GrPrevious /></span>Previous</div>
+          <div className="flex items-center gap-1">
+            {" "}
+            <span className="">
+              <GrPrevious />
+            </span>
+            Previous
+          </div>
         </button>
         <button
           className="bg-[#2DAD00] text-white px-4 py-2 rounded"
           disabled={!isStepTwoValid()}
           onClick={openModal}
         >
-          <div className="flex items-center gap-1"> continue <span className=""><GrNext /></span><span className="ml-[-14px]"><GrNext /></span></div>
+          <div className="flex items-center gap-1">
+            {" "}
+            continue{" "}
+            <span className="">
+              <GrNext />
+            </span>
+            <span className="ml-[-14px]">
+              <GrNext />
+            </span>
+          </div>
         </button>
       </div>
     </div>
