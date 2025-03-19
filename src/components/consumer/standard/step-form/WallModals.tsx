@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { GrNext } from "react-icons/gr";
 
 interface WallModalProps {
   closeWallModal: () => void;
@@ -16,7 +17,7 @@ const WallModal: React.FC<WallModalProps> = ({ closeWallModal, onAddWall }) => {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-gray-100 bg-opacity-50 backdrop-blur-lg">
+    <div className="fixed inset-0 flex items-center justify-center  bg-opacity-50  bg-gray-50/0 bg-opacity-50 z-20 backdrop-blur-sm">
       <div className="bg-white p-6 rounded shadow-lg w-96">
         <h3 className="text-xl font-semibold mb-4">Add Wall Information</h3>
         <div className="space-y-4">
@@ -51,16 +52,16 @@ const WallModal: React.FC<WallModalProps> = ({ closeWallModal, onAddWall }) => {
 
         <div className="flex justify-between mt-4">
           <button
-            className="bg-gray-500 text-white px-4 py-2 rounded"
+            className="bg-[#EAF7E6] text-[#2DAD00] px-4 py-2 rounded"
             onClick={closeWallModal}
           >
             Cancel
           </button>
           <button
-            className="bg-green-600 text-white px-4 py-2 rounded"
+            className="bg-[#2DAD00] text-white px-4 py-2 rounded cursor-pointer"
             onClick={handleSubmit}
           >
-            Submit
+          <div className="flex items-center gap-1"> Submit <span className=""><GrNext /></span><span className="ml-[-14px]"><GrNext /></span></div>
           </button>
         </div>
       </div>
