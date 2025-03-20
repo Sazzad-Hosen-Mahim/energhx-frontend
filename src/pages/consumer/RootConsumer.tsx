@@ -4,6 +4,7 @@ import { FaHome } from "react-icons/fa";
 import { MdHistory, MdSettings, MdLogout } from "react-icons/md";
 import { BsBuilding } from "react-icons/bs";
 import { IoPeople } from "react-icons/io5";
+import Navbar from "@/Layout/Navbar";
 
 const consumerMenu = [
   { path: "/consumer/dashboard", label: "Dashboard", icon: FaHome },
@@ -16,11 +17,14 @@ const consumerMenu = [
 
 const RootConsumer = () => {
   return (
-    <div className="flex px-20">
+    <div>
+<Navbar/>
+    <div className="flex px-24">
       <Sidebar menuItems={consumerMenu} />
       <div className="flex-1 p-4">
         <Outlet />
       </div>
+    </div>
     </div>
   );
 };
