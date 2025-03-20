@@ -5,6 +5,7 @@ import { MdHistory, MdSettings, MdLogout } from "react-icons/md";
 import { BsBuilding } from "react-icons/bs";
 import { IoPeople } from "react-icons/io5";
 import Navbar from "@/Layout/Navbar";
+import CommonBanner from "@/common/CommonBanner";
 
 const consumerMenu = [
   { path: "/consumer/dashboard", label: "Dashboard", icon: FaHome },
@@ -19,6 +20,7 @@ const RootConsumer = () => {
   return (
     <div>
 <Navbar/>
+<CommonBanner name="Rahman Abdul Quadir" role="Consumer (Standard)" imageUrl=""/>
     <div className="flex px-24">
       <Sidebar menuItems={consumerMenu} />
       <div className="flex-1 p-4">
