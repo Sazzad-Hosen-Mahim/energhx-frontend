@@ -1,38 +1,62 @@
 const SocialProfile = () => {
-    const handleSave = () => {
-      // Handle save logic here
-      console.log("Social profile info saved");
-    };
-  
-    return (
-      <div className="p-6 bg-white rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold mb-4">Social Profile</h2>
-        <div className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Facebook:</label>
-            <input type="text" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Instagram:</label>
-            <input type="text" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">YouTube:</label>
-            <input type="text" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">LinkedIn:</label>
-            <input type="text" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md" />
-          </div>
-        </div>
-        <button
-          onClick={handleSave}
-          className="mt-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-        >
-          Save Info
-        </button>
-      </div>
-    );
+  const handleSave = () => {
+    // Handle save logic here
+    console.log("Social profile info saved");
   };
-  
-  export default SocialProfile;
+
+  return (
+    <div className="p-6 bg-white rounded-lg">
+      <h2 className="text-2xl mb-10">Social Media</h2>
+      <div className="space-y-10">
+        <div className="flex items-center gap-6">
+          <label className="w-32 text-lg font-medium text-[#758179]">
+            Facebook:
+          </label>
+          <input
+            type="text"
+            className="flex-1 px-3 py-3 border border-gray-300 rounded-md"
+            placeholder="https//facebook.com/username"
+          />
+        </div>
+        <div className="flex items-center gap-6">
+          <label className="w-32 text-lg font-medium text-[#758179]">
+            Instagram:
+          </label>
+          <input
+            type="text"
+            className="flex-1 px-3 py-3 border border-gray-300 rounded-md"
+            placeholder="https//instagram.com/username"
+          />
+        </div>
+        <div className="flex items-center gap-6">
+          <label className="w-32 text-lg font-medium text-[#758179]">
+            YouTube:
+          </label>
+          <input
+            type="text"
+            className="flex-1 px-3 py-3 border border-gray-300 rounded-md"
+            placeholder="https//youtube.com/username"
+          />
+        </div>
+        <div className="flex items-center gap-6">
+          <label className="w-32 text-lg font-medium text-[#758179]">
+            LinkedIn:
+          </label>
+          <input
+            type="text"
+            className="flex-1 px-3 py-3 border border-gray-300 rounded-md"
+            placeholder="https//linkedin.com/in/username"
+          />
+        </div>
+      </div>
+      <button
+        onClick={handleSave}
+        className="mt-14 px-4 py-3 bg-[#2DAD00] text-white rounded hover:bg-[#2ead00ee]"
+      >
+        Save Social Media
+      </button>
+    </div>
+  );
+};
+
+export default SocialProfile;
