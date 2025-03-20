@@ -3,6 +3,7 @@ import { IoNotificationsOutline } from "react-icons/io5";
 import { FaBars } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 import { Link } from "react-router-dom";
+import userImg from "/user.png"
 
 interface User {
   name: string;
@@ -15,10 +16,9 @@ const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const user: User = {
-    name: "Emmanuel Nonye",
+    name: "Rahman Abdul Quadir",
     role: "Consumer (Standard)",
-    profileImg:
-      "https://via.placeholder.com/40", // Replace with actual image URL
+    profileImg:`${userImg}`, // Replace with actual image URL
   };
 
   return (
@@ -30,7 +30,7 @@ const Navbar = () => {
        <img
           src="https://s3-alpha-sig.figma.com/img/b47b/3cd6/6e06b1487bd0f3f26de872aeb5f99d8b?Expires=1743379200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=C8QNwR~yp4Du5n3yHqV5nfblvq7axWdwl5L7V7hi3XM1XIIeGyg9600CRDOgapJFn1sgGq9sJciOElgQtVIB-ScPVKradIlU~HVeW5ORoj8hHujTVLexeCd~WNdxTo9PUL7WSN4taKC~FUx06D0T6Vhwgo18Cl9oqs0oJV~TGYVsw61d388R~h57epJCDf~qBTPx3GLOLVhNHTKgNZ77zkaRhXEQnKMp5ShP-SjRZzgQtI5ug6qL7sDTx44CxD5~ZGRVrQQ3QWz6X5JHKihzRWPq0w8XhNERvuSwHb7CNMbnsqxf7o2AHyDu71G8U1y4vBzMlHg6tMdwOLqhCmhwUg__" // Replace with actual logo
           alt="Logo"
-          className="h-8"
+          className="h-8 w-[120px]"
         />
        </Link>
       </div>
@@ -54,7 +54,7 @@ const Navbar = () => {
             <img
               src={user.profileImg}
               alt="User"
-              className="w-8 h-8 rounded-full border border-green-500"
+              className="w-12 h-12 rounded-full border border-green-500"
             />
             <div className="text-sm">
               <p className="font-medium">{user.name}</p>
@@ -79,14 +79,6 @@ const Navbar = () => {
             </div>
           )}
         </div>
-
-        {/* Mobile Menu Toggle */}
-        {/* <button
-          className="lg:hidden text-gray-600 hover:text-green-600"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <MdClose size={24} /> : <FaBars size={24} />}
-        </button> */}
       </div>
    </div>
     </nav>

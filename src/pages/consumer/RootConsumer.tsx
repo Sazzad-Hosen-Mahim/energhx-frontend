@@ -6,6 +6,7 @@ import { BsBuilding } from "react-icons/bs";
 import { IoPeople } from "react-icons/io5";
 import Navbar from "@/Layout/Navbar";
 import CommonBanner from "@/common/CommonBanner";
+import userImg from "/user.png"
 
 const consumerMenu = [
   { path: "/consumer/dashboard", label: "Dashboard", icon: FaHome },
@@ -20,10 +21,10 @@ const RootConsumer = () => {
   return (
     <div>
 <Navbar/>
-<CommonBanner name="Rahman Abdul Quadir" role="Consumer (Standard)" imageUrl=""/>
+<CommonBanner name="Rahman Abdul Quadir" role="Consumer (Standard)" imageUrl={userImg}/>
     <div className="flex px-24">
       <Sidebar menuItems={consumerMenu} />
-      <div className="flex-1 p-4">
+      <div className="flex-1 p-4 border-t border-t-[#E7E9E8]">
         <Outlet />
       </div>
     </div>
