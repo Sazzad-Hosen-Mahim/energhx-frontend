@@ -26,7 +26,7 @@ const Settings = () => {
   return (
     <div className="p-8 bg-white min-h-screen">
       <h1 className="text-3xl font-bold mb-8">Settings</h1>
-      <div className="flex space-x-4 border-b border-gray-300 pb-4">
+      <div className="flex space-x-30 border-b border-gray-300  cursor-pointer">
         <button
           onClick={() => setActiveTab("profile")}
           className={`flex items-center px-5 py-4 rounded-lg transition-all ${
