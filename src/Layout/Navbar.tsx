@@ -78,12 +78,12 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button
+        {/* <button
           className="lg:hidden text-gray-600 hover:text-green-600"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <MdClose size={24} /> : <FaBars size={24} />}
-        </button>
+        </button> */}
       </div>
    </div>
     </nav>
