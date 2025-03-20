@@ -2,6 +2,7 @@ import { useState } from "react";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { FaBars } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 interface User {
   name: string;
@@ -25,11 +26,13 @@ const Navbar = () => {
    <div className="w-[1440px] flex justify-between">
        {/* Left Section: Logo */}
        <div className="flex items-center space-x-2">
-        <img
+       <Link to={'/'}>
+       <img
           src="https://s3-alpha-sig.figma.com/img/b47b/3cd6/6e06b1487bd0f3f26de872aeb5f99d8b?Expires=1743379200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=C8QNwR~yp4Du5n3yHqV5nfblvq7axWdwl5L7V7hi3XM1XIIeGyg9600CRDOgapJFn1sgGq9sJciOElgQtVIB-ScPVKradIlU~HVeW5ORoj8hHujTVLexeCd~WNdxTo9PUL7WSN4taKC~FUx06D0T6Vhwgo18Cl9oqs0oJV~TGYVsw61d388R~h57epJCDf~qBTPx3GLOLVhNHTKgNZ77zkaRhXEQnKMp5ShP-SjRZzgQtI5ug6qL7sDTx44CxD5~ZGRVrQQ3QWz6X5JHKihzRWPq0w8XhNERvuSwHb7CNMbnsqxf7o2AHyDu71G8U1y4vBzMlHg6tMdwOLqhCmhwUg__" // Replace with actual logo
           alt="Logo"
           className="h-8"
         />
+       </Link>
       </div>
 
       {/* Right Section: Notifications & User */}
