@@ -5,20 +5,19 @@ import { NavLink } from "react-router-dom";
 
 const Sidebar: React.FC<SidebarProps> = ({ menuItems }) => {
   return (
-    <div className="w-64 h-screen bg-white text-[#758179] p-5 border-r  border-gray-300 z-30">
-      <h2 className="text-xl font-semibold mb-5">Dashboard</h2>
-      <ul className="space-y-4">
+    <div className=" h-screen text-[#758179] border-r border-t border-r-[#E7E9E8] border-t-[#E7E9E8]  border-gray-300 z-30">
+      <ul className="">
         {menuItems.map((item, index) => (
           <NavLink
             key={index}
             to={item.path}
             className={({ isActive }) =>
-              `flex items-center space-x-2 cursor-pointer p-2 rounded ${
-                isActive ? "bg-[#2DAD00] text-white" : "hover:bg-[#EAF7E6]"
+              `flex items-center font-primary font-light space-x-2 cursor-pointer text-[18px] p-3 pr-28 rounded-sm ${
+                isActive ? "bg-primary text-white" : "hover:bg-[#EAF7E6]"
               }`
             }
           >
-            <item.icon /> <span>{item.label}</span>
+            <item.icon size={20}/> <span>{item.label}</span>
           </NavLink>
         ))}
       </ul>
