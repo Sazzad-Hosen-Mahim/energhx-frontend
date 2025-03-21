@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/poppins');
+@import url('https://fonts.cdnfonts.com/css/akira-expanded');
 @import "tailwindcss";
 
 @theme {
@@ -12,7 +14,7 @@
 
   /* Font Families */
   --font-primary: "Poppins", sans-serif;
-  --font-secondary: "Roboto", sans-serif;
+  --font-secondary: "Akira Expanded", sans-serif;
 }
 
 body {

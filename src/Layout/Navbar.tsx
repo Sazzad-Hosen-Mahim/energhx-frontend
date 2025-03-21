@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className=" bg-white border-b-1 border-b-[#E7E9E8] p-4 flex justify-center items-center">
+    <nav className=" bg-white border-b border-b-[#E7E9E8] p-4 flex justify-center items-center">
    <div className="w-[1440px] flex justify-between">
        {/* Left Section: Logo */}
        <div className="flex items-center space-x-2">

@@ -16,8 +16,8 @@ const CommonBanner = ({ name, role, imageUrl }: CoverBannerProps) => {
         className="w-32 h-32 rounded-full border-2 border-gray-300"
       />
       <div>
-        <h2 className="lg:text-[24px] font-bold text-[#112518]">{name}</h2>
-        <p className="text-[18px] text-primary">{role}</p>
+        <h2 className="lg:text-[24px] font-secondary font-bold text-[#112518]">{name}</h2>
+        <p className="text-[18px] text-primary font-primary">{role}</p>
       </div>
      </div>
         </div>
