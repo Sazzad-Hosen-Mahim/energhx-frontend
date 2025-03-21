@@ -10,38 +10,54 @@ const associates = [
   { id: "04", name: "Emmnauel Nonye", role: "Server", rating: 4.3 },
 ];
 
-
 const CertifiedAssociates = () => {
   return (
     <div className="p-5 mx-auto">
       <h2 className="text-xl font-semibold mb-4">Certified Associates</h2>
 
-      <DropdownInfo/>
+      <DropdownInfo />
       <div className="space-y-4">
         {associates.map((associate) => (
-         <Card key={associate.id} className="flex items-center justify-between p-4 shadow-sm rounded-[12px] bg-[#F5F5F5]">
-         <div className="flex items-center justify-between gap-6">
-           <span className="text-gray-500 text-sm">{associate.id}</span>
-           <div>
-             <h3 className="text-primary text-[18px] font-semibold text-base">{associate.name}</h3>
-             <div className="flex items-center text-yellow-500">
-               {[...Array(4)].map((_, i) => (
-                 <Star key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500" />
-               ))}
-               <Star className="w-4 h-4 fill-none text-yellow-500" />
-               <span className="ml-1 text-accent text-sm">{associate.rating}</span>
-             </div>
-           </div>
-           <p className="text-gray-700 font-semibold text-base">{associate.role}</p>
-           <p className="text-gray-500 text-sm">Here is the current Location Lorem Ipsum used since the 1500</p>
-        
-         <Button className="bg-primary text-white rounded-[4px] px-[16px] py-[12px] shadow-md">View Profile</Button>
-         </div>
-       </Card>
+          <Card
+            key={associate.id}
+            className="flex items-center p-4 shadow-sm rounded-[12px] bg-[#F5F5F5]"
+          >
+            <div className="flex items-center gap-x-12">
+              <span className="text-accent text-sm">{associate.id}</span>
+         
+                <div className="flex flex-col">
+                <h3 className="text-primary text-[18px] font-semibold">
+                  {associate.name}
+                </h3>
+                <div className="flex items-center text-yellow-500">
+                  {[...Array(4)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="w-4 h-4 fill-yellow-500 text-yellow-500"
+                    />
+                  ))}
+                  <Star className="w-4 h-4 fill-none text-yellow-500" />
+                  <span className="ml-1 text-accent text-sm">
+                    {associate.rating}
+                  </span>
+                </div>
+                </div>
+             
+              <p className="text-accent font-semibold text-base">
+                {associate.role}
+              </p>
+              <p className="text-gray-500 text-sm">
+                Here is the current Location Lorem Ipsum used since the 1500
+              </p>
+            <Button className="bg-primary text-white rounded-[4px] px-8 py-7 shadow-md text-[18px]">
+              View Profile
+            </Button>
+            </div>
+          </Card>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CertifiedAssociates
+export default CertifiedAssociates;
