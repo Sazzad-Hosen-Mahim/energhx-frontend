@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { IoNotificationsOutline } from "react-icons/io5";
-import { FaBars } from "react-icons/fa";
-import { MdClose } from "react-icons/md";
 import { Link } from "react-router-dom";
 import userImg from "/user.png"
 
@@ -12,7 +10,6 @@ interface User {
 }
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const user: User = {
