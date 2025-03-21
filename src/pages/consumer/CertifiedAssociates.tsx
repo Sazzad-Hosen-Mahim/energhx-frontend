@@ -1,3 +1,4 @@
+import DropdownInfo from "@/components/consumer/standard/certifiedAssociates/DropdownInfo";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -13,9 +14,9 @@ const associates = [
 
 const CertifiedAssociates = () => {
   return (
-    <div className="p-4 mx-auto">
+    <div className="p-5 mx-auto">
       <h2 className="text-xl font-semibold mb-4">Certified Associates</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <Select>
           <SelectTrigger className="bg-green-100">
             <SelectValue placeholder="Type" />
@@ -43,7 +44,9 @@ const CertifiedAssociates = () => {
             <SelectItem value="busy">Busy</SelectItem>
           </SelectContent>
         </Select>
-      </div>
+      </div> */}
+
+      <DropdownInfo/>
       <div className="space-y-4">
         {associates.map((associate) => (
          <Card key={associate.id} className="flex items-center justify-around p-4 shadow-sm rounded-[12px] bg-[#F5F5F5]">

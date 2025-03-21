@@ -24,7 +24,7 @@ const RootConsumer = () => {
 <CommonBanner name="Rahman Abdul Quadir" role="Consumer (Standard)" imageUrl={userImg}/>
     <div className="flex max-w-[1440px] mx-auto">
       <Sidebar menuItems={consumerMenu} />
-      <div className="flex-1 p-4 border-t border-t-[#E7E9E8]">
+      <div className="flex-1 border-t border-t-[#E7E9E8]">
         <Outlet />
       </div>
     </div>

@@ -9,9 +9,9 @@ import Signup from "@/pages/Signup";
 import RootConsumer from "@/pages/consumer/RootConsumer";
 import Dashboard from "@/pages/consumer/Dashboard";
 import BuildingInfo from "@/components/consumer/standard/BuildingInfo";
-import CertifiedAssociates from "@/components/consumer/standard/CertifiedAssociates";
 import History from "@/components/consumer/standard/History";
 import Settings from "@/components/consumer/standard/Settings";
+import CertifiedAssociates from "@/pages/consumer/CertifiedAssociates";
 
 const routes = createBrowserRouter([
   {
