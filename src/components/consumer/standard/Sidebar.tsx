@@ -13,7 +13,7 @@ const Sidebar: React.FC<SidebarProps> = ({ menuItems }) => {
             key={index}
             to={item.path}
             className={({ isActive }) =>
-              `flex items-center space-x-2 cursor-pointer text-[18px] p-3 pr-28 rounded-sm ${
+              `flex items-center font-primary font-light space-x-2 cursor-pointer text-[18px] p-3 pr-28 rounded-sm ${
                 isActive ? "bg-primary text-white" : "hover:bg-[#EAF7E6]"
               }`
             }
