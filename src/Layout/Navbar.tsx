@@ -32,7 +32,7 @@ const Navbar = () => {
       </div>
 
       {/* Right Section: Notifications & User */}
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-7">
         {/* Notification Icon */}
         <button className="relative p-2 w-[40px] h-[40px] rounded-full bg-[#EAF7E6] cursor-pointer">
 
@@ -52,7 +52,7 @@ const Navbar = () => {
               alt="User"
               className="w-12 h-12 rounded-full border-2 border-primary "
             />
-            <div className="text-sm">
+            <div className="text-start">
               <p className=" font-[400] text-[16px] font-primary">{user.name}</p>
               <p className="text-primary font-[400] text-[14px]">{user.role}</p>
             </div>

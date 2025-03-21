@@ -27,14 +27,14 @@ const Dropdown = ({ label, options }: { label: string; options: Option[] }) => {
 
   return (
     <div className="relative w-full">
-      <div className="w-full bg-secondary text-primary py-3 px-4 rounded-lg flex flex-col">
+      <div className="w-full bg-secondary text-primary py-4 px-4 rounded-[12px] flex flex-col">
         <p className="text-accent text-[12px] mb-1">{label}</p>
         <button
-          className="flex justify-between items-center w-full text-primary font-semibold"
+          className="flex justify-between items-center w-full text-primary font-semibold text-[18px]"
           onClick={() => setOpen(!open)}
         >
           <span>{selected.label}</span>
-          <ChevronDown className="w-4 h-4" />
+          <ChevronDown className="w-4 h-4 text-primary" />
         </button>
       </div>
       {open && (
