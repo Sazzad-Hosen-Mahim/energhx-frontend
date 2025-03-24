@@ -2,6 +2,7 @@ import service from "../../../assets/Profile/service.png";
 import Star from "./Star";
 
 import light from "../../../assets/Profile/light.svg";
+import Review from "./Review";
 
 const features = [
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -18,7 +19,7 @@ const features = [
 ];
 const Service = () => {
   return (
-    <div className="p-5">
+    <div className="p-5 font-primary">
       <div className=" flex items-center justify-between">
         <h2 className="text-xl font-semibold  ">Service Details</h2>
 
@@ -37,8 +38,10 @@ const Service = () => {
             <p className="text-accent">4.3</p>
             <p className="text-accent">(Review 22)</p>
           </div>
-          <h2 className="font-semibold ">Introduction Energhx</h2>
-          <p>
+          <h2 className="font-semibold  text-[#394A3F] text-lg">
+            Introduction Energhx
+          </h2>
+          <p className="text-accent ">
             There are many variations of passages of Lorem Ipsum available, but
             the majority have suffered alteration in some form, by injected
             humour, or randomised words which don't look even slightly
@@ -47,10 +50,10 @@ const Service = () => {
         </div>
       </div>
       <div>
-        <h2 className="text-sm  text-primary font-secondary  pb-4">
+        <h2 className="text-sm font-extrabold  text-primary font-secondary  pb-4">
           Facilities
         </h2>
-        <p>
+        <p className="text-[#112518]">
           Here is our some lorem ipsum dolor sit amet, consectetur adipiscing
           elit, sed do eiusmod tempor incididunt ut labore et dolore magna
           aliqua.
@@ -61,15 +64,17 @@ const Service = () => {
         {features.map((item, i) => (
           <div className="flex items-center gap-1" key={i}>
             <img src={light} alt="light" />
-            <p>{item}</p>
+            <p className="text-accent">{item}</p>
           </div>
         ))}
       </div>
-      <p>
+      <p className="text-accent">
         Note: Contrary to popular belief, Lorem Ipsum is not simply random text.
         It has roots in a piece of classical Latin literature from 45 BC, making
         it over 2000 years old. Richard McClintock
       </p>
+
+      <Review />
     </div>
   );
 };

@@ -23,11 +23,11 @@ const Booking = () => {
   ];
   const head = ["SL.", "Service name", "Date", "Price", "Status", "Option"];
   return (
-    <div className="p-5">
+    <div className="p-5 font-primary">
       <h2 className="text-xl font-semibold  pb-4">Booking History</h2>
 
       <div className=" border border-[#E7E9E8]   w-full ">
-        <div className=" bg-[#EAF7E6] grid grid-cols-7 px-4">
+        <div className=" bg-[#EAF7E6] grid grid-cols-7 px-4 text-accent">
           {head.map((item, i) => (
             <h2 className="py-4 nth-[2]:col-span-2" key={i}>
               {item}
@@ -37,17 +37,21 @@ const Booking = () => {
         <div>
           {body.map((item, i) => (
             <div className="border-b border-[#E7E9E8] last:border-0 grid grid-cols-7 px-4 ">
-              <div>#{i + 100}</div>
-              <div className="flex flex-col  col-span-2">
+              <div className="text-accent">#{i + 100}</div>
+              <div className="flex flex-col  col-span-2 text-accent">
                 <h2> {item.service}</h2>
 
                 <div className="flex items-center gap-1">
                   <Star />
-                  <p className="text-[#394A3F]">4.3</p>
+                  <p className="text-accent">4.3</p>
                 </div>
               </div>
-              <div className="flex items-center py-4">{item.date}</div>
-              <div className="flex items-center py-4">{item.price}</div>
+              <div className="flex items-center py-4 text-accent">
+                {item.date}
+              </div>
+              <div className="flex items-center py-4 text-accent">
+                {item.price}
+              </div>
               <div className={`flex items-center py-4 `}>
                 <button
                   className={
