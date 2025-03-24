@@ -9,7 +9,7 @@ interface Step2FormProps {
   ) => void; // Updated to include select
   isStepTwoValid: () => boolean;
   setStep: React.Dispatch<React.SetStateAction<number>>;
-  openModal: () => void;
+  openModal?: () => void; // Optional if not used
 }
 
 const Step2Form: React.FC<Step2FormProps> = ({
@@ -17,7 +17,7 @@ const Step2Form: React.FC<Step2FormProps> = ({
   handleChange,
   isStepTwoValid,
   setStep,
-  openModal,
+  openModal, // Optional if not used
 }) => {
   return (
     <div className="space-y-6 pt-4 w-[80%] ">
@@ -103,7 +103,11 @@ const Step2Form: React.FC<Step2FormProps> = ({
         <button
           className="bg-[#2DAD00] text-white px-4 py-2 rounded"
           disabled={!isStepTwoValid()}
-          onClick={openModal}
+          onClick={() => {
+            if (isStepTwoValid()) {
+              setStep(3); // Move to Step 3 if the form is valid
+            }
+          }}
         >
           <div className="flex items-center gap-1">
             {" "}
