@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { FaAngleLeft, FaAngleDoubleRight } from "react-icons/fa";
 import SungUp from "./SungUp";
 import WorkExperience from "./WorkExperience";
+import WorkExperienceTwo from "./WorkExperienceTwo";
 
 const MultiStepForm = () => {
   const [step, setStep] = useState(1);
@@ -25,6 +26,7 @@ const MultiStepForm = () => {
     interest: "",
     workEngagement: "",
     workEngagementTwo: "",
+    workEngagementThree: "",
     passportPhotograph: "",
     countryOfResidence: "",
     addressOfWorkEngagement: "",
@@ -86,10 +88,17 @@ const MultiStepForm = () => {
             prevStep={prevStep}
           />
         )}
-        {/*{step === 3 && <StepThree formData={formData} updateFormData={updateFormData} />} */}
+        {step === 3 && (
+          <WorkExperienceTwo
+            formData={formData}
+            updateFormData={updateFormData}
+            nextStep={nextStep}
+            prevStep={prevStep}
+          />
+        )}
 
         <div className="flex items-center gap-5 mt-10">
-          {step < 3 ? (
+          {step < 4 ? (
             ""
           ) : (
             <Button

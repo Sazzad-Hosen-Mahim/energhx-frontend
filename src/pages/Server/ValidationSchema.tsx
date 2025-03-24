@@ -27,9 +27,6 @@ export const workExperienceSchema = z.object({
   workEngagementTwo: z
     .string()
     .min(2, "Work engagement must be at least 2 characters"),
-  // passportPhotograph: z
-  //   .string()
-  //   .min(2, "Passport photograph must be at least 2 characters"),
   countryOfResidence: z
     .string()
     .min(2, "Country of residence must be at least 2 characters"),
@@ -40,7 +37,10 @@ export const workExperienceSchema = z.object({
 
 export type workExperienceType = z.infer<typeof workExperienceSchema>;
 
-export const secondWorkExperience = z.object({
+export const workExperienceTwoSchema = z.object({
+  workEngagementThree: z
+    .string()
+    .min(2, "Work engagement must be at least 2 characters"),
   addressOfWorkEngagement: z
     .string()
     .min(2, "Address of work engagement must be at least 2 characters"),
@@ -60,4 +60,4 @@ export const secondWorkExperience = z.object({
     .min(2, "Year of publication must be at least 2 characters"),
 });
 
-export type secondWorkExperience = z.infer<typeof secondWorkExperience>;
+export type workExperienceTwoType = z.infer<typeof workExperienceTwoSchema>;

@@ -40,7 +40,7 @@ const SungUp: React.FC<SungUpProps> = ({
       updateFormData(field, value);
     });
     nextStep();
-    toast.success("Form Submittes successfully");
+    toast.success("Form Submitted successfully");
   };
 
   return (
