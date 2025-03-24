@@ -210,8 +210,8 @@ const BuildingInfo = () => {
           {/* Display walls for all four directions */}
           {["North", "South", "East", "West"].map((direction) => (
             <div key={direction} className="mb-4">
-              <div className="flex items-center gap-6">
-                <h4 className="text-md">{direction}</h4>
+              <div className="flex items-center gap-4">
+                <h4 className="text-md w-20">{direction}</h4>
                 {walls.filter((wall) => wall.direction === direction).length >
                 0 ? (
                   <div className="space-y-2">
@@ -282,7 +282,7 @@ const BuildingInfo = () => {
                   </div>
                 ) : (
                   <button
-                    className="bg-[#2DAD00] text-white px-4 py-2 rounded mt-2"
+                    className="bg-[#2DAD00] text-white px-4 py-2 rounded "
                     onClick={() => {
                       setSelectedDirection(direction);
                       setShowWallModal(true);
@@ -302,7 +302,7 @@ const BuildingInfo = () => {
 
           {/* Roof Information */}
           <div className="mt-6 w-[80%]">
-            <h3 className="text-lg font-semibold mb-3">Roof Information</h3>
+            <h3 className="text-lg font-semibold mb-3 mt-10">Roof Information</h3>
             <div className="grid grid-cols-3 gap-4">
               <input
                 type="text"
