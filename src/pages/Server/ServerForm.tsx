@@ -1,9 +1,9 @@
-import SungUp from "@/components/Server/Form/SungUp";
+import MultiStepForm from "@/components/Server/Form/MultiStepForm";
 
 const ServerForm = () => {
   return (
     <div>
-      <SungUp />
+      <MultiStepForm />
     </div>
   );
 };
