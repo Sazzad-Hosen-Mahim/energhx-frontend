@@ -13,6 +13,7 @@ import History from "@/components/consumer/standard/History";
 import Settings from "@/components/consumer/standard/Settings";
 import CertifiedAssociates from "@/pages/consumer/CertifiedAssociates";
 import AssociateProfile from "@/components/consumer/standard/certifiedAssociates/AssociateProfile";
+import CertifiedAssociateLayout from "@/Layout/CertifiedAssociateLayout";
 
 const routes = createBrowserRouter([
   {
@@ -45,12 +46,12 @@ const routes = createBrowserRouter([
       { path: "", element: <Dashboard /> },
       { path: "dashboard", element: <Dashboard /> },
       { path: "buildingInformation", element: <BuildingInfo /> },
-      { 
+      {
         path: "certifiedAssociates",
-        element: <CertifiedAssociates />,
+        element: <CertifiedAssociateLayout />, // Acts as a wrapper for dynamic content
         children: [
-          { path: "certifiedAssociates", element: <CertifiedAssociates/> },
-          { path: "certified-associate-profile", element: <AssociateProfile/> },
+          { index: true, element: <CertifiedAssociates /> }, // Default route
+          { path: "certified-associate-profile", element: <AssociateProfile /> }, // Profile replaces CertifiedAssociates
         ],
       },
       { path: "history", element: <History /> },
