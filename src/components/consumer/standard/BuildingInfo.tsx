@@ -11,7 +11,7 @@ import { GrPrevious } from "react-icons/gr";
 import { GrNext } from "react-icons/gr";
 
 const BuildingInfo = () => {
-  const [step, setStep] = useState(1); // Start at step 1 initially
+  const [step, setStep] = useState(0); // Start at step 1 initially
   const [formData, setFormData] = useState({
     building: "",
     subBuilding: "",
@@ -165,6 +165,20 @@ const BuildingInfo = () => {
   return (
     <div className="p-5">
       <h2 className="text-xl font-semibold mb-5">Building Information</h2>
+
+      {/* step 0: terms and conditon modal */}
+      {step === 0 && (
+        <Modal
+          closeModal={() => {
+            setIsModalOpen(false);
+            setStep(1);
+          }}
+          onSubmit={() => {
+            setIsModalOpen(false);
+            setStep(1);
+          }}
+        />
+      )}
 
       {/* Step 1: Basic Information */}
       {step === 1 && (
@@ -540,7 +554,10 @@ const BuildingInfo = () => {
             <h3 className="text-lg font-semibold mb-3">Window Information</h3>
             <div className="space-y-3">
               {windowData.map((window, index) => (
-                <div key={index} className="p-3 bg-gray-300 w-[30%]  rounded-md">
+                <div
+                  key={index}
+                  className="p-3 bg-gray-300 w-[30%]  rounded-md"
+                >
                   <p>
                     <strong>Window {index + 1}</strong>
                   </p>
@@ -617,7 +634,7 @@ const BuildingInfo = () => {
 
       {showElectricMobilityModal && (
         <ElectricMobility
-          closeModal={() => setShowElectricMobilityModal(false)}
+          closeElectricMobilityModal={() => setShowElectricMobilityModal(false)} // Updated prop name
           onAddElectricMobility={handleAddElectricMobility}
         />
       )}
