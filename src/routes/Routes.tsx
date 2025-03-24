@@ -9,9 +9,10 @@ import Signup from "@/pages/Signup";
 import RootConsumer from "@/pages/consumer/RootConsumer";
 import Dashboard from "@/pages/consumer/Dashboard";
 import BuildingInfo from "@/components/consumer/standard/BuildingInfo";
-import History from "@/components/consumer/standard/History";
 import Settings from "@/components/consumer/standard/Settings";
 import CertifiedAssociates from "@/pages/consumer/CertifiedAssociates";
+import History from "@/pages/consumer/History";
+import Service from "@/components/consumer/history/Service";
 
 const routes = createBrowserRouter([
   {
@@ -41,13 +42,13 @@ const routes = createBrowserRouter([
     path: "consumer",
     element: <RootConsumer />,
     children: [
-
       { path: "", element: <Dashboard /> },
       { path: "dashboard", element: <Dashboard /> },
       { path: "buildingInformation", element: <BuildingInfo /> },
-      {path: "certifiedAssociates", element: <CertifiedAssociates/>},
-      {path: "history", element: <History/>},
-      {path: "settings", element: <Settings/>}
+      { path: "certifiedAssociates", element: <CertifiedAssociates /> },
+      { path: "history", element: <History /> },
+      { path: "history/:id", element: <Service /> },
+      { path: "settings", element: <Settings /> },
     ],
   },
   {
@@ -57,10 +58,3 @@ const routes = createBrowserRouter([
 ]);
 
 export default routes;
-
-
-
-
-
-
-

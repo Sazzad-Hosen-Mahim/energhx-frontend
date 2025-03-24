@@ -1,7 +1,7 @@
-import CommonWrapper from "@/common/CommonWrapper";
-import { FaStar, FaRegStar } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+import Star from "./Star";
 
-const History = () => {
+const Booking = () => {
   const body = [
     {
       service: "Energhx New LED Light Fix",
@@ -23,11 +23,11 @@ const History = () => {
   ];
   const head = ["SL.", "Service name", "Date", "Price", "Status", "Option"];
   return (
-    <div>
-      <h2>Booking History</h2>
+    <div className="p-5">
+      <h2 className="text-xl font-semibold  pb-4">Booking History</h2>
 
       <div className=" border border-[#E7E9E8]   w-full ">
-        <div className=" bg-[#EAF7E6] grid grid-cols-7">
+        <div className=" bg-[#EAF7E6] grid grid-cols-7 px-4">
           {head.map((item, i) => (
             <h2 className="py-4 nth-[2]:col-span-2" key={i}>
               {item}
@@ -36,9 +36,16 @@ const History = () => {
         </div>
         <div>
           {body.map((item, i) => (
-            <div className="border-b border-[#E7E9E8] last:border-0 grid grid-cols-7   ">
+            <div className="border-b border-[#E7E9E8] last:border-0 grid grid-cols-7 px-4 ">
               <div>#{i + 100}</div>
-              <div className="flex items-center col-span-2">{item.service}</div>
+              <div className="flex flex-col  col-span-2">
+                <h2> {item.service}</h2>
+
+                <div className="flex items-center gap-1">
+                  <Star />
+                  <p className="text-[#394A3F]">4.3</p>
+                </div>
+              </div>
               <div className="flex items-center py-4">{item.date}</div>
               <div className="flex items-center py-4">{item.price}</div>
               <div className={`flex items-center py-4 `}>
@@ -52,11 +59,11 @@ const History = () => {
                   {item.status}
                 </button>
               </div>
-              <div className="flex items-center py-4">
+              <Link to="5" className="flex items-center py-4">
                 <button className="px-4 py-2 rounded-full bg-[#FFFAE9] border border-[#F1BB00] text-[#F1BB00]   cursor-pointer">
                   {item.option}
                 </button>
-              </div>
+              </Link>
             </div>
           ))}
         </div>
@@ -65,4 +72,4 @@ const History = () => {
   );
 };
 
-export default History;
+export default Booking;
