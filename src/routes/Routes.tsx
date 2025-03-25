@@ -21,6 +21,10 @@ import BasicHistory from "@/pages/BasicConsumer/BasicHistory";
 import BasicService from "@/pages/BasicConsumer/BasicService";
 import BasicSettings from "@/pages/BasicConsumer/BasicSettings";
 
+import AssociateProfile from "@/components/consumer/standard/certifiedAssociates/AssociateProfile";
+import CertifiedAssociateLayout from "@/Layout/CertifiedAssociateLayout";
+
+
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -52,6 +56,7 @@ const routes = createBrowserRouter([
       { path: "", element: <Dashboard /> },
       { path: "dashboard", element: <Dashboard /> },
       { path: "buildingInformation", element: <BuildingInfo /> },
+
       { path: "certifiedAssociates", element: <CertifiedAssociates /> },
       { path: "history", element: <History /> },
       { path: "history/:id", element: <Service /> },
@@ -69,6 +74,18 @@ const routes = createBrowserRouter([
       { path: "history", element: <BasicHistory /> },
       { path: "history/:id", element: <BasicService /> },
       { path: "settings", element: <BasicSettings /> },
+
+      {
+        path: "certifiedAssociates",
+        element: <CertifiedAssociateLayout />, 
+        children: [
+          { index: true, element: <CertifiedAssociates /> }, 
+          { path: "certified-associate-profile", element: <AssociateProfile /> },
+        ],
+      },
+      { path: "history", element: <History /> },
+      { path: "settings", element: <Settings /> },
+
     ],
   },
   {

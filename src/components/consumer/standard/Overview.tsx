@@ -2,29 +2,37 @@ const Overview = () => {
   return (
     <div className="w-full">
       <h2 className="text-xl font-semibold mb-5">Overview</h2>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-4 gap-4">
         <div className="bg-[#9ED98A] text-white p-5 rounded-lg text-center h-[200px]">
           <p className="text-6xl font-bold pt-6 text-[#1C9237] border-b-1 border-[#BEE6B0] pb-2 ">
             26
           </p>
-          <p className="text-[#394A3F] pt-4 text-2xl">
-            Available Certified Server
+          <p className="text-[#394A3F] pt-4 text-lg">
+          Energy Audit & Analysis
           </p>
         </div>
         <div className="bg-[#9ED98A] text-white p-5 rounded-lg text-center h-[200px]">
           <p className="text-6xl font-bold pt-6 text-[#1C9237] border-b-1 border-[#BEE6B0] pb-2 ">
             306
           </p>
-          <p className="text-[#394A3F] pt-4 text-2xl">
-            Available Certified Developers
+          <p className="text-[#394A3F] pt-4 text-lg">
+          Solar Energy Sizing
           </p>
         </div>
         <div className="bg-[#9ED98A] text-white p-5 rounded-lg text-center h-[200px]">
           <p className="text-6xl font-bold pt-6 text-[#1C9237] border-b-1 border-[#BEE6B0] pb-2 ">
             24K
           </p>
-          <p className="text-[#394A3F] pt-4 text-2xl">
-            Available Regular Customers
+          <p className="text-[#394A3F] pt-4 text-lg">
+          Wind Energy Sizing
+          </p>
+        </div>
+        <div className="bg-[#9ED98A] text-white p-5 rounded-lg text-center h-[200px]">
+          <p className="text-6xl font-bold pt-6 text-[#1C9237] border-b-1 border-[#BEE6B0] pb-2 ">
+            24K
+          </p>
+          <p className="text-[#394A3F] pt-4 text-lg">
+          Biomass Energy Sizing
           </p>
         </div>
       </div>
