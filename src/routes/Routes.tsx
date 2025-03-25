@@ -48,10 +48,10 @@ const routes = createBrowserRouter([
       { path: "buildingInformation", element: <BuildingInfo /> },
       {
         path: "certifiedAssociates",
-        element: <CertifiedAssociateLayout />, // Acts as a wrapper for dynamic content
+        element: <CertifiedAssociateLayout />, 
         children: [
-          { index: true, element: <CertifiedAssociates /> }, // Default route
-          { path: "certified-associate-profile", element: <AssociateProfile /> }, // Profile replaces CertifiedAssociates
+          { index: true, element: <CertifiedAssociates /> }, 
+          { path: "certified-associate-profile", element: <AssociateProfile /> },
         ],
       },
       { path: "history", element: <History /> },

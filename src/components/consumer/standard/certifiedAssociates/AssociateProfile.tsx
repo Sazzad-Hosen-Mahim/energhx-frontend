@@ -16,31 +16,39 @@ const AssociateProfile = () => {
           {Array(4)
             .fill(0)
             .map((_, index) => (
-              <div key={index} className="bg-white shadow-md rounded-xl overflow-hidden border">
-                <img
-                  src={`https://source.unsplash.com/400x250/?technology,${index}`}
-                  alt="Service"
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold text-gray-800">Energhx New LED Light Fix</h3>
-                  <div className="flex items-center text-yellow-500 mt-1">
-                    {[...Array(4)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500" />
-                    ))}
-                    <Star className="w-4 h-4 fill-none text-yellow-500" />
-                    <span className="ml-1 text-gray-600 text-sm">4.3 (Review 22)</span>
-                  </div>
-                  <button className="w-full mt-3 bg-green-600 text-white py-2 rounded-md font-semibold">
-                    Book Now
-                  </button>
-                </div>
+              <div className="bg-white shadow-md rounded-xl border p-4">
+              {/* Image */}
+              <img
+                src="https://source.unsplash.com/400x250/?wind-turbine"
+                alt="Service"
+                className="w-full h-44 object-cover rounded-lg"
+              />
+        
+              {/* Title */}
+              <h3 className="text-lg font-semibold text-gray-800 mt-3">
+                Energhx New Fan Light Fix
+              </h3>
+        
+              {/* Rating */}
+              <div className="flex items-center text-yellow-500 mt-1">
+                {[...Array(4)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-yellow-500 text-yellow-500" />
+                ))}
+                <Star className="w-5 h-5 fill-none text-yellow-500" />
+                <span className="ml-1 text-gray-600 font-medium">4.3</span>
+                <span className="text-gray-500 text-sm ml-1">(Review 22)</span>
               </div>
+        
+              {/* Button */}
+              <button className="w-full mt-4 bg-secondary text-primary py-2 rounded-md font-semibold border border-green-500 hover:bg-primary hover:text-white transition">
+                Book Now
+              </button>
+            </div>
             ))}
         </div>
 
         {/* Profile Section */}
-        <div className="bg-gray-100 p-6 rounded-xl shadow-md">
+        <div className="bg-secondary p-6 rounded-xl shadow-md">
           {/* Profile Header */}
           <div className="flex flex-col items-center text-center">
             <img
@@ -60,7 +68,7 @@ const AssociateProfile = () => {
               <Star className="w-4 h-4 fill-none text-yellow-500" />
               <span className="ml-1 text-gray-600 text-sm">4.3</span>
             </div>
-            <button className="w-full mt-3 bg-green-600 text-white py-2 rounded-md font-semibold">
+            <button className="w-full mt-3 bg-primary text-white py-2 rounded-md font-semibold">
               Appointment
             </button>
             <p className="text-gray-500 text-sm mt-3">
