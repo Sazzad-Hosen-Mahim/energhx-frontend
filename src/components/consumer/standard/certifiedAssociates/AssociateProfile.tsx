@@ -108,4 +108,4 @@ const AssociateProfile = () => {
   )
 }
 
-export default AssociateProfile
+export default AssociateProfile;

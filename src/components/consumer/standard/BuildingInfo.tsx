@@ -11,7 +11,7 @@ import { GrPrevious } from "react-icons/gr";
 import { GrNext } from "react-icons/gr";
 
 const BuildingInfo = () => {
-  const [step, setStep] = useState(1); // Start at step 1 initially
+  const [step, setStep] = useState(0); // Start at step 1 initially
   const [formData, setFormData] = useState({
     building: "",
     subBuilding: "",
@@ -166,6 +166,20 @@ const BuildingInfo = () => {
     <div className="p-5">
       <h2 className="text-xl font-semibold mb-5">Building Information</h2>
 
+      {/* step 0: terms and conditon modal */}
+      {step === 0 && (
+        <Modal
+          closeModal={() => {
+            setIsModalOpen(false);
+            setStep(1);
+          }}
+          onSubmit={() => {
+            setIsModalOpen(false);
+            setStep(1);
+          }}
+        />
+      )}
+
       {/* Step 1: Basic Information */}
       {step === 1 && (
         <Step1Form
@@ -196,8 +210,8 @@ const BuildingInfo = () => {
           {/* Display walls for all four directions */}
           {["North", "South", "East", "West"].map((direction) => (
             <div key={direction} className="mb-4">
-              <div className="flex items-center gap-6">
-                <h4 className="text-md">{direction}</h4>
+              <div className="flex items-center gap-4">
+                <h4 className="text-md w-20">{direction}</h4>
                 {walls.filter((wall) => wall.direction === direction).length >
                 0 ? (
                   <div className="space-y-2">
@@ -268,7 +282,7 @@ const BuildingInfo = () => {
                   </div>
                 ) : (
                   <button
-                    className="bg-[#2DAD00] text-white px-4 py-2 rounded mt-2"
+                    className="bg-[#2DAD00] text-white px-4 py-2 rounded "
                     onClick={() => {
                       setSelectedDirection(direction);
                       setShowWallModal(true);
@@ -288,7 +302,7 @@ const BuildingInfo = () => {
 
           {/* Roof Information */}
           <div className="mt-6 w-[80%]">
-            <h3 className="text-lg font-semibold mb-3">Roof Information</h3>
+            <h3 className="text-lg font-semibold mb-3 mt-10">Roof Information</h3>
             <div className="grid grid-cols-3 gap-4">
               <input
                 type="text"
@@ -540,7 +554,10 @@ const BuildingInfo = () => {
             <h3 className="text-lg font-semibold mb-3">Window Information</h3>
             <div className="space-y-3">
               {windowData.map((window, index) => (
-                <div key={index} className="p-3 bg-gray-300 w-[30%]  rounded-md">
+                <div
+                  key={index}
+                  className="p-3 bg-gray-300 w-[30%]  rounded-md"
+                >
                   <p>
                     <strong>Window {index + 1}</strong>
                   </p>
@@ -617,7 +634,7 @@ const BuildingInfo = () => {
 
       {showElectricMobilityModal && (
         <ElectricMobility
-          closeModal={() => setShowElectricMobilityModal(false)}
+          closeElectricMobilityModal={() => setShowElectricMobilityModal(false)} // Updated prop name
           onAddElectricMobility={handleAddElectricMobility}
         />
       )}

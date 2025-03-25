@@ -34,8 +34,13 @@ const ElectricMobility: React.FC<ElectricMobilityProps> = ({
     closeElectricMobilityModal(); // Close modal after submitting
   };
 
+  const handleClose = () => {
+    closeElectricMobilityModal(); // Close modal on cancel
+    console.log("Modal closed!"); // Optional: For debugging
+  };
+
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-opacity-50fixed bg-gray-50/0 bg-opacity-50 z-20 backdrop-blur-sm">
+    <div className="fixed inset-0 flex items-center justify-center bg-opacity-50 bg-gray-50/0 z-20 backdrop-blur-sm">
       <div className="bg-white p-6 rounded shadow-lg w-96">
         <h3 className="text-lg font-semibold mb-4">Add Electric Mobility</h3>
 
@@ -83,7 +88,7 @@ const ElectricMobility: React.FC<ElectricMobilityProps> = ({
         <div className="mt-4 flex justify-between">
           <button
             className="bg-gray-500 text-white px-4 py-2 rounded"
-            onClick={closeElectricMobilityModal}
+            onClick={handleClose} // Call handleClose on click
           >
             Cancel
           </button>
@@ -91,7 +96,15 @@ const ElectricMobility: React.FC<ElectricMobilityProps> = ({
             className="bg-green-600 text-white px-4 py-2 rounded"
             onClick={handleSubmit}
           >
-            <div className="flex items-center gap-1"> continue <span className=""><GrNext /></span><span className="ml-[-14px]"><GrNext /></span></div>
+            <div className="flex items-center gap-1">
+              continue{" "}
+              <span className="">
+                <GrNext />
+              </span>
+              <span className="ml-[-14px]">
+                <GrNext />
+              </span>
+            </div>
           </button>
         </div>
       </div>
