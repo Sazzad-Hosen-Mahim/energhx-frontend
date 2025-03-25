@@ -58,6 +58,11 @@ export const workExperienceTwoSchema = z.object({
   yearOfPublication: z
     .number()
     .min(2, "Year of publication must be at least 2 characters"),
+  nameOfPersonOrCompany: z
+    .string()
+    .min(2, "Number of person or company must be at least 2 characters"),
+  reference: z.string().min(2, "Referrence must be at least 2 characters"),
+  recommendationLetter: z.instanceof(File).optional(),
 });
 
 export type workExperienceTwoType = z.infer<typeof workExperienceTwoSchema>;

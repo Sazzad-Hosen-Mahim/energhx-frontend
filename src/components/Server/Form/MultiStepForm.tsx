@@ -38,12 +38,9 @@ const MultiStepForm = () => {
     listOfAuthors: "",
     pages: "",
     yearOfPublication: "",
-    personOrCompany: "",
-    reference: "",
-    homeTel: "",
-    altTel: "",
-    companyName: "",
-    uploadDocone: "",
+    nameOfPersonOrCompany: "",
+    recommendationLetter: "",
+    uploadDocOne: "",
     uploadDocTwo: "",
     uploadDocThree: "",
   });
@@ -96,7 +93,6 @@ const MultiStepForm = () => {
             prevStep={prevStep}
           />
         )}
-
         <div className="flex items-center gap-5 mt-10">
           {step < 3 ? (
             ""
