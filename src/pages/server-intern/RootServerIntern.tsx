@@ -37,7 +37,7 @@ const RootServerIntern = () => {
       />
       <div className="flex max-w-[1440px] mx-auto">
         <Sidebar menuItems={serverInternMenu} />
-        <div className="flex-1 border-t border-t-[#E7E9E8]">
+        <div className="flex-1 border-t border-t-[#E7E9E8] p-[24px]">
           <Outlet />
         </div>
       </div>
