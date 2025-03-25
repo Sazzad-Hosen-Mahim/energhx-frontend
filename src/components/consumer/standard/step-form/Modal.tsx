@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { GrNext } from "react-icons/gr";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 interface ModalProps {
   closeModal: () => void;
@@ -7,6 +8,8 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ closeModal, onSubmit }) => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
   // State to track checkbox status
   const [isCheckbox1Checked, setIsCheckbox1Checked] = useState(false);
   const [isCheckbox2Checked, setIsCheckbox2Checked] = useState(false);
@@ -18,6 +21,12 @@ const Modal: React.FC<ModalProps> = ({ closeModal, onSubmit }) => {
     } else {
       alert("Please agree to both terms and conditions before continuing."); // Optional: Show an alert if checkboxes are not checked
     }
+  };
+
+  // Function to handle modal close and navigate to /dashboard
+  const handleClose = () => {
+    closeModal(); // Close the modal
+    navigate("/consumer/dashboard"); // Navigate to /dashboard
   };
 
   return (
@@ -68,7 +77,7 @@ const Modal: React.FC<ModalProps> = ({ closeModal, onSubmit }) => {
           <div className="flex gap-6 mt-4">
             <button
               className="bg-gray-500 text-white px-4 py-2 rounded"
-              // onClick={closeModal}
+              onClick={handleClose} // Call handleClose when cancel button is clicked
             >
               Cancel
             </button>
