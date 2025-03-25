@@ -11,22 +11,44 @@ import { FaGraduationCap } from "react-icons/fa6";
 import { FaPhotoVideo } from "react-icons/fa";
 
 const serverInternMenu = [
-  { path: "/server-intern/dashboard", label: "Dashboard", icon: FaHome },
   {
-    path: "/server-intern/my-courses",
-    label: "My Courses/LMS",
+    path: "/standard-server-certificate/dashboard",
+    label: "Dashboard",
+    icon: FaHome,
+  },
+  {
+    path: "/standard-server-certificate/appointment-request",
+    label: "Appointment Request",
     icon: FaGraduationCap,
   },
   {
-    path: "/server-intern/all-courses",
+    path: "/standard-server-certificate/my-courses",
+    label: "My Courses",
+    icon: FaPhotoVideo,
+  },
+  {
+    path: "/standard-server-certificate/all-courses",
     label: "All Courses",
     icon: FaPhotoVideo,
   },
-  { path: "/server-intern/history", label: "History", icon: MdHistory },
-  { path: "/server-intern/settings", label: "Settings", icon: MdSettings },
+  {
+    path: "/standard-server-certificate/history",
+    label: "History",
+    icon: MdHistory,
+  },
+  {
+    path: "/standard-server-certificate/subscrption",
+    label: "Subscription",
+    icon: MdHistory,
+  },
+  {
+    path: "/standard-server-certificate/settings",
+    label: "Settings",
+    icon: MdSettings,
+  },
   { path: "/logout", label: "Logout", icon: MdLogout },
 ];
-const RootServerIntern = () => {
+const RootStandardServerCertificate = () => {
   return (
     <div>
       <Navbar />
@@ -45,4 +67,4 @@ const RootServerIntern = () => {
   );
 };
 
-export default RootServerIntern;
+export default RootStandardServerCertificate;

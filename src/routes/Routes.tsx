@@ -27,6 +27,20 @@ import BasicSettings from "@/pages/BasicConsumer/BasicSettings";
 
 import AssociateProfile from "@/components/consumer/standard/certifiedAssociates/AssociateProfile";
 import CertifiedAssociateLayout from "@/Layout/CertifiedAssociateLayout";
+import ServerInternDasboard from "@/pages/server-intern/ServerInternDasboard";
+import RootServerIntern from "@/pages/server-intern/RootServerIntern";
+import MyCourses from "@/pages/server-intern/MyCourses";
+import AllCourses from "@/pages/server-intern/AllCourses";
+import ServerInternHistory from "@/pages/server-intern/ServerInternHistory";
+import ServerInternSetting from "@/pages/server-intern/ServerInternSetting";
+import RootStandardServerCertificate from "@/pages/standard-server-certificate/RootStandardCeritificate";
+import StarndardCertificateDasboard from "@/pages/standard-server-certificate/StarndardCertificateDasboard";
+import AppointmentRequest from "@/pages/standard-server-certificate/AppointmentRequest";
+import StandardServerMyCourse from "@/pages/standard-server-certificate/StandardServerMyCourse";
+import StandardServerAllCourse from "@/pages/standard-server-certificate/StandardServerAllCourse";
+import StandardServerHistory from "@/pages/standard-server-certificate/StandardServerHistory";
+import StandardServerSubscription from "@/pages/standard-server-certificate/StandardServerSubscription";
+import StandardServerSetting from "@/pages/standard-server-certificate/StandardServerSetting";
 
 const routes = createBrowserRouter([
   {
@@ -105,6 +119,32 @@ const routes = createBrowserRouter([
           },
         ],
       },
+    ],
+  },
+  {
+    path: "server-intern",
+    element: <RootServerIntern />,
+    children: [
+      { path: "", element: <ServerInternDasboard /> },
+      { path: "dashboard", element: <ServerInternDasboard /> },
+      { path: "my-courses", element: <MyCourses /> },
+      { path: "all-courses", element: <AllCourses /> },
+      { path: "history", element: <ServerInternHistory /> },
+      { path: "settings", element: <ServerInternSetting /> },
+    ],
+  },
+  {
+    path: "standard-server-certificate",
+    element: <RootStandardServerCertificate />,
+    children: [
+      { path: "", element: <StarndardCertificateDasboard /> },
+      { path: "dashboard", element: <StarndardCertificateDasboard /> },
+      { path: "appointment-request", element: <AppointmentRequest /> },
+      { path: "my-courses", element: <StandardServerMyCourse /> },
+      { path: "all-courses", element: <StandardServerAllCourse /> },
+      { path: "history", element: <StandardServerHistory /> },
+      { path: "subscrption", element: <StandardServerSubscription /> },
+      { path: "settings", element: <StandardServerSetting /> },
     ],
   },
   {
