@@ -1,4 +1,3 @@
-import { FaRegStar } from "react-icons/fa6";
 import { MdOutlineStarBorder } from "react-icons/md";
 
 const Review = () => {

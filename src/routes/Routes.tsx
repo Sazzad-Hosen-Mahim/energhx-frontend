@@ -12,14 +12,14 @@ import BuildingInfo from "@/components/consumer/standard/BuildingInfo";
 import Settings from "@/components/consumer/standard/Settings";
 import CertifiedAssociates from "@/pages/consumer/CertifiedAssociates";
 import History from "@/pages/consumer/History";
-import Service from "@/components/consumer/history/Service";
-import BasicConsumner from "@/pages/BasicConsumner";
-import BasicDashboard from "@/pages/consumer/basic/BasicDashboard";
-import BasicBuildingInfo from "@/pages/consumer/basic/BasicBuildingInfo";
-import BasicCertifiedAssociates from "@/pages/consumer/basic/BasicCertifiedAssociates";
-import BasicHistory from "@/pages/consumer/basic/BasicHistory";
-import BasicService from "@/pages/consumer/basic/BasicService";
-import BasicSettings from "@/pages/consumer/basic/BasicSettings";
+import Service from "@/common/Service";
+import BasicConsumner from "@/pages/BasicConsumer/BasicConsumner";
+import BasicDashboard from "@/pages/BasicConsumer/BasicDashboard";
+import BasicBuildingInfo from "@/pages/BasicConsumer/BasicBuildingInfo";
+import BasicCertifiedAssociates from "@/pages/BasicConsumer/BasicCertifiedAssociates";
+import BasicHistory from "@/pages/BasicConsumer/BasicHistory";
+import BasicService from "@/pages/BasicConsumer/BasicService";
+import BasicSettings from "@/pages/BasicConsumer/BasicSettings";
 
 const routes = createBrowserRouter([
   {

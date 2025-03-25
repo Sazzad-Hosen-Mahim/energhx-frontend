@@ -1,7 +1,7 @@
-import service from "../../../assets/Profile/service.png";
-import Star from "./Star";
+import service from "../assets/Profile/service.png";
+import Star from "../components/consumer/history/Star";
 
-import light from "../../../assets/Profile/light.svg";
+import light from "../assets/Profile/light.svg";
 import Review from "./Review";
 
 const features = [
@@ -19,7 +19,7 @@ const features = [
 ];
 const Service = () => {
   return (
-    <div className="p-5 font-primary">
+    <div className="font-primary">
       <div className=" flex items-center justify-between">
         <h2 className="text-xl font-semibold  ">Service Details</h2>
 

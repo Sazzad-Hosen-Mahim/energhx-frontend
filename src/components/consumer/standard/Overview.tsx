@@ -1,6 +1,6 @@
 const Overview = () => {
   return (
-    <div className="flex-1 p-5">
+    <div className="w-full">
       <h2 className="text-xl font-semibold mb-5">Overview</h2>
       <div className="grid grid-cols-3 gap-4">
         <div className="bg-[#9ED98A] text-white p-5 rounded-lg text-center h-[200px]">
