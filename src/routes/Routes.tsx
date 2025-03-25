@@ -17,7 +17,7 @@ import ServerForm from "@/pages/Server/ServerForm";
 import CertifiedAssociates from "@/pages/consumer/CertifiedAssociates";
 import History from "@/pages/consumer/History";
 import Service from "@/common/Service";
-import BasicConsumner from "@/pages/BasicConsumer/BasicConsumner";
+import BasicConsumer from "@/pages/BasicConsumer/BasicConsumer";
 import BasicDashboard from "@/pages/BasicConsumer/BasicDashboard";
 import BasicBuildingInfo from "@/pages/BasicConsumer/BasicBuildingInfo";
 import BasicCertifiedAssociates from "@/pages/BasicConsumer/BasicCertifiedAssociates";
@@ -99,7 +99,7 @@ const routes = createBrowserRouter([
   }, // <-- Missing closing bracket added here
   {
     path: "basic",
-    element: <BasicConsumner />,
+    element: <BasicConsumer />,
     children: [
       { path: "", element: <BasicDashboard /> },
       { path: "dashboard", element: <BasicDashboard /> },
