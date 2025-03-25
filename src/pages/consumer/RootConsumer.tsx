@@ -6,12 +6,21 @@ import { BsBuilding } from "react-icons/bs";
 import { IoPeople } from "react-icons/io5";
 import Navbar from "@/Layout/Navbar";
 import CommonBanner from "@/common/CommonBanner";
-import userImg from "/user.png"
+import userImg from "/user.png";
+import CommonWrapper from "@/common/CommonWrapper";
 
 const consumerMenu = [
   { path: "/consumer/dashboard", label: "Dashboard", icon: FaHome },
-  { path: "/consumer/buildingInformation", label: "Building Information", icon: BsBuilding },
-  { path: "/consumer/certifiedAssociates", label: "Certified Associates", icon: IoPeople },
+  {
+    path: "/consumer/buildingInformation",
+    label: "Building Information",
+    icon: BsBuilding,
+  },
+  {
+    path: "/consumer/certifiedAssociates",
+    label: "Certified Associates",
+    icon: IoPeople,
+  },
   { path: "/consumer/history", label: "History", icon: MdHistory },
   { path: "/consumer/settings", label: "Settings", icon: MdSettings },
   { path: "/logout", label: "Logout", icon: MdLogout },
@@ -20,14 +29,20 @@ const consumerMenu = [
 const RootConsumer = () => {
   return (
     <div>
-<Navbar/>
-<CommonBanner name="Rahman Abdul Quadir" role="Consumer (Standard)" imageUrl={userImg}/>
-    <div className="flex max-w-[1440px] mx-auto">
-      <Sidebar menuItems={consumerMenu} />
-      <div className="flex-1 border-t border-t-[#E7E9E8]">
-        <Outlet />
-      </div>
-    </div>
+      <Navbar />
+      <CommonBanner
+        name="Rahman Abdul Quadir"
+        role="Consumer (Standard)"
+        imageUrl={userImg}
+      />
+      <CommonWrapper>
+        <div className="flex">
+          <Sidebar menuItems={consumerMenu} />
+          <div className="flex-1 border-t border-t-[#E7E9E8] pl-5 pt-5 font-primary">
+            <Outlet />
+          </div>
+        </div>
+      </CommonWrapper>
     </div>
   );
 };

@@ -9,11 +9,21 @@ import Signup from "@/pages/Signup";
 import RootConsumer from "@/pages/consumer/RootConsumer";
 import Dashboard from "@/pages/consumer/Dashboard";
 import BuildingInfo from "@/components/consumer/standard/BuildingInfo";
-import History from "@/components/consumer/standard/History";
 import Settings from "@/components/consumer/standard/Settings";
 import CertifiedAssociates from "@/pages/consumer/CertifiedAssociates";
+import History from "@/pages/consumer/History";
+import Service from "@/common/Service";
+import BasicConsumner from "@/pages/BasicConsumer/BasicConsumner";
+import BasicDashboard from "@/pages/BasicConsumer/BasicDashboard";
+import BasicBuildingInfo from "@/pages/BasicConsumer/BasicBuildingInfo";
+import BasicCertifiedAssociates from "@/pages/BasicConsumer/BasicCertifiedAssociates";
+import BasicHistory from "@/pages/BasicConsumer/BasicHistory";
+import BasicService from "@/pages/BasicConsumer/BasicService";
+import BasicSettings from "@/pages/BasicConsumer/BasicSettings";
+
 import AssociateProfile from "@/components/consumer/standard/certifiedAssociates/AssociateProfile";
 import CertifiedAssociateLayout from "@/Layout/CertifiedAssociateLayout";
+
 
 const routes = createBrowserRouter([
   {
@@ -46,6 +56,25 @@ const routes = createBrowserRouter([
       { path: "", element: <Dashboard /> },
       { path: "dashboard", element: <Dashboard /> },
       { path: "buildingInformation", element: <BuildingInfo /> },
+
+      { path: "certifiedAssociates", element: <CertifiedAssociates /> },
+      { path: "history", element: <History /> },
+      { path: "history/:id", element: <Service /> },
+      { path: "settings", element: <Settings /> },
+    ],
+  },
+  {
+    path: "basic",
+    element: <BasicConsumner />,
+    children: [
+      { path: "", element: <BasicDashboard /> },
+      { path: "dashboard", element: <BasicDashboard /> },
+      { path: "buildingInformation", element: <BasicBuildingInfo /> },
+      { path: "certifiedAssociates", element: <BasicCertifiedAssociates /> },
+      { path: "history", element: <BasicHistory /> },
+      { path: "history/:id", element: <BasicService /> },
+      { path: "settings", element: <BasicSettings /> },
+
       {
         path: "certifiedAssociates",
         element: <CertifiedAssociateLayout />, 
@@ -56,6 +85,7 @@ const routes = createBrowserRouter([
       },
       { path: "history", element: <History /> },
       { path: "settings", element: <Settings /> },
+
     ],
   },
   {
