@@ -1,9 +1,10 @@
-import React from 'react'
+import RequestList from '@/components/Appointment/RequestList'
+
 
 const AppointmentRequest = () => {
   return (
     <div>
-      
+      <RequestList/>
     </div>
   )
 }
