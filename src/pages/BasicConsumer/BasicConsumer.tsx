@@ -7,6 +7,7 @@ import { FaHome } from "react-icons/fa";
 import { MdHistory, MdSettings, MdLogout } from "react-icons/md";
 import { BsBuilding } from "react-icons/bs";
 import { IoPeople } from "react-icons/io5";
+import CommonWrapper from "@/common/CommonWrapper";
 const consumerMenu = [
   { path: "/basic/dashboard", label: "Dashboard", icon: FaHome },
   {
@@ -23,7 +24,7 @@ const consumerMenu = [
   { path: "/basic/settings", label: "Settings", icon: MdSettings },
   { path: "/logout", label: "Logout", icon: MdLogout },
 ];
-const BasicConsumner = () => {
+const BasicConsumer = () => {
   return (
     <div>
       <Navbar />
@@ -32,14 +33,16 @@ const BasicConsumner = () => {
         role="Consumer (Basic)"
         imageUrl={userImg}
       />
-      <div className="flex max-w-[1440px] mx-auto">
-        <Sidebar menuItems={consumerMenu} />
-        <div className="flex-1 border-t border-t-[#E7E9E8]">
-          <Outlet />
+      <CommonWrapper>
+        <div className="flex">
+          <Sidebar menuItems={consumerMenu} />
+          <div className="flex-1 border-t border-t-[#E7E9E8] pt-5 pl-5">
+            <Outlet />
+          </div>
         </div>
-      </div>
+      </CommonWrapper>
     </div>
   );
 };
 
-export default BasicConsumner;
+export default BasicConsumer;
