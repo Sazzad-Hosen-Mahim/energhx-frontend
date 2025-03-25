@@ -1,75 +1,33 @@
-import { FaHome } from "react-icons/fa";
-import { MdHistory, MdSettings, MdLogout } from "react-icons/md";
-import { BsBuilding } from "react-icons/bs";
-import { IoPeople } from "react-icons/io5";
+import { SidebarProps } from "@/types";
 import { NavLink } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar: React.FC<SidebarProps> = ({ menuItems }) => {
   return (
-    <div className="w-64 h-screen bg-green-700 text-white p-5">
-      <h2 className="text-xl font-semibold mb-5">Dashboard</h2>
-      <ul className="space-y-4">
-        <NavLink
-          to="/consumer/dashboard"
-          className={({ isActive }) =>
-            `flex items-center space-x-2 cursor-pointer p-2 rounded ${
-              isActive ? "bg-green-500" : "hover:bg-green-600"
-            }`
-          }
-        >
-          <FaHome /> <span>Dashboard</span>
-        </NavLink>
+    <div className="w-fit h-screen text-[#758179] border-r border-t border-r-[#E7E9E8] border-t-[#E7E9E8]  border-gray-300 z-30 ">
+      <ul className="">
+        {menuItems.map((item, index) => (
+          <NavLink
+            key={index}
+            to={item.path}
+            className={({ isActive }) =>
+              `flex items-center font-primary gap-1 font-light text-[18px] relative group  xl:pr-10 p-3 rounded-sm ${
+                isActive ? "bg-primary text-white" : "hover:bg-[#EAF7E6]"
+              }`
+            }
+          >
+            {/* <span>{item.icon}</span> */}
+            <item.icon size={20} />
+            <span className="hidden xl:block">{item.label}</span>
 
-        <NavLink
-          to="/consumer/buildingInformation"
-          className={({ isActive }) =>
-            `flex items-center space-x-2 cursor-pointer p-2 rounded ${
-              isActive ? "bg-green-500" : "hover:bg-green-600"
-            }`
-          }
-        >
-          <BsBuilding /> <span>Building Information</span>
-        </NavLink>
-
-        <NavLink
-          to="/consumer/certifiedAssociates"
-          className={({ isActive }) =>
-            `flex items-center space-x-2 cursor-pointer p-2 rounded ${
-              isActive ? "bg-green-500" : "hover:bg-green-600"
-            }`
-          }
-        >
-          <IoPeople /> <span>Certified Associates</span>
-        </NavLink>
-
-        <NavLink
-          to="/consumer/history"
-          className={({ isActive }) =>
-            `flex items-center space-x-2 cursor-pointer p-2 rounded ${
-              isActive ? "bg-green-500" : "hover:bg-green-600"
-            }`
-          }
-        >
-          <MdHistory /> <span>History</span>
-        </NavLink>
-
-        <NavLink
-          to="/consumer/settings"
-          className={({ isActive }) =>
-            `flex items-center space-x-2 cursor-pointer p-2 rounded ${
-              isActive ? "bg-green-500" : "hover:bg-green-600"
-            }`
-          }
-        >
-          <MdSettings /> <span>Settings</span>
-        </NavLink>
-
-        <NavLink
-          to="/logout"
-          className="flex items-center space-x-2 cursor-pointer hover:bg-green-600 p-2 rounded"
-        >
-          <MdLogout /> <span>Logout</span>
-        </NavLink>
+            <div className="absolute xl:hidden translate-x-9">
+              <div className="invisible group-hover:visible min-w-fit xl:block">
+                <p className="p-2 text-white rounded-md bg-primary">
+                  {item.label}
+                </p>
+              </div>
+            </div>
+          </NavLink>
+        ))}
       </ul>
     </div>
   );
