@@ -2,6 +2,7 @@ import DropdownInfo from "@/components/consumer/standard/certifiedAssociates/Dro
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Star } from "lucide-react";
+import { Link, Outlet } from "react-router-dom";
 
 const associates = [
   { id: "01", name: "Emmnauel Nonye", role: "Developer", rating: 4.3 },
@@ -22,7 +23,7 @@ const CertifiedAssociates = () => {
             key={associate.id}
             className="flex items-center p-4 shadow-sm rounded-[12px] bg-[#F5F5F5]"
           >
-            <div className="flex items-center gap-x-12">
+            <div className="flex items-center gap-x-14">
               <span className="text-accent text-sm">{associate.id}</span>
          
                 <div className="flex flex-col">
@@ -49,13 +50,20 @@ const CertifiedAssociates = () => {
               <p className="text-gray-500 text-sm">
                 Here is the current Location Lorem Ipsum used since the 1500
               </p>
-            <Button className="bg-primary text-white rounded-[4px] px-8 py-7 shadow-md text-[18px]">
+         
+            <Link to={"certified-associate-profile"}>
+            <Button className="bg-primary flex justify-center text-white rounded-[4px] px-8 py-7 shadow-md text-[18px] cursor-pointer">
               View Profile
             </Button>
+            </Link>
+            
             </div>
           </Card>
         ))}
       </div>
+
+
+      <Outlet/>
     </div>
   );
 };

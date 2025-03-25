@@ -1,11 +1,11 @@
 import Booking from "@/common/Booking";
 
-const History = () => {
+const BasicHistory = () => {
   return (
-    <>
+    <div>
       <Booking />
-    </>
+    </div>
   );
 };
 
-export default History;
+export default BasicHistory;
