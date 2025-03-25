@@ -1,7 +1,9 @@
+import RequestList from "@/components/Appointment/RequestList";
+
 const AppointmentRequest = () => {
   return (
     <div>
-      <h1>AppointmentRequest</h1>
+     <RequestList/>
     </div>
   );
 };
