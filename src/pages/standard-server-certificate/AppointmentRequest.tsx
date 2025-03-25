@@ -1,4 +1,8 @@
+
+import RequestList from "@/components/Appointment/RequestList";
+
 import React from "react";
+
 
 const AppointmentRequest = () => {
   const appointments = [
@@ -17,6 +21,10 @@ const AppointmentRequest = () => {
   };
 
   return (
+
+    <div>
+     <RequestList/>
+
     <div className="p-6 min-h-screen">
       <h2 className="text-xl font-semibold mb-4">Overview</h2>
       <div className="grid grid-cols-3 gap-4 mb-6">
@@ -41,6 +49,7 @@ const AppointmentRequest = () => {
         </div>
       ))}
       
+
     </div>
   );
 };
