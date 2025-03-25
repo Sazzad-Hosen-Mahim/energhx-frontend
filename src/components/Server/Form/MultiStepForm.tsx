@@ -98,7 +98,7 @@ const MultiStepForm = () => {
         )}
 
         <div className="flex items-center gap-5 mt-10">
-          {step < 4 ? (
+          {step < 3 ? (
             ""
           ) : (
             <Button
