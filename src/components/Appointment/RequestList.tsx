@@ -6,8 +6,12 @@ interface Request {
   consumerName: string;
   location: string;
 }
+interface RequestListProps {
+  onViewRequest: (order: string) => void;
+}
 
-function RequestList() {
+
+function RequestList({ onViewRequest }: RequestListProps) {
   const requests: Request[] = [
     {
       order: "01",
@@ -72,7 +76,9 @@ function RequestList() {
                 <div className="col-span-4 text-lg font-normal">{request.location}</div>
                 <div className="col-span-2">
            
-                  <button className="bg-[#2DAD00] text-white px-9 py-3 rounded-sm hover:bg-[#259A00] transition-colors">
+                  <button 
+                     onClick={() => onViewRequest(request.order)}
+                  className="bg-[#2DAD00] cursor-pointer text-white px-9 py-3 rounded-sm hover:bg-[#259A00] transition-colors ">
                     View
                   </button>
              
