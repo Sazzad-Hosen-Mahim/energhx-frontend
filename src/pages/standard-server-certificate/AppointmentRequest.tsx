@@ -1,13 +1,20 @@
-import RequestList from '@/components/Appointment/RequestList'
+import RequestList from '@/components/Appointment/RequestList';
+import ViewDetails from '@/components/Appointment/ViewDetails';
+import React, { useState } from 'react';
 
 
-const AppointmentRequest = () => {
-  return (
-    <div>
-      <RequestList/>
-    </div>
-  )
+function AppointmentRequest() {
+  const [selectedItem, setSelectedItem] = useState<string | null>(null);
+
+  const handleViewRequest = (order: string) => {
+    setSelectedItem(order);
+  };
+
+  if (selectedItem) {
+    return <ViewDetails />;
+  }
+
+  return <RequestList onViewRequest={handleViewRequest} />;
 }
 
-export default AppointmentRequest
-
+export default AppointmentRequest;
