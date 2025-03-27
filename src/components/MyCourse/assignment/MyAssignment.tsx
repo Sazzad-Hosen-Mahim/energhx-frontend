@@ -15,8 +15,8 @@ const MyAssignment = ({ assignmentList }: MyAssignmentProps) => {
   return (
     <div>
       <div className="my-5"></div>
-      <div>
-        <table className="w-full">
+      <div className="overflow-x-auto">
+        <table className="min-w-full table-auto border-collapse">
           <thead className="">
             <tr className="bg-secondary text-[16px] text-#758179] text-left">
               <th className="py-4 px-6 font-normal">Service Name</th>
