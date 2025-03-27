@@ -1,51 +1,3 @@
-import { singleCourse } from "../../standard-developer/standardDeveloperData";
-import { FaLongArrowAltRight } from "react-icons/fa";
-
-const MyCourseDetails = () => {
-  const [selectedFilter, setSelectedFilter] = useState("module");
-
-  const filterArray = [
-    { id: generateRandomId(), label: "Module", value: "module" },
-    { id: generateRandomId(), label: "Class", value: "class" },
-    { id: generateRandomId(), label: "Assignment", value: "assignment" },
-    { id: generateRandomId(), label: "Certificate", value: "certificate" },
-  ];
-  return (
-    <div>
-      <p className="text-[18px] text-[#112518] flex items-center">
-        My Course
-        <span className="mx-3">
-          <FaLongArrowAltRight />
-        </span>
-        <span className="font-semibold">Course Details</span>
-      </p>
-      <div className="flex gap-4 my-2">
-        {filterArray.map((item) => {
-          return (
-            <button
-              onClick={() => setSelectedFilter(item.value)}
-              className={`px-3 py-2 border-[1px] cursor-pointer rounded-full ${
-                item.value === selectedFilter
-                  ? "bg-[#FFFAE9] text-[#F1BB00] border-[#F1BB00]"
-                  : "bg-[#E7E9E8] text-[#9DA6A0] border-[#9DA6A0]"
-              }`}
-            >
-              {item.label}
-            </button>
-          );
-        })}
-      </div>
-
-      <div className="flex gap-8 flex-wrap">
-        {singleCourse.map((course) => (
-          <SingleModuleCard key={course.id} course={course} />
-        ))}
-      </div>
-    </div>
-  );
-};
-export default MyCourseDetails;
-
 import newspaperfolding from "/src/assets/courses/newspaper-folding.png";
 import carouselvideo from "/src/assets/courses/carousel-video.png";
 import { calculatePercentage, generateRandomId } from "@/lib/utils";
@@ -54,7 +6,7 @@ import StarRating from "@/components/ui/StarRating";
 import { useState } from "react";
 
 // Define the Course type
-interface Course {
+export interface Course {
   id: number;
   title: string;
   description: string;
@@ -74,7 +26,7 @@ interface CourseCardProps {
   course: Course;
 }
 
-const SingleModuleCard: React.FC<CourseCardProps> = ({ course }) => {
+const MySingleModuleCard: React.FC<CourseCardProps> = ({ course }) => {
   const progressPercent = calculatePercentage(
     course.completedAssignment + course.completedClass,
     course.totalClass + parseInt(course.totalModules)
@@ -133,3 +85,5 @@ const SingleModuleCard: React.FC<CourseCardProps> = ({ course }) => {
     </div>
   );
 };
+
+export default MySingleModuleCard;

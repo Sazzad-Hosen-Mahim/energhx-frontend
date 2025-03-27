@@ -70,7 +70,7 @@ export const courseList = [
   },
 ];
 
-export const singleCourse = [
+export const singleCourseModuleList = [
   {
     id: 1,
     title: "Energhx Fan Fixing Course",
@@ -160,5 +160,102 @@ export const singleCourse = [
     rating: 4.0,
     reviews: 15,
     image: "/src/assets/courses/fan5.png",
+  },
+];
+
+export const singleCourseClassList = [
+  {
+    id: generateRandomId(),
+    title: "Introduction to Fan Repair",
+    topic: "Basic Components & Tools",
+    timeInMinutes: 30,
+    classNumber: 1,
+    isCompleted: true,
+    isWatching: false,
+    files: ["info.pdf"],
+    image: "/src/assets/courses/fan.png",
+  },
+  {
+    id: generateRandomId(),
+    title: "Diagnosing Fan Issues",
+    topic: "Common Problems & Troubleshooting",
+    timeInMinutes: 45,
+    classNumber: 2,
+    isCompleted: false,
+    isWatching: false,
+    files: ["diagnostics.pdf"],
+    image: "/src/assets/courses/fan.png",
+  },
+  {
+    id: generateRandomId(),
+    title: "Motor and Wiring Fixes",
+    topic: "Replacing & Repairing Electrical Components",
+    timeInMinutes: 40,
+    classNumber: 3,
+    isCompleted: false,
+    isWatching: true,
+    files: ["wiring_guide.pdf"],
+    image: "/src/assets/courses/fan.png",
+  },
+  {
+    id: generateRandomId(),
+    title: "Blade & Speed Control Mechanisms",
+    topic: "Balancing, Cleaning & Replacing Blades",
+    timeInMinutes: 35,
+    classNumber: 4,
+    isCompleted: false,
+    isWatching: true,
+    files: ["blades_maintenance.pdf"],
+    image: "/src/assets/courses/fan.png",
+  },
+  {
+    id: generateRandomId(),
+    title: "Final Assembly & Safety",
+    topic: "Testing & Ensuring Safety Standards",
+    timeInMinutes: 50,
+    classNumber: 5,
+    isCompleted: true,
+    isWatching: false,
+    files: ["safety_guidelines.pdf"],
+    image: "/src/assets/courses/fan.png",
+  },
+];
+
+export const singleCourseAssignmentList = [
+  {
+    id: generateRandomId(),
+    name: "Energhx New LED Light Fix",
+    submissionDate: new Date("2025-03-20T12:00:00Z"),
+    status: "completed",
+  },
+  {
+    id: generateRandomId(),
+    name: "Ceiling Fan Motor Repair",
+    submissionDate: new Date("2025-03-22T15:30:00Z"),
+    status: "pending",
+  },
+  {
+    id: generateRandomId(),
+    name: "Table Fan Blade Balancing",
+    submissionDate: new Date("2025-03-18T09:45:00Z"),
+    status: "completed",
+  },
+  {
+    id: generateRandomId(),
+    name: "Wall Fan Speed Control Fix",
+    submissionDate: new Date("2025-03-25T18:00:00Z"),
+    status: "pending",
+  },
+  {
+    id: generateRandomId(),
+    name: "Pedestal Fan Wiring Check",
+    submissionDate: new Date("2025-03-21T14:15:00Z"),
+    status: "completed",
+  },
+  {
+    id: generateRandomId(),
+    name: "Testing Safety Measures",
+    submissionDate: new Date("2025-03-23T08:20:00Z"),
+    status: "pending",
   },
 ];

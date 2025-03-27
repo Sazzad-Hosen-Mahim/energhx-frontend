@@ -41,8 +41,9 @@ import StandardDeveloperDasboard from "@/pages/standard-developer/StandardDevelo
 import StandardDeveloperSetting from "@/pages/standard-developer/StandardDeveloperSetting";
 import StandardDeveloperHistory from "@/pages/standard-developer/StandardDeveloperHistory";
 import OverviewDetails from "@/pages/standard-server-certificate/OverviewDetails";
-import MyCourseDetails from "@/pages/Course/course-details/MyCourseDetails";
+import MyCourseDetails from "@/components/MyCourse/course-details/MyCourseDetails";
 import CourseDetails from "@/pages/standard-developer/CourseDetails";
+import RootMyCourse from "@/pages/standard-developer/RootMyCourse";
 
 const routes = createBrowserRouter([
   {
@@ -129,15 +130,18 @@ const routes = createBrowserRouter([
     children: [
       { path: "", element: <StandardDeveloperDasboard /> },
       { path: "dashboard", element: <StandardDeveloperDasboard /> },
-      { path: "my-courses", element: <MyCourses /> },
+      {
+        path: "my-courses",
+        element: <RootMyCourse />,
+        children: [
+          { path: "", element: <MyCourses /> },
+          { path: ":id", element: <MyCourseDetails /> },
+        ],
+      },
       { path: "all-courses", element: <AllCourses /> },
       { path: "course/:id", element: <CourseDetails /> },
       { path: "history", element: <StandardDeveloperHistory /> },
       { path: "settings", element: <StandardDeveloperSetting /> },
-      {
-        path: "my-course/:id",
-        element: <MyCourseDetails />,
-      },
     ],
   },
   {
