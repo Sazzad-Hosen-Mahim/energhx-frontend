@@ -1,4 +1,4 @@
-import { ChevronRight, MapPin, MoveRight } from 'lucide-react';
+import {  MoveRight } from 'lucide-react';
 import AppointmentImg from "../../assets/appointment.png";
 import appointment from "../../assets/appointment.svg";
 
