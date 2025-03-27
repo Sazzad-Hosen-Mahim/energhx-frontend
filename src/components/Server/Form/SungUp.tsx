@@ -34,7 +34,7 @@ const SungUp: React.FC<SungUpProps> = ({
     formState: { errors },
   } = useForm<FormData>({
     resolver: zodResolver(sungUpSchema),
-    defaultValues: formData,
+    defaultValues: { ...formData },
   });
 
   const onSubmit = (data: FormData) => {

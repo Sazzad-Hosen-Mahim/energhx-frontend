@@ -39,7 +39,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
     formState: { errors },
   } = useForm<workExperienceType>({
     resolver: zodResolver(workExperienceSchema),
-    defaultValues: formData,
+    defaultValues: { ...formData },
   });
 
   const onSubmit = (data: workExperienceType) => {
@@ -47,7 +47,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
       updateFormData(field, value);
     });
     nextStep();
-    toast.success("Form Submittes successfully");
+    toast.success("Form Submitted successfully");
   };
 
   const validateFileType = (file: File, allowedTypes: string[]) => {
