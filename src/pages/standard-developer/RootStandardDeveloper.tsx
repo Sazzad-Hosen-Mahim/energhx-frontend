@@ -10,33 +10,33 @@ import { IoPeople } from "react-icons/io5";
 import { FaGraduationCap } from "react-icons/fa6";
 import { FaPhotoVideo } from "react-icons/fa";
 
-const serverInternMenu = [
-  { path: "/server-intern/dashboard", label: "Dashboard", icon: FaHome },
+const standardDeveloperSiderBarMenu = [
+  { path: "/standard-developer/dashboard", label: "Dashboard", icon: FaHome },
   {
-    path: "/server-intern/my-courses",
+    path: "/standard-developer/my-courses",
     label: "My Courses/LMS",
     icon: FaGraduationCap,
   },
   {
-    path: "/server-intern/all-courses",
+    path: "/standard-developer/all-courses",
     label: "All Courses",
     icon: FaPhotoVideo,
   },
-  { path: "/server-intern/history", label: "History", icon: MdHistory },
-  { path: "/server-intern/settings", label: "Settings", icon: MdSettings },
+  { path: "/standard-developer/history", label: "History", icon: MdHistory },
+  { path: "/standard-developer/settings", label: "Settings", icon: MdSettings },
   { path: "/logout", label: "Logout", icon: MdLogout },
 ];
-const RootServerIntern = () => {
+const RootStandardDeveloper = () => {
   return (
     <div>
       <Navbar />
       <CommonBanner
         name="Munna Ahmed"
-        role="Server (Intern)"
+        role="Developer (Intern)"
         imageUrl={userImg}
       />
       <div className="flex max-w-[1440px] mx-auto">
-        <Sidebar menuItems={serverInternMenu} />
+        <Sidebar menuItems={standardDeveloperSiderBarMenu} />
         <div className="flex-1 border-t border-t-[#E7E9E8] p-[24px]">
           <Outlet />
         </div>
@@ -45,4 +45,4 @@ const RootServerIntern = () => {
   );
 };
 
-export default RootServerIntern;
+export default RootStandardDeveloper;

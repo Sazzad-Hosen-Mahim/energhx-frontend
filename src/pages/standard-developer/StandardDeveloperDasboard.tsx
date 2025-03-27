@@ -1,17 +1,17 @@
 import { useState } from "react";
-import { courseFilterArray, courseList } from "./serverInternData";
+import { courseFilterArray, courseList } from "./standardDeveloperData";
 import StarRating from "@/components/ui/StarRating";
 import StatusBadge from "@/components/ui/StatusBadge";
 import ProgressBar from "@/components/ui/ProgressBar";
 import { calculatePercentage } from "@/lib/utils";
 
-const ServerInternDasboard = () => {
+const StandardDeveloperDasboard = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>("enrolled");
   return (
     <div>
       <p className="text-[18px] text-[#112518]">Overview</p>
       {/* filter section======= */}
-      <div className="w-full flex flex-col justify-center md:justify-start md:flex-row gap-6 my-6">
+      <div className="w-full flex flex-col justify-center items-center md:justify-start md:flex-row gap-6 my-6">
         {courseFilterArray.map((item) => {
           const IconElement = item.icon;
           return (
@@ -114,4 +114,4 @@ const ServerInternDasboard = () => {
   );
 };
 
-export default ServerInternDasboard;
+export default StandardDeveloperDasboard;

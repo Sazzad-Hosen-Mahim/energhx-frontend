@@ -17,22 +17,17 @@ import ServerForm from "@/pages/Server/ServerForm";
 import CertifiedAssociates from "@/pages/consumer/CertifiedAssociates";
 import History from "@/pages/consumer/History";
 import Service from "@/common/Service";
-import BasicConsumer from "@/pages/BasicConsumer/BasicConsumer";
+import BasicConsumner from "@/pages/BasicConsumer/BasicConsumer";
 import BasicDashboard from "@/pages/BasicConsumer/BasicDashboard";
 import BasicBuildingInfo from "@/pages/BasicConsumer/BasicBuildingInfo";
 import BasicCertifiedAssociates from "@/pages/BasicConsumer/BasicCertifiedAssociates";
 import BasicHistory from "@/pages/BasicConsumer/BasicHistory";
 import BasicService from "@/pages/BasicConsumer/BasicService";
 import BasicSettings from "@/pages/BasicConsumer/BasicSettings";
-
 import AssociateProfile from "@/components/consumer/standard/certifiedAssociates/AssociateProfile";
 import CertifiedAssociateLayout from "@/Layout/CertifiedAssociateLayout";
-import ServerInternDasboard from "@/pages/server-intern/ServerInternDasboard";
-import RootServerIntern from "@/pages/server-intern/RootServerIntern";
-import MyCourses from "@/pages/server-intern/MyCourses";
-import AllCourses from "@/pages/server-intern/AllCourses";
-import ServerInternHistory from "@/pages/server-intern/ServerInternHistory";
-import ServerInternSetting from "@/pages/server-intern/ServerInternSetting";
+import MyCourses from "@/pages/standard-developer/MyCourses";
+import AllCourses from "@/pages/standard-developer/AllCourses";
 import RootStandardServerCertificate from "@/pages/standard-server-certificate/RootStandardCeritificate";
 import StarndardCertificateDasboard from "@/pages/standard-server-certificate/StarndardCertificateDasboard";
 import AppointmentRequest from "@/pages/standard-server-certificate/AppointmentRequest";
@@ -41,6 +36,10 @@ import StandardServerAllCourse from "@/pages/standard-server-certificate/Standar
 import StandardServerHistory from "@/pages/standard-server-certificate/StandardServerHistory";
 import StandardServerSubscription from "@/pages/standard-server-certificate/StandardServerSubscription";
 import StandardServerSetting from "@/pages/standard-server-certificate/StandardServerSetting";
+import RootStandardDeveloper from "@/pages/standard-developer/RootStandardDeveloper";
+import StandardDeveloperDasboard from "@/pages/standard-developer/StandardDeveloperDasboard";
+import StandardDeveloperSetting from "@/pages/standard-developer/StandardDeveloperSetting";
+import StandardDeveloperHistory from "@/pages/standard-developer/StandardDeveloperHistory";
 
 const routes = createBrowserRouter([
   {
@@ -99,7 +98,7 @@ const routes = createBrowserRouter([
   }, // <-- Missing closing bracket added here
   {
     path: "basic",
-    element: <BasicConsumer />,
+    element: <BasicConsumner />,
     children: [
       { path: "", element: <BasicDashboard /> },
       { path: "dashboard", element: <BasicDashboard /> },
@@ -122,15 +121,15 @@ const routes = createBrowserRouter([
     ],
   },
   {
-    path: "server-intern",
-    element: <RootServerIntern />,
+    path: "standard-developer",
+    element: <RootStandardDeveloper />,
     children: [
-      { path: "", element: <ServerInternDasboard /> },
-      { path: "dashboard", element: <ServerInternDasboard /> },
+      { path: "", element: <StandardDeveloperDasboard /> },
+      { path: "dashboard", element: <StandardDeveloperDasboard /> },
       { path: "my-courses", element: <MyCourses /> },
       { path: "all-courses", element: <AllCourses /> },
-      { path: "history", element: <ServerInternHistory /> },
-      { path: "settings", element: <ServerInternSetting /> },
+      { path: "history", element: <StandardDeveloperHistory /> },
+      { path: "settings", element: <StandardDeveloperSetting /> },
     ],
   },
   {
