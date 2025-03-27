@@ -1,7 +1,7 @@
 import { singleCourse } from "../../standard-developer/standardDeveloperData";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
-const CourseDetails = () => {
+const MyCourseDetails = () => {
   const [selectedFilter, setSelectedFilter] = useState("module");
 
   const filterArray = [
@@ -44,7 +44,7 @@ const CourseDetails = () => {
     </div>
   );
 };
-export default CourseDetails;
+export default MyCourseDetails;
 
 import newspaperfolding from "/src/assets/courses/newspaper-folding.png";
 import carouselvideo from "/src/assets/courses/carousel-video.png";

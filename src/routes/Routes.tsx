@@ -40,7 +40,9 @@ import RootStandardDeveloper from "@/pages/standard-developer/RootStandardDevelo
 import StandardDeveloperDasboard from "@/pages/standard-developer/StandardDeveloperDasboard";
 import StandardDeveloperSetting from "@/pages/standard-developer/StandardDeveloperSetting";
 import StandardDeveloperHistory from "@/pages/standard-developer/StandardDeveloperHistory";
-import CourseDetails from "@/pages/Course/course-details/CourseDetails";
+import OverviewDetails from "@/pages/standard-server-certificate/OverviewDetails";
+import MyCourseDetails from "@/pages/Course/course-details/MyCourseDetails";
+import CourseDetails from "@/pages/standard-developer/CourseDetails";
 
 const routes = createBrowserRouter([
   {
@@ -103,10 +105,10 @@ const routes = createBrowserRouter([
     children: [
       { path: "", element: <BasicDashboard /> },
       { path: "dashboard", element: <BasicDashboard /> },
-      { path: "buildingInformation", element: <BasicBuildingInfo /> },
-      { path: "certifiedAssociates", element: <BasicCertifiedAssociates /> },
-      { path: "history", element: <BasicHistory /> },
-      { path: "history/:id", element: <BasicService /> },
+      // { path: "buildingInformation", element: <BasicBuildingInfo /> },
+      // { path: "certifiedAssociates", element: <BasicCertifiedAssociates /> },
+      // { path: "history", element: <BasicHistory /> },
+      // { path: "history/:id", element: <BasicService /> },
       { path: "settings", element: <BasicSettings /> },
       {
         path: "certifiedAssociates",
@@ -128,13 +130,14 @@ const routes = createBrowserRouter([
       { path: "", element: <StandardDeveloperDasboard /> },
       { path: "dashboard", element: <StandardDeveloperDasboard /> },
       { path: "my-courses", element: <MyCourses /> },
-      {
-        path: "course/:id",
-        element: <CourseDetails />,
-      },
       { path: "all-courses", element: <AllCourses /> },
+      { path: "course/:id", element: <CourseDetails /> },
       { path: "history", element: <StandardDeveloperHistory /> },
       { path: "settings", element: <StandardDeveloperSetting /> },
+      {
+        path: "my-course/:id",
+        element: <MyCourseDetails />,
+      },
     ],
   },
   {
@@ -149,6 +152,7 @@ const routes = createBrowserRouter([
       { path: "history", element: <StandardServerHistory /> },
       { path: "subscrption", element: <StandardServerSubscription /> },
       { path: "settings", element: <StandardServerSetting /> },
+      { path: "overview/:id", element: <OverviewDetails /> },
     ],
   },
   {

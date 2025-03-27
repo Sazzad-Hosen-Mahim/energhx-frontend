@@ -38,7 +38,7 @@ const MyCourses = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <p className="text-[18px] text-[#394A3F]">{course.title}</p>
-                  <Link to={`/standard-developer/course/${course.id}`}>
+                  <Link to={`/standard-developer/my-course/${course.id}`}>
                     <div className="cursor-pointer px-4 py-2 text-sm font-normal border-[1px] rounded-full bg-[#E6F7FF] text-[#00ADFF] border-[#00ADFF] hover:bg-[#d3edf9]">
                       <FaLongArrowAltRight />
                     </div>

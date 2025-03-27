@@ -1,7 +1,8 @@
 import React from "react";
 import { IoIosStar, IoIosStarOutline } from "react-icons/io";
 import newspaperfolding from "/src/assets/courses/newspaper-folding.png";
-import carouselvideo from "/src/assets/courses/carousel-video.png"
+import carouselvideo from "/src/assets/courses/carousel-video.png";
+import { Link } from "react-router-dom";
 
 // Define the Course type
 interface Course {
@@ -56,19 +57,28 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
       <h2 className="font-bold text-lg mt-3">{course.title}</h2>
       <p className=" text-[#758179] mt-2">{course.description}</p>
       <div className="flex justify-between items-center mt-3 text-gray-700 text-sm">
-        <span className="flex gap-2"><img src={carouselvideo}/> {course.totalClass} Classes</span>
-        <span className="flex gap-2"> <img src={newspaperfolding}/> {course.assignment} Assignments</span>
+        <span className="flex gap-2">
+          <img src={carouselvideo} /> {course.totalClass} Classes
+        </span>
+        <span className="flex gap-2">
+          {" "}
+          <img src={newspaperfolding} /> {course.assignment} Assignments
+        </span>
       </div>
 
       {/* Star Ratings */}
       <div className="flex items-center mt-4">
         {renderStars(course.rating)}
-        <span className="text-gray-500 text-sm ml-2">(Review {course.reviews})</span>
+        <span className="text-gray-500 text-sm ml-2">
+          (Review {course.reviews})
+        </span>
       </div>
 
-      <button className="bg-[#EAF7E6] text-[#2DAD00] w-full py-2 mt-4 rounded-lg cursor-pointer hover:bg-[#2DAD00] hover:text-white">
-        Book Now
-      </button>
+      <Link to={`/standard-developer/course/${course.id}`}>
+        <button className="bg-[#EAF7E6] text-[#2DAD00] w-full py-2 mt-4 rounded-lg cursor-pointer hover:bg-[#2DAD00] hover:text-white">
+          Book Now
+        </button>
+      </Link>
     </div>
   );
 };

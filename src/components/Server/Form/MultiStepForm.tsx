@@ -9,7 +9,7 @@ import SungUp from "./SungUp";
 import WorkExperience from "./WorkExperience";
 import WorkExperienceTwo from "./WorkExperienceTwo";
 
-const MultiStepForm = () => {
+const MultiStepForm = ({ handleMultiform }) => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -75,6 +75,7 @@ const MultiStepForm = () => {
 
         {step === 1 && (
           <SungUp
+            handleMultiform={handleMultiform}
             formData={formData}
             updateFormData={updateFormData}
             nextStep={nextStep}
