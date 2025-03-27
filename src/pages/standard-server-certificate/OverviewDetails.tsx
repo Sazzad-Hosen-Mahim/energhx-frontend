@@ -1,6 +1,6 @@
 import React from "react";
 import { Overview } from '@/components/consumer/standard/Overview';
-import light from '../../assets/Profile/light.svg'
+import light from '../../assets/Profile/lightGreen.svg'
 import ractangle from '../../assets/Rectangle 1.png'
 
 const OverviewDetails = () => {
