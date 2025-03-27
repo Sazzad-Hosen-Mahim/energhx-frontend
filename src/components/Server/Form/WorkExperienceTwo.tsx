@@ -7,6 +7,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { CiSquarePlus } from "react-icons/ci";
+import { FaAngleDoubleRight, FaAngleLeft } from "react-icons/fa";
 import { MdOutlineFileUpload } from "react-icons/md";
 import { toast } from "react-toastify";
 
@@ -34,11 +35,17 @@ const WorkExperienceTwo: React.FC<WorkExperienceTwoProps> = ({
   });
 
   const onSubmit = (data: workExperienceTwoType) => {
+    console.log(data, "data in work experience two");
+
     Object.entries(data).forEach(([field, value]) => {
       updateFormData(field, value);
     });
     nextStep();
     toast.success("Form Submitted successfully");
+  };
+
+  const handlePrevious = () => {
+    prevStep();
   };
 
   const validateFileType = (file: File, allowedTypes: string[]) => {
@@ -154,7 +161,10 @@ const WorkExperienceTwo: React.FC<WorkExperienceTwoProps> = ({
                 )}
               </div>
             </div>
-            <Button className=" bg-primary-green text-white my-5 h-[48px]">
+            <Button
+              className=" bg-primary-green text-white my-5 h-[48px]"
+              type="button"
+            >
               <span>
                 <CiSquarePlus />
               </span>
@@ -257,7 +267,10 @@ const WorkExperienceTwo: React.FC<WorkExperienceTwoProps> = ({
                 )}
               </div>
             </div>
-            <Button className=" bg-primary-green text-white my-5 h-[48px]">
+            <Button
+              className=" bg-primary-green text-white my-5 h-[48px]"
+              type="button"
+            >
               <span>
                 <CiSquarePlus />
               </span>
@@ -265,7 +278,7 @@ const WorkExperienceTwo: React.FC<WorkExperienceTwoProps> = ({
             </Button>
 
             <p className="text-primary-gray text-xm  my-10">
-              Reference/ recommendation letter, if applicable
+              References & Job recommendation
             </p>
             <div className="flex flex-col">
               <label
@@ -287,6 +300,9 @@ const WorkExperienceTwo: React.FC<WorkExperienceTwoProps> = ({
                 </p>
               )}
             </div>
+            <p className="text-primary-gray text-xm  my-10">
+              Reference/ recommendation letter, if applicable
+            </p>
 
             <div className="my-5">
               <label
@@ -320,12 +336,32 @@ const WorkExperienceTwo: React.FC<WorkExperienceTwoProps> = ({
                 </p>
               )}
             </div>
-            <Button className=" bg-primary-green text-white my-5 h-[48px]">
+
+            <Button
+              className=" bg-primary-green text-white my-5 w-[204px] h-[48px]"
+              type="button"
+            >
               <span>
                 <CiSquarePlus />
               </span>
               Add Experience
             </Button>
+            <div className="flex items-center gap-5 mb-[200px]">
+              <Button
+                variant="outline"
+                onClick={handlePrevious}
+                className="bg-light-green border-primary-green text-primary-green py-5 rounded-md"
+              >
+                <FaAngleLeft />
+                Previous
+              </Button>
+              <Button
+                type="submit"
+                className="bg-primary-green text-white py-5 rounded-md"
+              >
+                Continue <FaAngleDoubleRight />
+              </Button>
+            </div>
           </form>
         </div>
       </CommonWrapper>
