@@ -1,40 +1,36 @@
-import { useDispatch, useSelector } from "react-redux";
 import CommonWrapper from "../common/CommonWrapper";
-import type { RootState, AppDispatch } from "../store/store";
 import home1 from "@/assets/home1.png";
 import home2 from "@/assets/home2.png";
 import home3 from "@/assets/home3.png";
 import { motion } from "framer-motion";
 import twing from "@/assets/twing.png";
 import { useState } from "react";
-import MultiStepForm from "@/components/Server/Form/MultiStepForm";
-import Signup from "./Signup";
-import WorkExperience from "@/components/Server/Form/WorkExperience";
-import WorkExperienceTwo from "@/components/Server/Form/WorkExperienceTwo";
-
+import SignUp from "./BasicConsumer/form/SignUp";
+import Utility from "./BasicConsumer/form/Utility";
+import Commodity from "./BasicConsumer/form/Commodity";
+import HydroForm from "./BasicConsumer/form/HydroForm";
+import EnbridgeForm from "./BasicConsumer/form/EnbridgeForm";
+import Overview from "./BasicConsumer/form/Overview";
 const Home = () => {
-  const [main, setMain] = useState(true);
-  const [form, setForm] = useState(" ");
+  const [step, setStep] = useState(1);
 
-  const handleMultiform = (item: string) => {
-    setForm(item);
-    setMain(false);
+  const nextStep = () => {
+    setStep((pre) => pre + 1);
+  };
+  const prevStep = () => {
+    setStep((pre) => pre - 1);
   };
   return (
     <CommonWrapper>
-      {/* Personal Information Section */}
-
-      {main && (
+      {step === 1 && (
         <section className="p-6">
           <h2 className="text-[#2DAD00] font-bold text-lg mb-8 uppercase">
-            Personal Information
+            Personal Infomation
           </h2>
           <div className="flex gap-6">
             {/* Energy Intern */}
             <motion.div
-              onClick={() => {
-                handleMultiform("person");
-              }}
+              onClick={nextStep}
               className="p-6 border border-green-300 bg-[#EAF7E6] rounded-lg text-center w-[250px] h-[250px] flex flex-col justify-center items-center cursor-pointer"
               whileHover={{ scale: 1.1, backgroundColor: "#C3E6C0" }}
             >
@@ -83,8 +79,7 @@ const Home = () => {
         </section>
       )}
 
-      {/* Sign Up Eligibility Section */}
-      {main && (
+      {step === 1 && (
         <section className="p-6 mt-8">
           <h2 className="text-[#2DAD00] font-bold text-lg mb-8 uppercase">
             Sign Up Eligibility
@@ -122,10 +117,13 @@ const Home = () => {
         </section>
       )}
 
-      {form === "person" && <MultiStepForm handleMultiform={handleMultiform} />}
-      {form === "signup" && <Signup />}
-      {form === "experience" && <WorkExperience />}
-      {form === "experienceTwo" && <WorkExperienceTwo />}
+      {step === 2 && <SignUp prevStep={prevStep} nextStep={nextStep} />}
+
+      {step === 3 && <Utility prevStep={prevStep} nextStep={nextStep} />}
+      {step === 4 && <Commodity prevStep={prevStep} nextStep={nextStep} />}
+      {step === 5 && <EnbridgeForm nextStep={nextStep} />}
+      {step === 6 && <HydroForm nextStep={nextStep} />}
+      {step === 7 && <Overview nextStep={nextStep} />}
     </CommonWrapper>
   );
 };

@@ -1,7 +1,7 @@
 import service from "../assets/Profile/service.png";
 import Star from "../components/consumer/history/Star";
 
-import light from "../assets/Profile/light.svg";
+import light from "../assets/Profile/arrowGreen.png";
 import Review from "./Review";
 
 const features = [
