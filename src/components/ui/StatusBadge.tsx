@@ -6,7 +6,9 @@ interface StatusBadgeProps {
 const StatusBadge = ({ status }: StatusBadgeProps) => {
   const statusColors: Record<typeof status, string> = {
     active: "bg-[#FFFAE9] text-[#F1BB00] border-[#F1BB00]",
+    pending: "bg-[#FFFAE9] text-[#F1BB00] border-[#F1BB00]",
     completed: "bg-[#E8F4EB] text-[#1C9237] border-[#1C9237]",
+    submitted: "bg-[#E8F4EB] text-[#1C9237] border-[#1C9237]",
     enrolled: "bg-[#E6F7FF] text-[#00ADFF] border-[#00ADFF]",
   };
 
