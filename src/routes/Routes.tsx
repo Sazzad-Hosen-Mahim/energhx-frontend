@@ -66,7 +66,7 @@ const routes = createBrowserRouter([
     ],
   },
   {
-    path: "consumer",
+    path: "consumer", //this is standard consumer
     element: <RootConsumer />,
     children: [
       { path: "", element: <Dashboard /> },
@@ -97,7 +97,7 @@ const routes = createBrowserRouter([
     ],
   }, // <-- Missing closing bracket added here
   {
-    path: "basic",
+    path: "basic", //this is basic consumer basboard
     element: <BasicConsumner />,
     children: [
       { path: "", element: <BasicDashboard /> },
