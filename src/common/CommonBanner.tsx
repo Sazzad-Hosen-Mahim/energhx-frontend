@@ -24,9 +24,9 @@ const CommonBanner = ({ name, role, imageUrl, onUpgrade }: CoverBannerProps) => 
       {onUpgrade && (
         <button
           onClick={onUpgrade}
-          className="px-4 py-2 bg-[#2DAD00] text-white rounded-lg font-medium hover:bg-[#2DAD00] transition duration-300"
+          className="px-4 py-3 bg-[#2DAD00] text-white rounded-lg font-medium hover:bg-[#2DAD00] transition duration-300"
         >
-         
+          <div className="flex items-center gap-3"><span><FaCrown/></span>Upgrade</div>
         </button>
       )}
     </div>
