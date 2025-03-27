@@ -48,6 +48,10 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
     });
     nextStep();
     toast.success("Form Submitted successfully");
+    console.log(data, "data in work experience one");
+  };
+  const handlePrevious = () => {
+    prevStep();
   };
 
   const validateFileType = (file: File, allowedTypes: string[]) => {
@@ -278,6 +282,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
               <Button
                 variant="outline"
                 className="bg-light-green border-primary-green text-primary-green py-5 rounded-md"
+                onClick={handlePrevious}
               >
                 <FaAngleLeft />
                 Previous

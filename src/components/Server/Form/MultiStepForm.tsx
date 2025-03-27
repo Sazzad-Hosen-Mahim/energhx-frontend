@@ -8,6 +8,10 @@ import { FaAngleLeft, FaAngleDoubleRight } from "react-icons/fa";
 import SungUp from "./SungUp";
 import WorkExperience from "./WorkExperience";
 import WorkExperienceTwo from "./WorkExperienceTwo";
+import VerifyAndSubmit from "./VerifyAndSubmit";
+import UpgradeFacilities from "./UpgradeFacilities";
+import UpgradeFacilitiesTwo from "./UpgradeFacilitiesTwo";
+import ThankYou from "./ThankYou";
 
 const MultiStepForm = () => {
   const [step, setStep] = useState(1);
@@ -43,6 +47,23 @@ const MultiStepForm = () => {
     uploadDocOne: "",
     uploadDocTwo: "",
     uploadDocThree: "",
+    verifyFirstName: "",
+    verifyLastName: "",
+    service: "",
+    utilityName: "",
+    accountNo: "",
+    upgradeFacilitiesHomeTel: "",
+    upgradeFacilitiesAltTel: "",
+    streetAddress: "",
+    suite: "",
+    upgradeFacilitiesCity: "",
+    upgradeFacilitiesPostalCode: "",
+    upgradeFacilitiesFirstName: "",
+    upgradeFacilitiesLastName: "",
+    upgradeFacilitiesHomeTelTwo: "",
+    upgradeFacilitiesAltTelTwo: "",
+    upgradeFacilitiesMailTwo: "",
+    upgradeFacilitiesCompanyName: "",
   });
 
   const nextStep = () => {
@@ -61,9 +82,7 @@ const MultiStepForm = () => {
 
   const handleSubmit = () => {
     console.log("Form Data Submitted:", formData);
-    // Here you can send the formData to the backend
   };
-  // console.log(formData, "formdata in multistepform");
 
   return (
     <CommonWrapper>
@@ -93,8 +112,34 @@ const MultiStepForm = () => {
             prevStep={prevStep}
           />
         )}
+        {step === 4 && (
+          <VerifyAndSubmit
+            formData={formData}
+            updateFormData={updateFormData}
+            nextStep={nextStep}
+            prevStep={prevStep}
+          />
+        )}
+        {step === 5 && (
+          <UpgradeFacilities
+            formData={formData}
+            updateFormData={updateFormData}
+            nextStep={nextStep}
+            prevStep={prevStep}
+          />
+        )}
+        {step === 6 && (
+          <UpgradeFacilitiesTwo
+            formData={formData}
+            updateFormData={updateFormData}
+            nextStep={nextStep}
+            prevStep={prevStep}
+            handleSubmitParent={handleSubmit}
+          />
+        )}
+        {step === 7 && <ThankYou />}
         <div className="flex items-center gap-5 mt-10">
-          {step < 3 ? (
+          {step < 6 ? (
             ""
           ) : (
             <Button
