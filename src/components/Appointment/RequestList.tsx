@@ -112,7 +112,9 @@ function RequestList({ onViewRequest }: RequestListProps) {
                 <div className="text-base">{request.location}</div>
               </div>
               
-              <button className="w-full bg-[#2DAD00] text-white py-2 rounded-sm hover:bg-[#259A00] transition-colors">
+              <button 
+                    onClick={() => onViewRequest(request.order)}
+              className="w-full bg-[#2DAD00] text-white py-2 rounded-sm cursor-pointer hover:bg-[#259A00] transition-colors">
                 View
               </button>
             </div>
