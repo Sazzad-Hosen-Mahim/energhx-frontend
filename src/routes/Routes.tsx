@@ -40,6 +40,7 @@ import RootStandardDeveloper from "@/pages/standard-developer/RootStandardDevelo
 import StandardDeveloperDasboard from "@/pages/standard-developer/StandardDeveloperDasboard";
 import StandardDeveloperSetting from "@/pages/standard-developer/StandardDeveloperSetting";
 import StandardDeveloperHistory from "@/pages/standard-developer/StandardDeveloperHistory";
+import CourseDetails from "@/pages/Course/course-details/CourseDetails";
 
 const routes = createBrowserRouter([
   {
@@ -127,6 +128,10 @@ const routes = createBrowserRouter([
       { path: "", element: <StandardDeveloperDasboard /> },
       { path: "dashboard", element: <StandardDeveloperDasboard /> },
       { path: "my-courses", element: <MyCourses /> },
+      {
+        path: "course/:id",
+        element: <CourseDetails />,
+      },
       { path: "all-courses", element: <AllCourses /> },
       { path: "history", element: <StandardDeveloperHistory /> },
       { path: "settings", element: <StandardDeveloperSetting /> },

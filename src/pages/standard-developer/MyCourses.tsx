@@ -2,7 +2,11 @@ import ProgressBar from "@/components/ui/ProgressBar";
 import { courseList } from "./standardDeveloperData";
 import StarRating from "@/components/ui/StarRating";
 import StatusBadge from "@/components/ui/StatusBadge";
-import { calculatePercentage } from "@/lib/utils";
+import { calculatePercentage, generateRandomId } from "@/lib/utils";
+import { FaLongArrowAltRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+
 const MyCourses = () => {
   return (
     <div>
@@ -32,7 +36,14 @@ const MyCourses = () => {
                   <StarRating rating={course.rating} />
                   <StatusBadge status={course.status} />
                 </div>
-                <p className="text-[18px] text-[#394A3F]">{course.title}</p>
+                <div className="flex justify-between items-center">
+                  <p className="text-[18px] text-[#394A3F]">{course.title}</p>
+                  <Link to={`/standard-developer/course/${course.id}`}>
+                    <div className="cursor-pointer px-4 py-2 text-sm font-normal border-[1px] rounded-full bg-[#E6F7FF] text-[#00ADFF] border-[#00ADFF] hover:bg-[#d3edf9]">
+                      <FaLongArrowAltRight />
+                    </div>
+                  </Link>
+                </div>
                 <p>
                   <span className="text-[#758179] text-[14px]">
                     Completed lesson:
