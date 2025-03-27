@@ -8,30 +8,28 @@ import { MdHistory, MdSettings, MdLogout } from "react-icons/md";
 import { BsBuilding } from "react-icons/bs";
 import { IoPeople } from "react-icons/io5";
 import CommonWrapper from "@/common/CommonWrapper";
+
 const consumerMenu = [
   { path: "/basic/dashboard", label: "Dashboard", icon: FaHome },
-  {
-    path: "/basic/buildingInformation",
-    label: "Building Information",
-    icon: BsBuilding,
-  },
-  {
-    path: "/basic/certifiedAssociates",
-    label: "Certified Associates",
-    icon: IoPeople,
-  },
-  { path: "/basic/history", label: "History", icon: MdHistory },
   { path: "/basic/settings", label: "Settings", icon: MdSettings },
   { path: "/logout", label: "Logout", icon: MdLogout },
 ];
+
 const BasicConsumer = () => {
+  // Function to handle upgrade button click
+  const handleUpgrade = () => {
+    alert("Upgrade process initiated!");
+    // You can also navigate to an upgrade page, show a modal, or make an API request
+  };
+
   return (
     <div>
       <Navbar />
       <CommonBanner
-        name="Md Ramjan Ali"
+        name="Sabbir Rahman"
         role="Consumer (Basic)"
         imageUrl={userImg}
+        onUpgrade={handleUpgrade} // Pass the function, not a string
       />
       <CommonWrapper>
         <div className="flex">

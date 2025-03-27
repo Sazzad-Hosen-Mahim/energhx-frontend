@@ -40,6 +40,7 @@ import RootStandardDeveloper from "@/pages/standard-developer/RootStandardDevelo
 import StandardDeveloperDasboard from "@/pages/standard-developer/StandardDeveloperDasboard";
 import StandardDeveloperSetting from "@/pages/standard-developer/StandardDeveloperSetting";
 import StandardDeveloperHistory from "@/pages/standard-developer/StandardDeveloperHistory";
+import OverviewDetails from "@/pages/standard-server-certificate/OverviewDetails";
 
 const routes = createBrowserRouter([
   {
@@ -102,10 +103,10 @@ const routes = createBrowserRouter([
     children: [
       { path: "", element: <BasicDashboard /> },
       { path: "dashboard", element: <BasicDashboard /> },
-      { path: "buildingInformation", element: <BasicBuildingInfo /> },
-      { path: "certifiedAssociates", element: <BasicCertifiedAssociates /> },
-      { path: "history", element: <BasicHistory /> },
-      { path: "history/:id", element: <BasicService /> },
+      // { path: "buildingInformation", element: <BasicBuildingInfo /> },
+      // { path: "certifiedAssociates", element: <BasicCertifiedAssociates /> },
+      // { path: "history", element: <BasicHistory /> },
+      // { path: "history/:id", element: <BasicService /> },
       { path: "settings", element: <BasicSettings /> },
       {
         path: "certifiedAssociates",
@@ -144,6 +145,7 @@ const routes = createBrowserRouter([
       { path: "history", element: <StandardServerHistory /> },
       { path: "subscrption", element: <StandardServerSubscription /> },
       { path: "settings", element: <StandardServerSetting /> },
+      {path: "overview/:id", element: <OverviewDetails/>}
     ],
   },
   {
