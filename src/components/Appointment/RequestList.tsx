@@ -47,7 +47,7 @@ function RequestList({ onViewRequest }: RequestListProps) {
 
   return (
     <div className="min-h-screen p-4 md:p-8">
-      <div className="max-w-7xl mx-auto">
+      <div className=" mx-auto">
         <h1 className="text-lg text-[#112518] mb-6 font-primary">Request List</h1>
         
         {/* Desktop View */}

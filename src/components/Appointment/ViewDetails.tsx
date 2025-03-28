@@ -4,10 +4,10 @@ import appointment from "../../assets/appointment.svg";
 
 function ViewDetails() {
   return (
-    <div className="min-h-screen p-4 md:p-6">
+    <div className="min-h-screen p-4 md:p-6 ">
       {/* Navigation and Actions */}
       <div className="bg-white">
-        <div className="max-w-6xl mx-auto py-4 md:py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className=" mx-auto py-4 md:py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center text-lg gap-2 text-[#112518]">
             <span>Overview</span>
             <MoveRight className="w-4 h-4" />
@@ -25,7 +25,12 @@ function ViewDetails() {
         <img src={AppointmentImg} alt="" className='w-full h-48 md:h-64 object-cover rounded-lg' />
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 md:px-6 py-6 md:py-8">
+      <div className="
+      
+      
+      
+      
+      mx-auto px-4 md:px-6 py-6 md:py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {/* Left Column */}
           <div>
