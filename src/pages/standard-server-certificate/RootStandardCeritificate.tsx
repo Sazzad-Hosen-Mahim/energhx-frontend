@@ -5,8 +5,6 @@ import Sidebar from "@/components/consumer/standard/Sidebar";
 import { Outlet } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import { MdHistory, MdSettings, MdLogout } from "react-icons/md";
-import { BsBuilding } from "react-icons/bs";
-import { IoPeople } from "react-icons/io5";
 import { FaGraduationCap } from "react-icons/fa6";
 import { FaPhotoVideo } from "react-icons/fa";
 

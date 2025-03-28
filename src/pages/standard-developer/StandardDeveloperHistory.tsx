@@ -1,12 +1,10 @@
-import React from "react";
-import image_1 from '../../assets/history/Rectangle 1.png';
-import image_2 from '../../assets/history/Rectangle 2.png';
-import image_3 from '../../assets/history/Rectangle 3.png';
-import image_4 from '../../assets/history/Rectangle 4.png';
-import image_5 from '../../assets/history/Rectangle 5.png';
+import image_1 from "../../assets/history/Rectangle 1.png";
+import image_2 from "../../assets/history/Rectangle 2.png";
+import image_3 from "../../assets/history/Rectangle 3.png";
+import image_4 from "../../assets/history/Rectangle 4.png";
+import image_5 from "../../assets/history/Rectangle 5.png";
 
-
-const historyData = [ 
+const historyData = [
   {
     id: 1,
     title: "Purchases: Energhx Fan Fixing Course",
@@ -14,7 +12,7 @@ const historyData = [
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...",
     time: "12:45 PM",
     date: "20 February 2024",
-    icon: image_1
+    icon: image_1,
   },
   {
     id: 2,
@@ -23,7 +21,7 @@ const historyData = [
       "It is a long established fact that a reader will be distracted...",
     time: "12:45 PM",
     date: "20 February 2024",
-    icon: image_2
+    icon: image_2,
   },
   {
     id: 3,
@@ -32,7 +30,7 @@ const historyData = [
       "Many desktop publishing packages and web page editors now use Lorem Ipsum...",
     time: "12:45 PM",
     date: "20 February 2024",
-    icon: image_3
+    icon: image_3,
   },
   {
     id: 4,
@@ -41,7 +39,7 @@ const historyData = [
       "Various versions have evolved over the years, sometimes by accident...",
     time: "12:45 PM",
     date: "20 February 2024",
-    icon: image_4
+    icon: image_4,
   },
   {
     id: 5,
@@ -50,7 +48,7 @@ const historyData = [
       "Lorem Ipsum is therefore always free from repetition, injected humour...",
     time: "12:45 PM",
     date: "20 February 2024",
-    icon: image_5
+    icon: image_5,
   },
 ];
 
@@ -66,7 +64,9 @@ const StandardDeveloperHistory = () => {
           >
             <img src={item.icon} alt={item.title} className="w-12 h-12" />
             <div className="flex-1">
-              <h3 className=" font-normal text-[#394A3F] text-[18px]">{item.title}</h3>
+              <h3 className=" font-normal text-[#394A3F] text-[18px]">
+                {item.title}
+              </h3>
               <p className="text-[#758179] text-[14px]">{item.description}</p>
             </div>
             <div className="text-right text-[#758179] text-[14px]">
@@ -81,4 +81,3 @@ const StandardDeveloperHistory = () => {
 };
 
 export default StandardDeveloperHistory;
-
