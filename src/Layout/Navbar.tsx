@@ -11,7 +11,7 @@ export interface User {
 
 const Navbar = () => {
   const [user] = useState<User>({
-    name: "Rahman Abdul Quadir",
+    name: "",
     role: "Consumer (Standard)",
     profileImg: "/user.png",
   });
