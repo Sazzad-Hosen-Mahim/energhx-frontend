@@ -1,6 +1,6 @@
 import RequestList from '@/components/Appointment/RequestList';
 import ViewDetails from '@/components/Appointment/ViewDetails';
-import React, { useState } from 'react';
+import  { useState } from 'react';
 
 
 function AppointmentRequest() {
