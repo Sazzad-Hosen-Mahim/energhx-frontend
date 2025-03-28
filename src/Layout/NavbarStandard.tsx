@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { User } from "./Navbar"; // Import the same User interface
+import { User } from "./Navbar";
+import Logo from "@/assets/logo.svg"; // Adjust the path to your logo
 
 interface NavbarStandardProps {
   user: User;
@@ -12,12 +13,15 @@ const NavbarStandard = ({ user }: NavbarStandardProps) => {
 
   return (
     <>
-      <nav className="bg-green-500 p-4 flex justify-between items-center">
+      <nav className="bg-white p-4 flex justify-between items-center mx-16  ">
         <div className="logo">
-          <img src="/path/to/logo.png" alt="Logo" className="h-8" />
+          <img src={Logo} alt="Logo" className="h-8" />
         </div>
 
-        <button onClick={toggleMenu} className="md:hidden text-white text-2xl">
+        <button
+          onClick={toggleMenu}
+          className="md:hidden text-primary-gray text-2xl"
+        >
           {isOpen ? "✖️" : "☰"}
         </button>
 
@@ -26,13 +30,24 @@ const NavbarStandard = ({ user }: NavbarStandardProps) => {
             isOpen ? "block" : "hidden"
           } md:flex`}
         >
-          {["Home", "About", "Services"].map((label) => (
+          {[
+            "Home",
+            "About Us",
+            "Internship",
+            "Incentives",
+            "Partners",
+            "Services",
+            "EnerghxPlus",
+            "Contact Us",
+          ].map((label) => (
             <li key={label} className="md:ml-4 my-2 md:my-0">
               <NavLink
                 to={`/${label.toLowerCase()}`}
                 className={({ isActive }) =>
                   `px-4 py-2 block md:inline ${
-                    isActive ? "text-yellow-400 font-bold" : "text-white"
+                    isActive
+                      ? "text-primary-green font-bold"
+                      : "text-primary-gray/80"
                   }`
                 }
               >

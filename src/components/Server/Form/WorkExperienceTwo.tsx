@@ -5,6 +5,7 @@ import {
   workExperienceTwoType,
 } from "@/pages/Server/ValidationSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { CiSquarePlus } from "react-icons/ci";
 import { FaAngleDoubleRight, FaAngleLeft } from "react-icons/fa";
@@ -33,6 +34,9 @@ const WorkExperienceTwo: React.FC<WorkExperienceTwoProps> = ({
     resolver: zodResolver(workExperienceTwoSchema),
     defaultValues: { ...formData },
   });
+
+  const [recommendationLetter, setRecommendationLetter] =
+    useState<String | null>(null);
 
   const onSubmit = (data: workExperienceTwoType) => {
     console.log(data, "data in work experience two");
@@ -309,8 +313,16 @@ const WorkExperienceTwo: React.FC<WorkExperienceTwoProps> = ({
                 htmlFor="recommendationLetter"
                 className="flex items-center justify-center gap-2 w-[236px] p-2 bg-light-green text-primary-green border border-primary-green rounded cursor-pointer hover:bg-gray-100"
               >
-                <MdOutlineFileUpload className="text-primary-green text-2xl" />
-                <span>Upload Documents</span>
+                {recommendationLetter ? (
+                  <span className="text-primary-green">
+                    {recommendationLetter}
+                  </span>
+                ) : (
+                  <div className="flex items-center gap-2">
+                    <MdOutlineFileUpload className="text-primary-green text-2xl" />
+                    <span>Upload Documents</span>
+                  </div>
+                )}
               </label>
 
               <input
@@ -322,6 +334,7 @@ const WorkExperienceTwo: React.FC<WorkExperienceTwoProps> = ({
                   if (file) {
                     if (validateFileType(file, ["application/pdf"])) {
                       setValue("recommendationLetter", file);
+                      setRecommendationLetter(file.name);
                     } else {
                       toast.error("Only PDF files are allowed for Document 1");
                     }
