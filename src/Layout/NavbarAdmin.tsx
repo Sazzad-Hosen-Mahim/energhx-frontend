@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import userImg from "/user.png";
-import { User } from "./Navbar"; // Importing the same User interface
+import { User } from "./Navbar";
+import Logo from "@/assets/logo.svg";
 
 interface NavbarAdminProps {
-  user: User; // Define props interface
+  user: User;
 }
 
 const NavbarAdmin = ({ user }: NavbarAdminProps) => {
@@ -14,11 +15,7 @@ const NavbarAdmin = ({ user }: NavbarAdminProps) => {
     <nav className="bg-white border-b p-4 flex justify-center items-center">
       <div className="w-[1440px] flex justify-between">
         <Link to="/">
-          <img
-            src="https://path-to-your-logo.png"
-            alt="Logo"
-            className="h-8 w-[120px]"
-          />
+          <img src={Logo} alt="Logo" className="h-8 w-[120px]" />
         </Link>
 
         <div className="flex items-center space-x-7">

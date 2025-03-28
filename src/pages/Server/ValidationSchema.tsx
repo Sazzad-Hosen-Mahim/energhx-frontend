@@ -130,7 +130,8 @@ export const upgradeFacilitesSchemaTwo = z.object({
   upgradeFacilitiesMailTwo: z.string().email("Invalid email address"),
   upgradeFacilitiesCompanyName: z
     .string()
-    .min(2, "Company name must be at least 2 characters"),
+    .min(2, "Company name must be at least 2 characters")
+    .optional(),
 });
 
 export type upgradeFacilitiesTwoType = z.infer<

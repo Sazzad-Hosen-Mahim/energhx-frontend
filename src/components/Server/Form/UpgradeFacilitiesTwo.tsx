@@ -7,6 +7,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { FaAngleDoubleRight, FaAngleLeft } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 interface upgradeFacilitiesProps {
   formData: any;
@@ -38,13 +39,9 @@ const UpgradeFacilitiesTwo: React.FC<upgradeFacilitiesProps> = ({
     });
 
     console.log("Form Data in UpgradeFacilitiesTwo (Before Timeout):", data);
-
-    // Delay to ensure state is updated before logging and submission
-    setTimeout(() => {
-      console.log("Form Data in Parent (After Timeout):", formData); // Check if updated
-      handleSubmitParent(); // Submit or log data after ensuring state is updated
-      nextStep(); // Then move to the next step
-    }, 200);
+    handleSubmitParent();
+    nextStep();
+    toast.success("Form submitted successfully!");
   };
 
   const handlePrevious = () => {

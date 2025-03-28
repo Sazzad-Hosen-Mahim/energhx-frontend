@@ -1,10 +1,6 @@
 import { useState } from "react";
 import CommonWrapper from "@/common/CommonWrapper";
-
-// import StepTwo from "./StepTwo";
-// import StepThree from "./StepThree";
 import { Button } from "@/components/ui/button";
-import { FaAngleLeft, FaAngleDoubleRight } from "react-icons/fa";
 import SungUp from "./SungUp";
 import WorkExperience from "./WorkExperience";
 import WorkExperienceTwo from "./WorkExperienceTwo";
@@ -87,7 +83,7 @@ const MultiStepForm = ({ handleMultiform }) => {
   return (
     <CommonWrapper>
       <div className="mt-20">
-        <h1 className="text-primary-green font-bold text-xl">Sign Up</h1>
+        {/* <h1 className="text-primary-green font-bold text-xl">Sign Up</h1> */}
 
         {step === 1 && (
           <SungUp
@@ -139,15 +135,15 @@ const MultiStepForm = ({ handleMultiform }) => {
           />
         )}
         {step === 7 && <ThankYou />}
-        <div className="flex items-center gap-5 mt-10">
-          {step < 6 ? (
+        <div className="flex items-center justify-center gap-5 mt-10">
+          {step < 7 ? (
             ""
           ) : (
             <Button
-              className="bg-primary-green text-white"
+              className="bg-primary-green text-white w-[144px] h-[48px] font-extralight"
               onClick={handleSubmit}
             >
-              Submit
+              Save Profile
             </Button>
           )}
         </div>

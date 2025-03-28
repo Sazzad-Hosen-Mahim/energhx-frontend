@@ -17,6 +17,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useState } from "react";
 
 interface WorkExperienceProps {
   formData: any;
@@ -42,6 +43,16 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
     defaultValues: { ...formData },
   });
 
+  const [uploadDocOnePreview, setUploadDocOnePreview] = useState<string | null>(
+    null
+  );
+  const [uploadDocTwoPreview, setUploadDocTwoPreview] = useState<string | null>(
+    null
+  );
+  const [passportPhotoPreview, setPassportPhotoPreview] = useState<
+    string | null
+  >(null);
+
   const onSubmit = (data: workExperienceType) => {
     Object.entries(data).forEach(([field, value]) => {
       updateFormData(field, value);
@@ -61,7 +72,9 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
     <div>
       <CommonWrapper>
         <div className="mt-20">
-          <h1 className="text-primary-green font-bold text-xl">Sung Up</h1>
+          <h1 className="text-primary-green font-bold text-xl">
+            Work Experience
+          </h1>
           <p className="my-6 text-primary-gray text-md font-semibold">
             Personal Information
           </p>
@@ -86,13 +99,21 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
                   </p>
                 )}
               </div>
-              <div className="">
+              <div className="flex flex-col gap-5">
                 <label
                   htmlFor="uploadDocOne"
                   className="flex items-center justify-center gap-2 w-[236px] p-2 bg-light-green text-primary-green border border-primary-green rounded cursor-pointer hover:bg-gray-100"
                 >
-                  <MdOutlineFileUpload className="text-primary-green text-2xl" />
-                  <span>Upload Documents</span>
+                  {uploadDocOnePreview ? (
+                    <p className="text-green-500 mt-2">
+                      📄 {uploadDocOnePreview}
+                    </p>
+                  ) : (
+                    <div className="flex items-center gap-2">
+                      <MdOutlineFileUpload className="text-primary-green text-2xl" />
+                      <span>Upload Documents</span>
+                    </div>
+                  )}
                 </label>
 
                 <input
@@ -104,6 +125,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
                     if (file) {
                       if (validateFileType(file, ["application/pdf"])) {
                         setValue("uploadDocOne", file);
+                        setUploadDocOnePreview(file.name);
                       } else {
                         toast.error(
                           "Only PDF files are allowed for Document 1"
@@ -150,8 +172,16 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
                   htmlFor="uploadDocTwo"
                   className="flex items-center justify-center gap-2 w-[236px] p-2 bg-light-green text-primary-green border border-primary-green rounded cursor-pointer hover:bg-gray-100"
                 >
-                  <MdOutlineFileUpload className="text-primary-green text-2xl" />
-                  <span>Upload Documents</span>
+                  {uploadDocTwoPreview ? (
+                    <p className="text-green-500 mt-2">
+                      📄 {uploadDocTwoPreview}
+                    </p>
+                  ) : (
+                    <div className="flex items-center gap-2">
+                      <MdOutlineFileUpload className="text-primary-green text-2xl" />
+                      <span>Upload Documents</span>
+                    </div>
+                  )}
                 </label>
 
                 <input
@@ -163,6 +193,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
                     if (file) {
                       if (validateFileType(file, ["application/pdf"])) {
                         setValue("uploadDocTwo", file);
+                        setUploadDocTwoPreview(file.name);
                       } else {
                         toast.error(
                           "Only PDF files are allowed for Document 2"
@@ -186,97 +217,118 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
             </div>
 
             {/* Second Part */}
-            <label
-              htmlFor="workEngagementTwo"
-              className="text-primary-gray text-md"
-            >
-              Passport Photograph
-            </label>
+            <div className="flex flex-col gap-2">
+              <div>
+                <label
+                  htmlFor="workEngagementTwo"
+                  className="text-primary-gray text-md"
+                >
+                  Passport Photograph
+                </label>
+              </div>
+              <div className="flex flex-col gap-5">
+                <label
+                  htmlFor="passportPhotograph"
+                  className="flex items-center justify-center gap-2 w-[236px] p-2 bg-light-green text-primary-green border border-primary-green rounded cursor-pointer hover:bg-gray-100"
+                >
+                  {passportPhotoPreview ? (
+                    <div className="mt-2">
+                      <img
+                        src={passportPhotoPreview}
+                        alt="Passport Preview"
+                        className="w-24 h-24 object-cover rounded-md border border-primary-green"
+                      />
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-2">
+                      <MdOutlineFileUpload className="text-primary-green text-2xl" />
+                      <span>Upload Documents</span>
+                    </div>
+                  )}
+                </label>
 
-            <div className="">
-              <label
-                htmlFor="passportPhotograph"
-                className="flex items-center justify-center gap-2 w-[236px] p-2 bg-light-green text-primary-green border border-primary-green rounded cursor-pointer hover:bg-gray-100"
-              >
-                <MdOutlineFileUpload className="text-primary-green text-2xl" />
-                <span>Upload Documents</span>
-              </label>
-
-              <input
-                type="file"
-                id="passportPhotograph"
-                {...register("passportPhotograph")}
-                onChange={(e) => {
-                  const file = e.target.files?.[0];
-                  if (file) {
-                    if (
-                      validateFileType(file, [
-                        "image/png",
-                        "image/jpeg",
-                        "image/jpg",
-                      ])
-                    ) {
-                      setValue("passportPhotograph", file);
-                    } else {
-                      toast.error(
-                        "Only image files (PNG/JPG) are allowed for Passport Photograph"
-                      );
+                <input
+                  type="file"
+                  id="passportPhotograph"
+                  {...register("passportPhotograph")}
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (file) {
+                      if (
+                        validateFileType(file, [
+                          "image/png",
+                          "image/jpeg",
+                          "image/jpg",
+                        ])
+                      ) {
+                        setValue("passportPhotograph", file);
+                        const imageURL = URL.createObjectURL(file);
+                        setPassportPhotoPreview(imageURL);
+                      } else {
+                        toast.error(
+                          "Only image files (PNG/JPG) are allowed for Passport Photograph"
+                        );
+                      }
                     }
-                  }
-                }}
-                className="hidden"
-              />
+                  }}
+                  className="hidden"
+                />
 
-              {errors.passportPhotograph && (
-                <p className="text-red-500">
-                  {errors.passportPhotograph.message}
-                </p>
-              )}
+                {errors.passportPhotograph && (
+                  <p className="text-red-500">
+                    {errors.passportPhotograph.message}
+                  </p>
+                )}
+              </div>
             </div>
 
-            <div className="col-span-2 w-full mt-5 mb-[50px]">
-              <label
-                htmlFor="workEngagementTwo"
-                className="text-primary-gray text-md"
-              >
-                Province (s)/Country of Residence
-              </label>
-              <Controller
-                name="countryOfResidence"
-                control={control}
-                render={({ field }) => (
-                  <Select {...field} onValueChange={field.onChange}>
-                    <SelectTrigger className="w-[486px] rounded-none border-primary-gray">
-                      <SelectValue placeholder="Select Country" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-light-green">
-                      <SelectItem
-                        value="light"
-                        className="hover:bg-primary-green hover:text-white"
-                      >
-                        Canada
-                      </SelectItem>
-                      <SelectItem
-                        value="dark"
-                        className="hover:bg-primary-green hover:text-white"
-                      >
-                        USA
-                      </SelectItem>
-                      <SelectItem
-                        value="system"
-                        className="hover:bg-primary-green hover:text-white"
-                      >
-                        Mexico
-                      </SelectItem>
-                    </SelectContent>
-                  </Select>
+            <div className="col-span-2 w-full mt-5 mb-[50px] flex flex-col gap-2">
+              <div>
+                <label
+                  htmlFor="workEngagementTwo"
+                  className="text-primary-gray text-md"
+                >
+                  Province (s)/Country of Residence
+                </label>
+              </div>
+              <div>
+                <Controller
+                  name="countryOfResidence"
+                  control={control}
+                  render={({ field }) => (
+                    <Select {...field} onValueChange={field.onChange}>
+                      <SelectTrigger className="w-[486px] rounded-none border-primary-gray">
+                        <SelectValue placeholder="Select Country" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-light-green">
+                        <SelectItem
+                          value="light"
+                          className="hover:bg-primary-green hover:text-white"
+                        >
+                          Canada
+                        </SelectItem>
+                        <SelectItem
+                          value="dark"
+                          className="hover:bg-primary-green hover:text-white"
+                        >
+                          USA
+                        </SelectItem>
+                        <SelectItem
+                          value="system"
+                          className="hover:bg-primary-green hover:text-white"
+                        >
+                          Mexico
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
+                  )}
+                />
+                {errors.countryOfResidence && (
+                  <p className="text-red-500">
+                    {errors.countryOfResidence.message}
+                  </p>
                 )}
-              />
-              {errors.countryOfResidence && (
-                <p className="text-red-500">
-                  {errors.countryOfResidence.message}
-                </p>
-              )}
+              </div>
             </div>
             <div className="flex items-center gap-5 mb-[200px]">
               <Button

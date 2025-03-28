@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { FaAngleDoubleRight, FaAngleLeft } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 interface upgradeFacilitiesProps {
   formData: any;
@@ -45,6 +46,7 @@ const UpgradeFacilities: React.FC<upgradeFacilitiesProps> = ({
     });
     nextStep();
     console.log(data, "data in upgrade facilities");
+    toast.success("Form submitted successfully!");
   };
 
   const handlePrevious = () => {

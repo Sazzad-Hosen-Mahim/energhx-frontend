@@ -7,8 +7,10 @@ interface ModalProps {
   onSubmit: () => void;
 }
 
+
 const Modal: React.FC<ModalProps> = ({ closeModal, onSubmit }) => {
   const navigate = useNavigate(); // Initialize useNavigate
+
 
   // State to track checkbox status
   const [isCheckbox1Checked, setIsCheckbox1Checked] = useState(false);

@@ -11,8 +11,7 @@ import Dashboard from "@/pages/consumer/Dashboard";
 import BuildingInfo from "@/components/consumer/standard/BuildingInfo";
 import Settings from "@/components/consumer/standard/Settings";
 import RootServer from "@/pages/Server/RootServer";
-import ServerInternDashboard from "@/pages/Server/ServerInternDashboard";
-import Setting from "@/components/Server/Basic/Setting";
+import BasicServerInternDashboard from "@/pages/Server/BasicServerInternDashboard";
 import ServerForm from "@/pages/Server/ServerForm";
 import CertifiedAssociates from "@/pages/consumer/CertifiedAssociates";
 import History from "@/pages/consumer/History";
@@ -22,6 +21,9 @@ import BasicDashboard from "@/pages/BasicConsumer/BasicDashboard";
 import BasicSettings from "@/pages/BasicConsumer/BasicSettings";
 import AssociateProfile from "@/components/consumer/standard/certifiedAssociates/AssociateProfile";
 import CertifiedAssociateLayout from "@/Layout/CertifiedAssociateLayout";
+
+import ServerSettings from "@/pages/Server/ServerSettings";
+
 import MyCourses from "@/pages/standard-developer/MyCourses";
 import AllCourses from "@/pages/standard-developer/AllCourses";
 import RootStandardServerCertificate from "@/pages/standard-server-certificate/RootStandardCeritificate";
@@ -40,6 +42,7 @@ import OverviewDetails from "@/pages/standard-server-certificate/OverviewDetails
 import MyCourseDetails from "@/components/MyCourse/course-details/MyCourseDetails";
 import CourseDetails from "@/pages/standard-developer/CourseDetails";
 import RootMyCourse from "@/pages/standard-developer/RootMyCourse";
+
 
 const routes = createBrowserRouter([
   {
@@ -84,11 +87,11 @@ const routes = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <ServerInternDashboard />,
+        element: <BasicServerInternDashboard />,
       },
       {
-        path: "setting",
-        element: <Setting />,
+        path: "settings",
+        element: <ServerSettings />,
       },
       {
         path: "form",

@@ -1,4 +1,4 @@
-// Navbar.tsx (Main Navbar)
+// Navbar.tsx
 import { useState } from "react";
 import NavbarAdmin from "./NavbarAdmin";
 import NavbarStandard from "./NavbarStandard";
@@ -12,7 +12,7 @@ export interface User {
 const Navbar = () => {
   const [user] = useState<User>({
     name: "Rahman Abdul Quadir",
-    role: "Consumer (Standard)", // Change to "Admin" for Admin view
+    role: "Consumer (Standard)",
     profileImg: "/user.png",
   });
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import BookingModal from "./BookingModal";
 
 const Billing = () => {
@@ -16,8 +16,10 @@ const Billing = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   // Handle input change
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   // Handle save and show modal
@@ -32,48 +34,104 @@ const Billing = () => {
       <div className="space-y-6">
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-lg font-medium text-[#758179]">First Name:</label>
-            <input type="text" name="firstName" className="w-full px-3 py-2 border border-gray-300 rounded-md"
-              placeholder="Consumer" onChange={handleChange} />
+            <label className="block text-lg font-medium text-[#758179]">
+              First Name:
+            </label>
+            <input
+              type="text"
+              name="firstName"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md"
+              placeholder="Consumer"
+              onChange={handleChange}
+            />
           </div>
           <div>
-            <label className="block text-lg font-medium text-[#758179]">Last Name:</label>
-            <input type="text" name="lastName" className="w-full px-3 py-2 border border-gray-300 rounded-md"
-              placeholder="Demo" onChange={handleChange} />
+            <label className="block text-lg font-medium text-[#758179]">
+              Last Name:
+            </label>
+            <input
+              type="text"
+              name="lastName"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md"
+              placeholder="Demo"
+              onChange={handleChange}
+            />
           </div>
         </div>
         <div>
-          <label className="block text-lg font-medium text-[#758179]">Email Address:</label>
-          <input type="email" name="email" className="w-full px-3 py-2 border border-gray-300 rounded-md"
-            placeholder="yourmail@mail.com" onChange={handleChange} />
+          <label className="block text-lg font-medium text-[#758179]">
+            Email Address:
+          </label>
+          <input
+            type="email"
+            name="email"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md"
+            placeholder="yourmail@mail.com"
+            onChange={handleChange}
+          />
         </div>
         <div>
-          <label className="block text-lg font-medium text-[#758179]">Country:</label>
-          <input type="text" name="country" className="w-full px-3 py-2 border border-gray-300 rounded-md"
-            placeholder="Your Country" onChange={handleChange} />
+          <label className="block text-lg font-medium text-[#758179]">
+            Country:
+          </label>
+          <input
+            type="text"
+            name="country"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md"
+            placeholder="Your Country"
+            onChange={handleChange}
+          />
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-lg font-medium text-[#758179]">State:</label>
-            <input type="text" name="state" className="w-full px-3 py-2 border border-gray-300 rounded-md"
-              placeholder="State Name" onChange={handleChange} />
+            <label className="block text-lg font-medium text-[#758179]">
+              State:
+            </label>
+            <input
+              type="text"
+              name="state"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md"
+              placeholder="State Name"
+              onChange={handleChange}
+            />
           </div>
           <div>
-            <label className="block text-lg font-medium text-[#758179]">City:</label>
-            <input type="text" name="city" className="w-full px-3 py-2 border border-gray-300 rounded-md"
-              placeholder="City Name" onChange={handleChange} />
+            <label className="block text-lg font-medium text-[#758179]">
+              City:
+            </label>
+            <input
+              type="text"
+              name="city"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md"
+              placeholder="City Name"
+              onChange={handleChange}
+            />
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-lg font-medium text-[#758179]">Postcode:</label>
-            <input type="text" name="postcode" className="w-full px-3 py-2 border border-gray-300 rounded-md"
-              placeholder="123" onChange={handleChange} />
+            <label className="block text-lg font-medium text-[#758179]">
+              Postcode:
+            </label>
+            <input
+              type="text"
+              name="postcode"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md"
+              placeholder="123"
+              onChange={handleChange}
+            />
           </div>
           <div>
-            <label className="block text-lg font-medium text-[#758179]">Phone:</label>
-            <input type="text" name="phone" className="w-full px-3 py-2 border border-gray-300 rounded-md"
-              placeholder="000 000 000 00" onChange={handleChange} />
+            <label className="block text-lg font-medium text-[#758179]">
+              Phone:
+            </label>
+            <input
+              type="text"
+              name="phone"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md"
+              placeholder="000 000 000 00"
+              onChange={handleChange}
+            />
           </div>
         </div>
       </div>

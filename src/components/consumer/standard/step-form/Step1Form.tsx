@@ -5,14 +5,15 @@ import { GrNext } from "react-icons/gr";
 
 interface Step1FormProps {
   formData: any;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+  handleChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => void;
   handleCheckboxChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   isStepOneValid: () => boolean;
   setStep: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const Step1Form: React.FC<Step1FormProps> = ({
-  formData,
   handleChange,
   handleCheckboxChange,
   isStepOneValid,
@@ -98,15 +99,15 @@ const Step1Form: React.FC<Step1FormProps> = ({
         </div>
       </div>
       <div>
-          <label className="block text-[#758179]">Number of Occupant*</label>
-          <input
-            type="text"
-            name="occupant"
-            className=" p-2 border rounded text-[#758179]"
-            onChange={handleChange}
-            placeholder="Type Occupant"
-          />
-        </div>
+        <label className="block text-[#758179]">Number of Occupant*</label>
+        <input
+          type="text"
+          name="occupant"
+          className=" p-2 border rounded text-[#758179]"
+          onChange={handleChange}
+          placeholder="Type Occupant"
+        />
+      </div>
 
       {/* Commodity Checkboxes */}
       <div>
@@ -137,14 +138,29 @@ const Step1Form: React.FC<Step1FormProps> = ({
           className="bg-[#EAF7E6] text-[#2DAD00] px-4 py-2 rounded"
           disabled
         >
-        <div className="flex items-center gap-1"> <span className=""><GrPrevious /></span>Previous</div>
+          <div className="flex items-center gap-1">
+            {" "}
+            <span className="">
+              <GrPrevious />
+            </span>
+            Previous
+          </div>
         </button>
         <button
           className="bg-[#2DAD00] text-white px-4 py-2 rounded"
           disabled={!isStepOneValid()}
           onClick={() => setStep(2)}
         >
-        <div className="flex items-center gap-1"> continue <span className=""><GrNext /></span><span className="ml-[-14px]"><GrNext /></span></div>
+          <div className="flex items-center gap-1">
+            {" "}
+            continue{" "}
+            <span className="">
+              <GrNext />
+            </span>
+            <span className="ml-[-14px]">
+              <GrNext />
+            </span>
+          </div>
         </button>
       </div>
     </div>
