@@ -19,10 +19,6 @@ import History from "@/pages/consumer/History";
 import Service from "@/common/Service";
 import BasicConsumner from "@/pages/BasicConsumer/BasicConsumer";
 import BasicDashboard from "@/pages/BasicConsumer/BasicDashboard";
-import BasicBuildingInfo from "@/pages/BasicConsumer/BasicBuildingInfo";
-import BasicCertifiedAssociates from "@/pages/BasicConsumer/BasicCertifiedAssociates";
-import BasicHistory from "@/pages/BasicConsumer/BasicHistory";
-import BasicService from "@/pages/BasicConsumer/BasicService";
 import BasicSettings from "@/pages/BasicConsumer/BasicSettings";
 import AssociateProfile from "@/components/consumer/standard/certifiedAssociates/AssociateProfile";
 import CertifiedAssociateLayout from "@/Layout/CertifiedAssociateLayout";
@@ -106,10 +102,6 @@ const routes = createBrowserRouter([
     children: [
       { path: "", element: <BasicDashboard /> },
       { path: "dashboard", element: <BasicDashboard /> },
-      // { path: "buildingInformation", element: <BasicBuildingInfo /> },
-      // { path: "certifiedAssociates", element: <BasicCertifiedAssociates /> },
-      // { path: "history", element: <BasicHistory /> },
-      // { path: "history/:id", element: <BasicService /> },
       { path: "settings", element: <BasicSettings /> },
       {
         path: "certifiedAssociates",

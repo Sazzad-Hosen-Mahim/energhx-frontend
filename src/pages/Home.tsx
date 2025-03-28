@@ -11,6 +11,7 @@ import Commodity from "./BasicConsumer/form/Commodity";
 import HydroForm from "./BasicConsumer/form/HydroForm";
 import EnbridgeForm from "./BasicConsumer/form/EnbridgeForm";
 import Overview from "./BasicConsumer/form/Overview";
+import ThanksForm from "./BasicConsumer/form/ThanksForm";
 const Home = () => {
   const [step, setStep] = useState(1);
 
@@ -124,6 +125,7 @@ const Home = () => {
       {step === 5 && <EnbridgeForm nextStep={nextStep} />}
       {step === 6 && <HydroForm nextStep={nextStep} />}
       {step === 7 && <Overview nextStep={nextStep} />}
+      {step === 8 && <ThanksForm nextStep={nextStep} />}
     </CommonWrapper>
   );
 };

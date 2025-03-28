@@ -67,7 +67,7 @@ const BuildingInfo = () => {
 
   //edit wall information
   const [editMode, setEditMode] = useState(false);
-  const [editedWall, setEditWall] = useState(null);
+  const [editedWall, setEditedWall] = useState(null);
   const [tempLength, setTempLength] = useState("");
   const [tempWidth, setTempWidth] = useState("");
   const [tempType, setTempType] = useState("");
@@ -302,7 +302,9 @@ const BuildingInfo = () => {
 
           {/* Roof Information */}
           <div className="mt-6 w-[80%]">
-            <h3 className="text-lg font-semibold mb-3 mt-10">Roof Information</h3>
+            <h3 className="text-lg font-semibold mb-3 mt-10">
+              Roof Information
+            </h3>
             <div className="grid grid-cols-3 gap-4">
               <input
                 type="text"
