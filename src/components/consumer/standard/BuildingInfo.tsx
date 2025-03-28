@@ -81,7 +81,9 @@ const BuildingInfo = () => {
 
   //edit wall information
   const [editMode, setEditMode] = useState(false);
+
   const [editedWall, setEditWall] = useState<Wall | null>(null);
+
   const [tempLength, setTempLength] = useState("");
   const [tempWidth, setTempWidth] = useState("");
   const [tempType, setTempType] = useState("");

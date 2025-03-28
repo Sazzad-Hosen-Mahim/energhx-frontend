@@ -26,7 +26,7 @@ const Booking = () => {
     <div className="w-full ">
       <h2 className="pb-4 text-xl font-semibold">Booking History</h2>
 
-      <div className=" border border-[#E7E9E8] w-screen ">
+      <div className=" border border-[#E7E9E8] ">
         <div className=" bg-[#EAF7E6] grid grid-cols-7 px-4 gap-2 text-accent ">
           {head.map((item, i) => (
             <h2 className="py-4 nth-[2]:col-span-2" key={i}>

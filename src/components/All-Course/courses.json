@@ -1,0 +1,72 @@
+[
+    {
+      "id": 1,
+      "title": "Energhx Fan Fixing Course",
+      "description": "Upon successful completion of the course, you will be awarded this certificate.",
+      "totalModules": "08",
+      "totalClass": 24,
+      "assignment": 14,
+      "rating": 4.0,
+      "reviews": 22,
+      "image": "/src/assets/courses/fan.png"
+    },
+    {
+      "id": 2,
+      "title": "Energhx Fan Fixing Course",
+      "description": "Upon successful completion of the course, you will be awarded this certificate.",
+      "totalModules": "05",
+      "totalClass": 24,
+      "assignment": 14,
+      "rating": 4.0,
+      "reviews": 22,
+      "image": "/src/assets/courses/fan1.png"
+    },
+    {
+      "id": 3,
+      "title": "Energhx Fan Fixing Course",
+      "description": "Upon successful completion of the course, you will be awarded this certificate.",
+      "totalModules": "06",
+      "totalClass": 24,
+      "assignment": 14,
+      "rating": 4.0,
+      "reviews": 22,
+      "image": "/src/assets/courses/fan2.png"
+    },
+
+    {
+        "id": 4,
+        "title": "Energhx Fan Fixing Course",
+        "description": "Upon successful completion of the course, you will be awarded this certificate.",
+        "totalModules": "06",
+        "totalClass": 24,
+        "assignment": 14,
+        "rating": 4.0,
+        "reviews": 22,
+        "image": "/src/assets/courses/fan3.png"
+      },
+      {
+        "id": 3,
+        "title": "Energhx Fan Fixing Course",
+        "description": "Upon successful completion of the course, you will be awarded this certificate.",
+        "totalModules": "06",
+        "totalClass": 24,
+        "assignment": 14,
+        "rating": 4.0,
+        "reviews": 22,
+        "image": "/src/assets/courses/fan4.png"
+      },
+      {
+        "id": 3,
+        "title": "Energhx Fan Fixing Course",
+        "description": "Upon successful completion of the course, you will be awarded this certificate.",
+        "totalModules": "06",
+        "totalClass": 24,
+        "assignment": 14,
+        "rating": 4.0,
+        "reviews": 22,
+        "image": "/src/assets/courses/fan5.png"
+      }
+
+
+  ]
+  
