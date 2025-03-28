@@ -1,19 +1,13 @@
 import { FaGraduationCap } from "react-icons/fa6";
 import { FaBookOpen } from "react-icons/fa";
 import { FaMedal } from "react-icons/fa";
-
-import { generateRandomId } from "@/lib/utils";
-// import graudationCap from "/public/server-intern-assets/bachelor-cap.svg";
-// import bookIcon from "/public/server-intern-assets/book-open.svg";
-// import medalIcon from "/public/server-intern-assets/gold-medal.svg";
-
 import courseImage from "/public/server-intern-assets/course1.jpg";
+import { generateRandomId } from "@/lib/utils";
 
 export const courseFilterArray = [
   {
     id: generateRandomId(),
     icon: FaGraduationCap,
-    // icon: graudationCap,
     label: "Enrolled Courses",
     number: "02",
     value: "enrolled",
@@ -21,7 +15,6 @@ export const courseFilterArray = [
   {
     id: generateRandomId(),
     icon: FaBookOpen,
-    // icon: bookIcon,
     label: "Active Courses",
     number: "01",
     value: "active",
@@ -29,7 +22,6 @@ export const courseFilterArray = [
   {
     id: generateRandomId(),
     icon: FaMedal,
-    // icon: medalIcon,
     label: "Completed Courses",
     number: "01",
     value: "completed",

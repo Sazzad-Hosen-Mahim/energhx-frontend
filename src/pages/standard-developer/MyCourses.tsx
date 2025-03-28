@@ -2,10 +2,9 @@ import ProgressBar from "@/components/ui/ProgressBar";
 import { courseList } from "./standardDeveloperData";
 import StarRating from "@/components/ui/StarRating";
 import StatusBadge from "@/components/ui/StatusBadge";
-import { calculatePercentage, generateRandomId } from "@/lib/utils";
+import { calculatePercentage } from "@/lib/utils";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 const MyCourses = () => {
   return (

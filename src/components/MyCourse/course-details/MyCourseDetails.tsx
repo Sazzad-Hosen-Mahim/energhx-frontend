@@ -10,10 +10,8 @@ import { useState } from "react";
 import MyClassDetails from "../class/MyClass";
 import MyAssignment from "../assignment/MyAssignment";
 import MyCertificate from "../certificate/MyCertificate";
-import { useParams } from "react-router-dom";
 
 const MyCourseDetails = () => {
-  const { id } = useParams();
   const [selectedFilter, setSelectedFilter] = useState("module");
 
   const filterArray = [

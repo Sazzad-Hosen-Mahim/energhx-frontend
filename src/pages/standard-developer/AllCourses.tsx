@@ -13,14 +13,6 @@ interface Course {
   image: string;
 }
 
-// const AllCourses = () => {
-//   return (
-//     <div>
-//       <h1>AllCourses</h1>
-//     </div>
-//   );
-// };
-
 const AllCourses: React.FC = () => {
   const [courses, setCourses] = useState<Course[]>([]);
 
