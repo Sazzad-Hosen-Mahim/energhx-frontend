@@ -9,7 +9,7 @@ import UpgradeFacilities from "./UpgradeFacilities";
 import UpgradeFacilitiesTwo from "./UpgradeFacilitiesTwo";
 import ThankYou from "./ThankYou";
 
-const MultiStepForm = ({ handleMultiform }) => {
+const MultiStepForm = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -87,7 +87,6 @@ const MultiStepForm = ({ handleMultiform }) => {
 
         {step === 1 && (
           <SungUp
-            handleMultiform={handleMultiform}
             formData={formData}
             updateFormData={updateFormData}
             nextStep={nextStep}

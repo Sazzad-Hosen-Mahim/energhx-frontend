@@ -18,11 +18,9 @@ interface SungUpProps {
   formData: any;
   updateFormData: (field: string, value: string | number) => void;
   nextStep: () => void;
-  setForm: any;
 }
 
 const SungUp: React.FC<SungUpProps> = ({
-  handleMultiform,
   formData,
   updateFormData,
   nextStep,
@@ -290,9 +288,6 @@ const SungUp: React.FC<SungUpProps> = ({
                 Previous
               </Button>
               <Button
-                onClick={() => {
-                  handleMultiform("signup");
-                }}
                 type="submit"
                 className="bg-primary-green text-white py-5 rounded-md"
               >

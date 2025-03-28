@@ -12,7 +12,21 @@ import { GrNext } from "react-icons/gr";
 
 const BasicBuildingInfo = () => {
   const [step, setStep] = useState(0); // Start at step 1 initially
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{
+    building: string;
+    subBuilding: string;
+    country: string;
+    street: string;
+    commodity: string[];
+    phoneNumber: string;
+    alternatePhoneNumber: string;
+    accountNumber: string;
+    units: string;
+    floorLength: string;
+    floorBreadth: string;
+    roofType: string;
+    indoorTemperature: string;
+  }>({
     building: "",
     subBuilding: "",
     country: "",
@@ -67,12 +81,19 @@ const BasicBuildingInfo = () => {
 
   //edit wall information
   const [editMode, setEditMode] = useState(false);
-  const [editedWall, setEditWall] = useState(null);
+  const [editedWall, setEditedWall] = useState<Wall | null>(null);
   const [tempLength, setTempLength] = useState("");
   const [tempWidth, setTempWidth] = useState("");
   const [tempType, setTempType] = useState("");
 
-  const handleEditClick = (wall) => {
+  interface Wall {
+    direction: string;
+    length: string;
+    width: string;
+    type: string;
+  }
+
+  const handleEditClick = (wall: Wall): void => {
     setEditedWall(wall);
     setTempLength(wall.length);
     setTempWidth(wall.width);
@@ -81,11 +102,11 @@ const BasicBuildingInfo = () => {
   };
 
   const handleSaveClick = () => {
-    updateWall(editedWall, {
-      length: tempLength,
-      width: tempWidth,
-      type: tempType,
-    });
+    // updateWall(editedWall, {
+    //   length: tempLength,
+    //   width: tempWidth,
+    //   type: tempType,
+    // });
     setEditMode(false);
     setEditedWall(null);
   };
@@ -126,7 +147,7 @@ const BasicBuildingInfo = () => {
   };
 
   const isStepOneValid = () => {
-    return (
+    return !!(
       formData.building &&
       formData.subBuilding &&
       formData.country &&
@@ -136,7 +157,7 @@ const BasicBuildingInfo = () => {
   };
 
   const isStepTwoValid = () => {
-    return formData.phoneNumber && formData.accountNumber && formData.units;
+    return !!(formData.phoneNumber && formData.accountNumber && formData.units);
   };
 
   const handleSubmit = () => {
@@ -643,7 +664,7 @@ const BasicBuildingInfo = () => {
 
       {showRoomModal && (
         <RoomModal
-          closeRoomModal={() => setShowRoomModal(false)}
+          closeModal={() => setShowRoomModal(false)}
           onAddRoom={handleAddRoom}
         />
       )}
@@ -659,3 +680,15 @@ const BasicBuildingInfo = () => {
 };
 
 export default BasicBuildingInfo;
+// function updateWall(
+//   editedWall: Wall | null,
+//   updatedValues: { length: string; width: string; type: string }
+// ) {
+//   if (!editedWall) return;
+
+//   setWalls((prevWalls) =>
+//     prevWalls.map((wall) =>
+//       wall === editedWall ? { ...wall, ...updatedValues } : wall
+//     )
+//   );
+// }
