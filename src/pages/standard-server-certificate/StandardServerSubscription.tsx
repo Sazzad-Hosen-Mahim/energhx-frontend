@@ -1,7 +1,12 @@
+
+import Subscription from "@/components/Appointment/Subscription";
+
+
 const StandardServerSubscription = () => {
   return (
     <div>
-      <h1>StandardServerSubscription</h1>
+      <Subscription/>
+      
     </div>
   );
 };
