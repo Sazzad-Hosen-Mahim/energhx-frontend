@@ -1,9 +1,8 @@
 import newspaperfolding from "/src/assets/courses/newspaper-folding.png";
 import carouselvideo from "/src/assets/courses/carousel-video.png";
-import { calculatePercentage, generateRandomId } from "@/lib/utils";
+import { calculatePercentage } from "@/lib/utils";
 import ProgressBar from "@/components/ui/ProgressBar";
 import StarRating from "@/components/ui/StarRating";
-import { useState } from "react";
 
 // Define the Course type
 export interface Course {

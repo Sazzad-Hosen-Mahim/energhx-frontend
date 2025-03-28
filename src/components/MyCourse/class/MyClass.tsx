@@ -65,9 +65,6 @@ const MyClassDetails = ({ classList }: MyClassDetailsProps) => {
               )}
               {singleClass.isCompleted && (
                 <button className="flex items-center justify-center gap-2 bg-[#E6F7FF] text-[#00ADFF] text-[16px] border-[1px] border-[#00ADFF] rounded-full px-3 py-1 cursor-pointer">
-                  {/* <span>
-                    <IoEyeOutline />
-                  </span>{" "} */}
                   Completed
                 </button>
               )}

@@ -18,7 +18,7 @@ const StandardDeveloperDasboard = () => {
             <div
               className={`max-w-[282px] w-full p-6 rounded-3xl border-[#9ED98A] cursor-pointer ${
                 item.value === selectedFilter
-                  ? "bg-[#2DAD00]"
+                  ? "bg-primary"
                   : "bg-light-green border"
               } `}
               onClick={() => setSelectedFilter(item.value)}
@@ -29,7 +29,7 @@ const StandardDeveloperDasboard = () => {
                   className={`text-6xl ${
                     item.value === selectedFilter
                       ? "text-white"
-                      : "text-[#2DAD00]"
+                      : "text-primary"
                   } `}
                 >
                   <IconElement />
