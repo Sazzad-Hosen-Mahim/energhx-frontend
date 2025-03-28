@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { User } from "./Navbar";
 import Logo from "@/assets/logo.svg"; // Adjust the path to your logo
+import { User } from "./Navbar";
 
 interface NavbarStandardProps {
   user: User;
@@ -13,9 +13,10 @@ const NavbarStandard = ({ user }: NavbarStandardProps) => {
 
   return (
     <>
-      <nav className="bg-white p-4 flex justify-between items-center mx-16  ">
-        <div className="logo">
+      <nav className="bg-white p-4 flex justify-between items-center mx-16">
+        <div className="flex items-center gap-4">
           <img src={Logo} alt="Logo" className="h-8" />
+          <span className="font-semibold">{user.name}</span>
         </div>
 
         <button

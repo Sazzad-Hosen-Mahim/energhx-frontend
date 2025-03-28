@@ -8,8 +8,17 @@ const Password = () => {
     confirm: false,
   });
 
-  const togglePasswordVisibility = (field) => {
-    setShowPassword((prev) => ({ ...prev, [field]: !prev[field] }));
+  interface PasswordVisibilityState {
+    old: boolean;
+    new: boolean;
+    confirm: boolean;
+  }
+
+  const togglePasswordVisibility = (field: keyof PasswordVisibilityState) => {
+    setShowPassword((prev: PasswordVisibilityState) => ({
+      ...prev,
+      [field]: !prev[field],
+    }));
   };
 
   const handleSave = () => {
@@ -20,7 +29,6 @@ const Password = () => {
     <div className="p-6 bg-white rounded-lg ">
       <h2 className="text-2xl  mb-10">Password</h2>
       <div className="space-y-10">
-        
         {/* Old Password */}
         <div className="relative">
           <label className="block text-lg  text-[#758179]">Old Password:</label>
@@ -55,7 +63,9 @@ const Password = () => {
 
         {/* Confirm Password */}
         <div className="relative">
-          <label className="block text-lg text-[#758179]">Re-type New Password:</label>
+          <label className="block text-lg text-[#758179]">
+            Re-type New Password:
+          </label>
           <input
             type={showPassword.confirm ? "text" : "password"}
             className="mt-1 block w-full px-3 py-3 border border-gray-300 rounded-md"

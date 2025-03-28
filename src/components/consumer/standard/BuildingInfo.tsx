@@ -12,7 +12,21 @@ import { GrNext } from "react-icons/gr";
 
 const BuildingInfo = () => {
   const [step, setStep] = useState(0); // Start at step 1 initially
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{
+    building: string;
+    subBuilding: string;
+    country: string;
+    street: string;
+    commodity: string[];
+    phoneNumber: string;
+    alternatePhoneNumber: string;
+    accountNumber: string;
+    units: string;
+    floorLength: string;
+    floorBreadth: string;
+    roofType: string;
+    indoorTemperature: string;
+  }>({
     building: "",
     subBuilding: "",
     country: "",
@@ -67,13 +81,20 @@ const BuildingInfo = () => {
 
   //edit wall information
   const [editMode, setEditMode] = useState(false);
-  const [editedWall, setEditWall] = useState(null);
+  const [editedWall, setEditWall] = useState<Wall | null>(null);
   const [tempLength, setTempLength] = useState("");
   const [tempWidth, setTempWidth] = useState("");
   const [tempType, setTempType] = useState("");
 
-  const handleEditClick = (wall) => {
-    setEditedWall(wall);
+  interface Wall {
+    direction: string;
+    length: string;
+    width: string;
+    type: string;
+  }
+
+  const handleEditClick = (wall: Wall): void => {
+    setEditWall(wall);
     setTempLength(wall.length);
     setTempWidth(wall.width);
     setTempType(wall.type);
@@ -81,13 +102,13 @@ const BuildingInfo = () => {
   };
 
   const handleSaveClick = () => {
-    updateWall(editedWall, {
-      length: tempLength,
-      width: tempWidth,
-      type: tempType,
-    });
+    // updateWall(editedWall, {
+    //   length: tempLength,
+    //   width: tempWidth,
+    //   type: tempType,
+    // });
     setEditMode(false);
-    setEditedWall(null);
+    setEditWall(null);
   };
 
   const handleAddElectricMobility = (data: {
@@ -126,7 +147,7 @@ const BuildingInfo = () => {
   };
 
   const isStepOneValid = () => {
-    return (
+    return !!(
       formData.building &&
       formData.subBuilding &&
       formData.country &&
@@ -136,7 +157,7 @@ const BuildingInfo = () => {
   };
 
   const isStepTwoValid = () => {
-    return formData.phoneNumber && formData.accountNumber && formData.units;
+    return !!(formData.phoneNumber && formData.accountNumber && formData.units);
   };
 
   const handleSubmit = () => {
@@ -302,7 +323,9 @@ const BuildingInfo = () => {
 
           {/* Roof Information */}
           <div className="mt-6 w-[80%]">
-            <h3 className="text-lg font-semibold mb-3 mt-10">Roof Information</h3>
+            <h3 className="text-lg font-semibold mb-3 mt-10">
+              Roof Information
+            </h3>
             <div className="grid grid-cols-3 gap-4">
               <input
                 type="text"
@@ -641,7 +664,7 @@ const BuildingInfo = () => {
 
       {showRoomModal && (
         <RoomModal
-          closeRoomModal={() => setShowRoomModal(false)}
+          closeModal={() => setShowRoomModal(false)}
           onAddRoom={handleAddRoom}
         />
       )}
@@ -657,3 +680,30 @@ const BuildingInfo = () => {
 };
 
 export default BuildingInfo;
+// function updateWall(
+//   editedWall: Wall | null,
+//   updatedValues: { length: string; width: string; type: string }
+// ) {
+//   if (!editedWall) return;
+
+//   setWalls((prevWalls) =>
+//     prevWalls.map((wall) =>
+//       wall === editedWall ? { ...wall, ...updatedValues } : wall
+//     )
+//   );
+// }
+// interface Wall {
+//   direction: string;
+//   length: string;
+//   width: string;
+//   type: string;
+// }
+
+// function setWalls(updateFn: (prevWalls: Wall[]) => Wall[]) {
+//   // Assuming this function is a state updater for the walls array
+//   // You can integrate this with a React state management system like useState
+//   // Example: wallsState = useState<Wall[]>([]); setWalls = wallsState[1];
+//   console.warn(
+//     "setWalls function should be integrated with a state management system."
+//   );
+// }

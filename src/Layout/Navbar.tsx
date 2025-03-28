@@ -1,4 +1,4 @@
-// Navbar.tsx (Main Navbar)
+// Navbar.tsx
 import { useState } from "react";
 import NavbarAdmin from "./NavbarAdmin";
 import NavbarStandard from "./NavbarStandard";

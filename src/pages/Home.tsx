@@ -1,6 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
 import CommonWrapper from "../common/CommonWrapper";
-import type { RootState, AppDispatch } from "../store/store";
 import home1 from "@/assets/home1.png";
 import home2 from "@/assets/home2.png";
 import home3 from "@/assets/home3.png";
@@ -69,23 +67,31 @@ const Home = () => {
         </h2>
         <ul className="text-gray-700 space-y-2">
           <li className="flex items-start">
-            <span className="text-green-500 mr-2"><img src={twing}/></span>
+            <span className="text-green-500 mr-2">
+              <img src={twing} />
+            </span>
             Not having an existing contract from any other retailer and/or
             energy marketer for this property.
           </li>
           <li className="flex items-start">
-            <span className="text-green-500 mr-2"><img src={twing}/></span>
+            <span className="text-green-500 mr-2">
+              <img src={twing} />
+            </span>
             You do have an existing contract with another retailer and/or energy
             marketer and request Energhx to consider your application for Demand
             Side Monitoring Plan.
           </li>
           <li className="flex items-start">
-            <span className="text-green-500 mr-2"><img src={twing}/></span>
+            <span className="text-green-500 mr-2">
+              <img src={twing} />
+            </span>
             Your plan with another retailer and/or energy marketer has recently
             expired.
           </li>
           <li className="flex items-start">
-            <span className="text-green-500 mr-2"><img src={twing}/></span>
+            <span className="text-green-500 mr-2">
+              <img src={twing} />
+            </span>
             You have previously cancelled your contract with Energhx.
           </li>
         </ul>

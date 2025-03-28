@@ -1,10 +1,6 @@
 import { useState } from "react";
 import CommonWrapper from "@/common/CommonWrapper";
-
-// import StepTwo from "./StepTwo";
-// import StepThree from "./StepThree";
 import { Button } from "@/components/ui/button";
-import { FaAngleLeft, FaAngleDoubleRight } from "react-icons/fa";
 import SungUp from "./SungUp";
 import WorkExperience from "./WorkExperience";
 import WorkExperienceTwo from "./WorkExperienceTwo";

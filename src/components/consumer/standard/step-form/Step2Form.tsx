@@ -17,7 +17,6 @@ const Step2Form: React.FC<Step2FormProps> = ({
   handleChange,
   isStepTwoValid,
   setStep,
-  openModal, // Optional if not used
 }) => {
   return (
     <div className="space-y-6 pt-4 w-[80%] ">
