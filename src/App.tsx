@@ -1,14 +1,11 @@
-import Footer from './Layout/Footer'
-import Layout from './Layout/Layout'
-import Navbar from './Layout/Navbar'
+import Layout from "./Layout/Layout";
 
 function App() {
-
   return (
     <>
-     <Layout></Layout>
+      <Layout></Layout>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
