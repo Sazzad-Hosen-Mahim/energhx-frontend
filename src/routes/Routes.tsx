@@ -11,7 +11,7 @@ import Dashboard from "@/pages/consumer/Dashboard";
 import BuildingInfo from "@/components/consumer/standard/BuildingInfo";
 import Settings from "@/components/consumer/standard/Settings";
 import RootServer from "@/pages/Server/RootServer";
-import ServerInternDashboard from "@/pages/Server/ServerInternDashboard";
+import BasicServerInternDashboard from "@/pages/Server/BasicServerInternDashboard";
 import Setting from "@/components/Server/Basic/Setting";
 import ServerForm from "@/pages/Server/ServerForm";
 import CertifiedAssociates from "@/pages/consumer/CertifiedAssociates";
@@ -27,6 +27,7 @@ import BasicSettings from "@/pages/BasicConsumer/BasicSettings";
 
 import AssociateProfile from "@/components/consumer/standard/certifiedAssociates/AssociateProfile";
 import CertifiedAssociateLayout from "@/Layout/CertifiedAssociateLayout";
+import ServerSettings from "@/pages/Server/ServerSettings";
 
 const routes = createBrowserRouter([
   {
@@ -71,11 +72,11 @@ const routes = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <ServerInternDashboard />,
+        element: <BasicServerInternDashboard />,
       },
       {
-        path: "setting",
-        element: <Setting />,
+        path: "settings",
+        element: <ServerSettings />,
       },
       {
         path: "form",
