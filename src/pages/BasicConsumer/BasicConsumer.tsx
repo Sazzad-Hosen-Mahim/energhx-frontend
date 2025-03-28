@@ -25,7 +25,7 @@ const BasicConsumer = () => {
     <div>
       <Navbar />
       <CommonBanner
-        name="Sabbir Rahman"
+        name="Ramjan Ali"
         role="Consumer (Basic)"
         imageUrl={userImg}
         onUpgrade={handleUpgrade} // Pass the function, not a string

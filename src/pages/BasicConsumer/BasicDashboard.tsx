@@ -3,19 +3,20 @@ import twing from "@/assets/twing.png";
 const BasicDashboard = () => {
   return (
     <div className="p-6 bg-white rounded-lg ">
-      <h2 className="text-xl font-bold text-[#112518]">Overview</h2>
-      
+      <h2 className="text-lg  text-[#112518] font-primary">Overview</h2>
+
       <div className="mt-4">
-        <h3 className="text-lg font-bold text-[#2DAD00] uppercase">
+        <h3 className="text-sm font-extrabold text-[#2DAD00] uppercase font-secondary">
           Upgrade Facilities
         </h3>
-        <p className="text-gray-700 mt-2 font-semibold pb-5">
-          Here is our some lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <p className="text-[#112518] font-semibold pb-5">
+          Here is our some lorem ipsum dolor sit amet, consectetur adipiscing
+          elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua.
         </p>
 
         <ul className="mt-4 space-y-2 text-[#758179] mb-5">
-        <li className="flex items-start">
+          <li className="flex items-start">
             <span className="text-green-500 mr-2">
               <img src={twing} />
             </span>
@@ -60,8 +61,10 @@ const BasicDashboard = () => {
         </ul>
 
         <p className="mt-4  text-[#758179]">
-          <span className="text-[#2DAD00] font-semibold">Note:</span> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical 
-          Latin literature from 45 BC, making it over 2000 years old. Richard McClintock
+          <span className="text-[#2DAD00] font-semibold">Note:</span> Contrary
+          to popular belief, Lorem Ipsum is not simply random text. It has roots
+          in a piece of classical Latin literature from 45 BC, making it over
+          2000 years old. Richard McClintock
         </p>
 
         <div className="mt-10 text-center">

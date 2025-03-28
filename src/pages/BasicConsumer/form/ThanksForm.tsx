@@ -1,9 +1,8 @@
 import Breadcrumbs from "@/common/Breadcrumbs";
 import thanks from "../../../assets/Profile/thank.png";
-interface ThanksForm {
-  nextStep: () => void;
-}
-const ThanksForm: React.FC<ThanksForm> = ({ nextStep }) => {
+import { Link } from "react-router-dom";
+
+const ThanksForm = () => {
   return (
     <div>
       <div className="py-8">
@@ -14,12 +13,12 @@ const ThanksForm: React.FC<ThanksForm> = ({ nextStep }) => {
           Thank You
         </h1>
         <img src={thanks} alt="thanks" />
-        <button
-          onClick={nextStep}
+        <Link
+          to="/basic/dashboard"
           className=" bg-primary text-white rounded-xl px-6 py-4 mt-10 cursor-pointer"
         >
           Save Profile
-        </button>
+        </Link>
       </div>
     </div>
   );
