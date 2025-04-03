@@ -3,7 +3,6 @@ import home1 from "@/assets/home1.png";
 import home2 from "@/assets/home2.png";
 import home3 from "@/assets/home3.png";
 import { motion } from "framer-motion";
-import twing from "@/assets/twing.png";
 import { useState } from "react";
 import SignUp from "./BasicConsumer/form/SignUp";
 import Utility from "./BasicConsumer/form/Utility";
