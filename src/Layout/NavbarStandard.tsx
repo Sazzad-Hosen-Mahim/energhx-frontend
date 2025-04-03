@@ -34,10 +34,8 @@ const NavbarStandard = ({ user }: NavbarStandardProps) => {
           {[
             "Home",
             "About Us",
-            "Internship",
-            "Incentives",
-            "Partners",
-            "Services",
+            "Consulting",
+            "Research",
             "EnerghxPlus",
             "Contact Us",
           ].map((label) => (
@@ -45,14 +43,12 @@ const NavbarStandard = ({ user }: NavbarStandardProps) => {
               <NavLink
                 to={`/${label.toLowerCase()}`}
                 className={({ isActive }) =>
-                  `px-4 py-2 block md:inline ${
-                    isActive
-                      ? "text-primary-green font-bold"
-                      : "text-primary-gray/80"
-                  }`
+                  `relative px-4 py-2 block md:inline group hover:text-primary 
+          ${isActive ? "text-primary-green font-bold" : "text-primary-gray/80"}`
                 }
               >
                 {label}
+                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-primary transform scale-x-0 origin-center transition-transform duration-300 group-hover:scale-x-100"></span>
               </NavLink>
             </li>
           ))}

@@ -24,7 +24,7 @@ const Home = () => {
   return (
     <CommonWrapper>
       {step === 1 && (
-        <section className="p-6">
+        <section className="p-6 h-screen">
           <h2 className="text-[#2DAD00] font-bold text-lg mb-8 uppercase">
             Personal Infomation
           </h2>
@@ -80,7 +80,7 @@ const Home = () => {
         </section>
       )}
 
-      {step === 1 && (
+      {/* {step === 1 && (
         <section className="p-6 mt-8">
           <h2 className="text-[#2DAD00] font-bold text-lg mb-8 uppercase">
             Sign Up Eligibility
@@ -116,7 +116,7 @@ const Home = () => {
             </li>
           </ul>
         </section>
-      )}
+      )} */}
 
       {step === 2 && <SignUp prevStep={prevStep} nextStep={nextStep} />}
 
